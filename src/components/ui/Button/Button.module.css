@@ -178,26 +178,14 @@
   animation: spin 0.75s linear infinite;
 }
 
-.label {
-  flex: 1;
-  text-align: left;
-  display: inline-flex;
-  align-items: center;
-}
-
 /* Gutter spacing between icon and text labels */
 .iconLeft {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   margin-right: var(--spacing-xs);
-  flex-shrink: 0;
 }
 
 .iconRight {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
-  flex-shrink: 0;
 }

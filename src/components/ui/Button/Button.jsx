@@ -84,8 +84,6 @@ const Button = memo(({
     }
   };
 
-  const renderChildren = children ? <span className={styles.label}>{children}</span> : null;
-
   if (isLink) {
     return (
       <a
@@ -100,7 +98,7 @@ const Button = memo(({
         {...rest}
       >
         {renderIcon('left')}
-        {renderChildren}
+        {children}
         {renderIcon('right')}
       </a>
     );
@@ -116,7 +114,7 @@ const Button = memo(({
       {...rest}
     >
       {renderIcon('left')}
-      {renderChildren}
+      {children}
       {renderIcon('right')}
     </button>
   );
