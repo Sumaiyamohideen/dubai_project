@@ -12,9 +12,8 @@ export default function Home() {
       <StatsBar />
       <Services />
       <About />
+      {/* Why Choose Chalachal (Placeholder until implemented) */}
       <Projects />
     </div>
   );
 }
-
-
