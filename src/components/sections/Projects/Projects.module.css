@@ -61,8 +61,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   cursor: pointer;
+}
+
+.ctaButton > span {
+  margin-left: 0;
 }
 
 .iconBadge {
