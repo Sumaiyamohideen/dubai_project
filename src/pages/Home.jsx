@@ -3,6 +3,7 @@ import Hero from '../components/sections/Hero';
 import StatsBar from '../components/sections/StatsBar';
 import Services from '../components/sections/Services';
 import About from '../components/sections/About';
+import WhyChoose from '../components/sections/WhyChoose';
 import Projects from '../components/sections/Projects';
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
       <StatsBar />
       <Services />
       <About />
-      {/* Why Choose Chalachal (Placeholder until implemented) */}
+      <WhyChoose />
       <Projects />
     </div>
   );

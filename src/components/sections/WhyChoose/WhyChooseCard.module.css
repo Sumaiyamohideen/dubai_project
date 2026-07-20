@@ -1,0 +1,88 @@
+/* src/components/sections/WhyChoose/WhyChooseCard.module.css */
+
+.card {
+  background-color: var(--color-white, #ffffff);
+  border-radius: 1.938rem; /* 31px exact Figma */
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem 2.25rem 2.25rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.iconBadge {
+  background-color: var(--color-brand-primary, #035a2d);
+  width: 59px;
+  height: 56.542px; /* Exact Figma badge dimensions */
+  border-radius: 8.604px; /* 8.604px exact Figma */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+  color: var(--color-white, #ffffff);
+  flex-shrink: 0;
+}
+
+.badgeIcon {
+  color: var(--color-white, #ffffff);
+  stroke-width: 2;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.612rem; /* 25.792px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.25;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: 1.493rem; /* 23.888px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.35;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .card {
+    padding: 2rem 1.75rem;
+    border-radius: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.45rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 1.5rem 1.35rem;
+    border-radius: 1.25rem;
+  }
+
+  .iconBadge {
+    width: 48px;
+    height: 46px;
+    margin-bottom: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+}
