@@ -1,0 +1,86 @@
+/* src/components/sections/Testimonials/TestimonialCard.module.css */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 0.8125rem;
+  box-shadow: 0px 0px 16.4px 0px rgba(0, 0, 0, 0.25);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.starsRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+  color: rgba(237, 28, 36, 0.86);
+}
+
+.quoteText {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.384rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.authorBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
+}
+
+.authorName {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.464rem;
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.authorMeta {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.09rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .quoteText {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .authorName {
+    font-size: 1.25rem;
+  }
+
+  .authorMeta {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .quoteText {
+    font-size: 1.05rem;
+  }
+}

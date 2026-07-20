@@ -77,6 +77,9 @@ import clientAvatar5 from './satisfied_clients/image 16.png';
 // About Section
 import storyImage from './about/story-image.png';
 
+// Emirates Section
+import uaeMapImage from './emirates/uae-map.png';
+
 export const images = {
   logo: companyLogo,
   
@@ -87,6 +90,10 @@ export const images = {
   
   about: {
     story: storyImage,
+  },
+
+  emirates: {
+    map: uaeMapImage,
   },
   
   services: {

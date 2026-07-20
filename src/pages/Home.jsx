@@ -5,6 +5,10 @@ import Services from '../components/sections/Services';
 import About from '../components/sections/About';
 import WhyChoose from '../components/sections/WhyChoose';
 import Projects from '../components/sections/Projects';
+import Sectors from '../components/sections/Sectors';
+import Testimonials from '../components/sections/Testimonials';
+import Emirates from '../components/sections/Emirates';
+import FAQ from '../components/sections/FAQ';
 
 export default function Home() {
   return (
@@ -15,6 +19,10 @@ export default function Home() {
       <About />
       <WhyChoose />
       <Projects />
+      <Sectors />
+      <Testimonials />
+      <Emirates />
+      <FAQ />
     </div>
   );
 }
