@@ -47,6 +47,11 @@ import project07Card from './projects/project-07-card.png';
 import project08Card from './projects/project-08-card.png';
 import project09Card from './projects/project-09-card.png';
 
+// Projects - Exact Figma Card Images
+import image71 from './projects/image 71.png';
+import image72 from './projects/image 72.png';
+import image73 from './projects/image 73.png';
+
 // Projects - Masonry
 import project01Masonry from './projects/project-01-masonry.png';
 import project02Masonry from './projects/project-02-masonry.png';
@@ -174,18 +179,25 @@ export const images = {
   projects: {
     project01: project01Card,
     project01Masonry: project01Masonry,
-    project02: project02Card,
+    project02: image71,
+    project02Card: project02Card,
     project02Masonry: project02Masonry,
-    project03: project03Card,
-    project04: project04Card,
+    project03: image72,
+    project03Card: project03Card,
+    project04: image73,
+    project04Card: project04Card,
     project04Masonry: project04Masonry,
     project05: project05Card,
     project05Masonry: project05Masonry,
-    project06: project06Card,
+    project06: project07Card,
+    project06Card: project06Card,
     project06Masonry: project06Masonry,
     project07: project07Card,
     project08: project08Card,
-    project09: project09Card
+    project09: project09Card,
+    image71: image71,
+    image72: image72,
+    image73: image73,
   },
   
   testimonials: {
