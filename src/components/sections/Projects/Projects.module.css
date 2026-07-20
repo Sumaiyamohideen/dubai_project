@@ -48,7 +48,7 @@
 }
 
 .ctaButton {
-  min-width: 17.5rem; /* ~280px exact width for text + spacing + badge */
+  min-width: 11.3125rem; /* 181px exact Figma */
   height: 4.4375rem; /* 71px exact Figma */
   padding: 0 0.5rem 0 2rem;
   background-color: var(--color-brand-primary, #035a2d);
@@ -58,18 +58,7 @@
   font-size: 1.284rem; /* 20.539px exact Figma */
   font-weight: 600;
   border: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.75rem;
   cursor: pointer;
-}
-
-.ctaButton > span {
-  margin-left: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .iconBadge {

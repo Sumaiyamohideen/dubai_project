@@ -57,17 +57,8 @@
   font-family: var(--font-family-body);
   font-size: 1.2837rem; /* 20.539px exact Figma */
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.75rem;
-}
-
-.viewAllButton > span {
-  margin-left: auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  border: none;
+  cursor: pointer;
 }
 
 .iconBadge {
