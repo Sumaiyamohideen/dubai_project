@@ -69,6 +69,9 @@ import clientAvatar3 from './satisfied_clients/image 14.png';
 import clientAvatar4 from './satisfied_clients/image 15.png';
 import clientAvatar5 from './satisfied_clients/image 16.png';
 
+// About Section
+import storyImage from './about/story-image.png';
+
 export const images = {
   logo: companyLogo,
   
@@ -77,7 +80,9 @@ export const images = {
     extraAvatar: clientAvatar1,
   },
   
-  about: {},
+  about: {
+    story: storyImage,
+  },
   
   services: {
     airFiltration: {

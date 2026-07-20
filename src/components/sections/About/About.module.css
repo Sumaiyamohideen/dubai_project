@@ -1,0 +1,142 @@
+/* src/components/sections/About/About.module.css */
+
+.aboutSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: minmax(0, 746px) minmax(0, 1fr);
+  gap: 4rem; /* 64px spacing exact Figma */
+  align-items: center;
+}
+
+.cardWrapper {
+  background-color: var(--color-white, #ffffff);
+  border-radius: 1.899rem; /* 30.389px exact Figma */
+  padding: 1.35rem; /* ~21.5px padding to contain inner image */
+  box-shadow: 0px 0px 15.685px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.imageWrapper {
+  width: 100%;
+  border-radius: 1.532rem; /* 24.51px exact Figma */
+  overflow: hidden;
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 1.25rem;
+  background-color: #e1fae3;
+  border: 1px solid #b9e1c1;
+  border-radius: 1.5rem; /* 24px exact Figma */
+  color: var(--color-brand-primary, #035a2d);
+  font-family: var(--font-family-body);
+  font-size: 1.215rem; /* 19.447px exact Figma */
+  font-weight: 500;
+  margin-bottom: 2.375rem; /* 38px exact Figma spacing */
+  line-height: 1.2;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 4.887rem; /* 78.194px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.1;
+  margin-bottom: 1.375rem; /* 22px exact Figma spacing */
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: 1.84rem; /* 29.443px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.4;
+}
+
+/* Tablet Responsive Breakpoint */
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .cardWrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .description {
+    font-size: 1.375rem;
+  }
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 767px) {
+  .aboutSection {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .gridContainer {
+    gap: 2rem;
+  }
+
+  .cardWrapper {
+    max-width: 100%;
+    padding: 0.85rem;
+    border-radius: 1.25rem;
+  }
+
+  .imageWrapper {
+    border-radius: 1rem;
+  }
+
+  .badge {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+}
