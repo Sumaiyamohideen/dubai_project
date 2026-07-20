@@ -47,12 +47,14 @@ const Projects = memo(() => {
         <div className={styles.ctaArea}>
           <Button
             variant="primary"
-            className={styles.ctaButton}
+            size="lg"
             icon={
               <span className={styles.iconBadge}>
-                <Icon name="arrow-up-right" size={24} className={styles.badgeIcon} />
+                <Icon name="arrow-up-right" size={20} className={styles.badgeIcon} />
               </span>
             }
+            iconPosition="right"
+            className={styles.ctaButton}
           >
             {PROJECTS_HEADER.ctaButtonText}
           </Button>

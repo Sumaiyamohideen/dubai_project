@@ -48,11 +48,12 @@
 }
 
 .ctaButton {
+  min-width: 11.3125rem; /* 181px exact Figma */
+  height: 4.4375rem; /* 71px exact Figma */
+  padding: 0 0.5rem 0 2rem;
   background-color: var(--color-brand-primary, #035a2d);
   color: var(--color-white, #ffffff);
   border-radius: 1.0625rem; /* 17px exact Figma */
-  height: 71px;
-  padding: 0 0.5rem 0 2rem;
   font-family: var(--font-family-body);
   font-size: 1.284rem; /* 20.539px exact Figma */
   font-weight: 600;
@@ -60,6 +61,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   cursor: pointer;
 }
 
@@ -67,16 +69,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 39.65px;
-  height: 38px;
+  width: 2.478rem; /* 39.65px exact Figma */
+  height: 2.375rem; /* 38px exact Figma */
   background-color: var(--color-white, #ffffff);
-  border-radius: 5.783px; /* Exact Figma badge radius */
-  margin-left: 1.125rem;
+  border-radius: 0.3614rem; /* 5.783px exact Figma */
+  flex-shrink: 0;
 }
 
 .badgeIcon {
-  color: var(--color-brand-primary, #035a2d);
-  stroke-width: 2.5;
+  color: #333333;
 }
 
 /* Tablet Responsive Breakpoint */
