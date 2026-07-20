@@ -180,9 +180,13 @@
 
 /* Gutter spacing between icon and text labels */
 .iconLeft {
+  display: inline-flex;
+  align-items: center;
   margin-right: var(--spacing-xs);
 }
 
 .iconRight {
+  display: inline-flex;
+  align-items: center;
   margin-left: var(--spacing-xs);
 }
