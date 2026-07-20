@@ -50,7 +50,7 @@
 .viewAllButton {
   min-width: 11.3125rem; /* 181px exact Figma */
   height: 4.4375rem; /* 71px exact Figma */
-  padding: 0 1rem 0 1.5rem;
+  padding: 0 0.5rem 0 1.5rem;
   background-color: var(--color-brand-primary, #035a2d);
   color: var(--color-white, #ffffff);
   border-radius: 1.0625rem; /* 17px exact Figma */
@@ -59,8 +59,15 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+}
+
+.viewAllButton > span {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
 }
 
 .iconBadge {
