@@ -1,0 +1,8 @@
+/* src/styles/tokens/shadows.css */
+:root {
+  /* Soft shadows extracted from Figma visual specs */
+  --shadow-card: 0px 0px 16.8px rgba(0, 0, 0, 0.25);   /* Service/Project Cards shadow */
+  --shadow-button: 0px 0px 6px rgba(0, 0, 0, 0.25);     /* Pill buttons shadow */
+  --shadow-sticky: 0px 4px 20px rgba(0, 0, 0, 0.15);    /* Header/Floating call-to-actions shadow */
+  --shadow-focus: 0px 0px 0px 3px rgba(3, 90, 45, 0.4); /* Accessibility focus highlight shadow */
+}

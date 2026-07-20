@@ -1,0 +1,92 @@
+/* src/components/sections/Services/ServiceCard.module.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border-radius: 2.1875rem; /* 35px exact Figma rounded-[35px] */
+  padding: 1.8125rem; /* ~29px exact Figma */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 448 / 309;
+  border-radius: 1.8125rem; /* 29px exact Figma */
+  overflow: hidden;
+  background-color: var(--color-bg-gray);
+  margin-bottom: 1.5rem; /* 24px spacing */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1.8125rem; /* 29px exact Figma rounded image corners */
+  transition: transform var(--transition-normal);
+}
+
+.card:hover .image {
+  transform: scale(1.03);
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 1.6875rem; /* 27px exact Figma */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem; /* 8px spacing */
+  line-height: 1.25;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: 1.25rem; /* 20px exact Figma */
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-medium);
+  line-height: 1.55;
+  margin-bottom: 1.5rem; /* 24px spacing */
+  flex-grow: 1;
+}
+
+.actionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-body);
+  font-size: 1.25rem; /* 20px exact Figma */
+  font-weight: var(--font-weight-medium);
+  color: var(--color-brand-primary, #035a2d); /* #035a2d exact Figma text-[#035a2d] */
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  width: fit-content;
+}
+
+.actionLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.actionLink:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm, 4px);
+}
+
+.arrowIcon {
+  color: var(--color-brand-primary);
+  transition: transform var(--transition-fast);
+}
+
+.actionLink:hover .arrowIcon {
+  transform: translateX(4px);
+}

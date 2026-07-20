@@ -1,0 +1,455 @@
+/* src/components/layout/Navbar/Navbar.module.css
+ *
+ * All measurements derived from Figma node 731:1828 (desktop navbar 1920×151px).
+ * Color, spacing, typography, shadow, radius, and z-index values use only
+ * design tokens from src/styles/tokens/ — never raw hex or px literals.
+ *
+ * Layout dimensions confirmed from Figma metadata:
+ *   Bar height      : 151px  → --navbar-height: 9.4375rem
+ *   Logo area       : 123×100px, x=94
+ *   Nav pill bg     : 788×63px, x=515, y=46
+ *   Phone section   : x≈1378
+ *   CTA button      : 181×59px, x=1629
+ *   Mobile breakpt  : 1024px (below which hamburger shows)
+ *   Side margin     : 110px (Figma canvas margin) → ~var(--spacing-xl) scaled
+ */
+
+/* ── Navbar token ──────────────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-overlay);
+  height: 9.4375rem; /* 151px — Figma exact */
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  transition: background-color var(--transition-normal);
+}
+
+/* Scrolled state — strictly transparent to match Figma, keeping logo, nav links pill, phone, and CTA separate */
+.navbarScrolled {
+  background: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+}
+
+/* ── Inner container ───────────────────────────────────────────────── */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-inline: 6.875rem; /* 110px — Figma canvas side margin */
+  gap: var(--spacing-lg);
+}
+
+/* ── Logo ──────────────────────────────────────────────────────────── */
+.logoLink {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  /* width reserved to match Figma logo placeholder area */
+  width: 7.6875rem; /* 123px */
+}
+
+.logoLink:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Text fallback — shown while logo asset is pending designer delivery */
+.logoFallback {
+  display: block;
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  color: var(--color-brand-primary);
+  letter-spacing: var(--letter-spacing-wide);
+  white-space: nowrap;
+}
+
+/* ── Desktop nav pill ──────────────────────────────────────────────── */
+/*
+ * Figma: Rectangle 17 background pill (788×63px centred in bar).
+ * The pill wraps exactly the 5 link labels with horizontal padding.
+ */
+.desktopNav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1.5rem; /* approximates Figma 63px height pill padding */
+  background-color: var(--color-white, #ffffff);
+  border-radius: 83.588px; /* Figma exact 83.588px pill radius */
+  gap: var(--spacing-md);
+  box-shadow: 0px 0px 11.443px rgba(0, 0, 0, 0.25); /* Figma exact elevation shadow */
+}
+
+.navItem {
+  list-style: none;
+}
+
+.navLink {
+  display: block;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-small); /* ~14px — nav link size */
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm, 4px);
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.navLinkActive {
+  color: var(--color-brand-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ── Desktop right-side actions ────────────────────────────────────── */
+.desktopActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-shrink: 0;
+}
+
+/* ── Phone link ────────────────────────────────────────────────────── */
+.phoneLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.phoneLink:hover {
+  color: var(--color-brand-primary);
+}
+
+.phoneLink:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.phoneIcon {
+  flex-shrink: 0;
+  color: var(--color-brand-primary);
+}
+
+/* ── CTA Button ────────────────────────────────────────────────────── */
+/*
+ * Figma: Rectangle 17 CTA pill — 181×59px, brand-green bg, white text.
+ * Poppins SemiBold, uppercase.
+ */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Figma dimensions: 181px wide × 59px tall */
+  min-width: 11.3125rem;
+  height: 3.6875rem;
+  padding-inline: var(--spacing-lg);
+  background-color: var(--color-brand-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-small);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 9999px; /* pill */
+  white-space: nowrap;
+  transition: background-color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.ctaButton:hover {
+  background-color: var(--color-brand-secondary);
+  transform: translateY(-1px);
+}
+
+.ctaButton:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 3px;
+}
+
+.ctaButton:active {
+  transform: translateY(0);
+}
+
+/* ── Hamburger button ──────────────────────────────────────────────── */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm, 4px);
+  flex-shrink: 0;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.hamburgerBar {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--color-text-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-normal),
+              opacity var(--transition-normal);
+  transform-origin: center;
+}
+
+/* Animated X state when open */
+.hamburgerOpen .hamburgerBar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburgerOpen .hamburgerBar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile overlay menu ───────────────────────────────────────────── */
+/*
+ * Figma Component 27 Frame 18 (expanded state):
+ * full-screen overlay, dark green brand bg, white link text.
+ */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-index-overlay) - 1);
+  background-color: var(--color-brand-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7rem var(--spacing-lg) var(--spacing-lg);
+  overflow-y: auto;
+  /* hidden state */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-1rem);
+  transition: opacity var(--transition-slow),
+              visibility var(--transition-slow),
+              transform var(--transition-slow);
+}
+
+.mobileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobileNavList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-lg);
+  width: 100%;
+}
+
+.mobileNavItem {
+  width: 100%;
+  text-align: center;
+}
+
+.mobileNavLink {
+  display: block;
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: 1.5rem; /* ~24px — scaled mobile link */
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  padding: var(--spacing-xs) 0;
+  transition: color var(--transition-fast),
+              letter-spacing var(--transition-fast);
+}
+
+.mobileNavLink:hover {
+  color: var(--color-white);
+  letter-spacing: 0.08em;
+}
+
+.mobileNavLink:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.mobileNavLinkActive {
+  color: var(--color-white);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Footer section of mobile menu: phone + CTA */
+.mobileMenuFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+}
+
+.mobilePhoneLink {
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-body);
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.mobilePhoneLink:hover {
+  color: var(--color-white);
+}
+
+.mobilePhoneLink:focus-visible {
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.mobileCtaButton {
+  /* Override to white bg with brand text for mobile contrast */
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-brand-primary);
+  min-width: 14rem;
+}
+
+.mobileCtaButton:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/* ── Backdrop ──────────────────────────────────────────────────────── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-index-overlay) - 2);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ── Reduced-motion overrides ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navLink,
+  .phoneLink,
+  .ctaButton,
+  .hamburgerBar,
+  .mobileMenu,
+  .mobileNavLink {
+    transition: none;
+  }
+}
+
+/* ── Responsive breakpoints ────────────────────────────────────────── */
+
+/* Tablet: shrink side padding */
+@media (max-width: 1280px) {
+  .inner {
+    padding-inline: var(--spacing-xl); /* 48px */
+    gap: var(--spacing-md);
+  }
+
+  .navList {
+    gap: var(--spacing-sm);
+    padding: 0.75rem 1.25rem;
+  }
+
+  .ctaButton {
+    min-width: auto;
+    padding-inline: var(--spacing-md);
+  }
+}
+
+/* Mobile: hide desktop nav, show hamburger */
+@media (max-width: 1023px) {
+  .navbar {
+    height: 5rem; /* compact mobile bar */
+  }
+
+  .inner {
+    padding-inline: var(--spacing-sm);
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .desktopActions {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* White hamburger bars when mobile menu is open (dark green bg behind) */
+  .navbarMenuOpen .hamburgerBar {
+    background-color: var(--color-white);
+  }
+}

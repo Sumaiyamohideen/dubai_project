@@ -1,0 +1,56 @@
+/* src/styles/base/utilities.css */
+
+/* Visually Hidden (for Screen Readers/A11y) */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animateFadeIn {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+/* Action button micro-interactions */
+.fabHover {
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.fabHover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-sticky);
+}
+
+/* Centralized Grid and Layout Constraints */
+.container {
+  width: 100%;
+  max-width: var(--max-width-container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-sm);
+  padding-right: var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
+  }
+}

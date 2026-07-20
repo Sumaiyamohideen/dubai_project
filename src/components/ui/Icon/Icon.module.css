@@ -1,0 +1,46 @@
+/* src/components/ui/Icon/Icon.module.css */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color var(--transition-fast, 0.2s ease-in-out), transform var(--transition-fast, 0.2s ease-in-out);
+  color: currentColor;
+}
+
+/* Sizing Classes */
+.sm {
+  width: var(--icon-sm-size, 16px);
+  height: var(--icon-sm-size, 16px);
+}
+
+.md {
+  width: var(--icon-md-size, 24px);
+  height: var(--icon-md-size, 24px);
+}
+
+.lg {
+  width: var(--icon-lg-size, 32px);
+  height: var(--icon-lg-size, 32px);
+}
+
+.xl {
+  width: var(--icon-xl-size, 48px);
+  height: var(--icon-xl-size, 48px);
+}
+
+/* Utility Animations */
+.spin {
+  animation: icon-spin 1.5s linear infinite;
+}
+
+@keyframes icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

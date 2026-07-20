@@ -1,0 +1,19 @@
+/* src/styles/tokens/colors.css */
+:root {
+  /* Brand Color Palette */
+  --color-brand-primary: #035a2d;      /* Deep green - used for primary CTAs, links, and accents */
+  --color-brand-secondary: #102e16;    /* Darker forest green - used in mobile nav and sub-badges */
+  --color-brand-accent: #00bf5c;       /* Bright highlight green */
+  --color-white: #ffffff;              /* Standard white for backgrounds and text on dark */
+
+  /* Text Hex / Opacities (Hierarchy as defined in Figma) */
+  --color-text-primary: #0e0e0e;       /* Near black for primary headers and high emphasis */
+  --color-text-high: rgba(14, 14, 14, 0.86);   /* 86% opacity black for sub-headings / FAQ questions */
+  --color-text-medium: rgba(14, 14, 14, 0.73); /* 73% opacity black for body copy / FAQ answers */
+  --color-text-low: rgba(14, 14, 14, 0.61);    /* 61% opacity black for card descriptions */
+
+  /* Background / Surface Colors */
+  --color-bg-light: #f9f9f9;           /* Soft light background */
+  --color-bg-gray: #f0f3f1;            /* Lighter gray/green for section dividers and alternate sections */
+  --color-border: #e0e6e2;             /* Subtle border gray-green */
+}

@@ -1,0 +1,117 @@
+/* src/components/features/StatCard/StatCard.module.css */
+
+.statCard {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  color: var(--color-text-primary);
+}
+
+/* Orientations */
+.orientationVertical {
+  flex-direction: column;
+}
+
+.orientationHorizontal {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Alignments for vertical layout */
+.alignLeft {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.alignCenter {
+  align-items: center;
+  text-align: center;
+}
+
+.alignRight {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Alignment for text content container in horizontal layout */
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.textLeft {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.textCenter {
+  align-items: center;
+  text-align: center;
+}
+
+.textRight {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Icon Container */
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-primary);
+  margin-bottom: var(--spacing-sm);
+  transition: transform var(--transition-normal), color var(--transition-normal);
+}
+
+.orientationHorizontal .iconWrapper {
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* Value Styling */
+.value {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+/* Highlight variations for the statistic value */
+.highlightPrimary {
+  color: var(--color-brand-primary);
+}
+
+.highlightDark {
+  color: var(--color-brand-secondary);
+}
+
+.highlightText {
+  color: var(--color-text-primary);
+}
+
+/* Label Styling */
+.label {
+  margin: var(--spacing-xs) 0 0 0;
+  color: var(--color-text-medium);
+  line-height: var(--line-height-body);
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.orientationHorizontal .label {
+  margin-top: 4px;
+}
+
+/* Interactive hover micro-animations when wrapped inside a Card */
+.statCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments for mobile viewports */
+@media (max-width: 767px) {
+  .orientationHorizontal {
+    gap: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,8 @@
+/* src/styles/tokens/radius.css */
+:root {
+  /* Border Radii (Extracted from Figma card, button, and badge specs) */
+  --radius-card: 32px;                 /* 29px-35px radius in Figma - Service/Project Cards */
+  --radius-button: 17px;               /* Figma button border-radius */
+  --radius-badge: 12px;                /* Figma badge/icon chip border-radius */
+  --radius-pill: 9999px;               /* Full pill radius (badges, rounded CTAs) */
+}

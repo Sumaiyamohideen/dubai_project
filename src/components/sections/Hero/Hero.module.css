@@ -1,0 +1,550 @@
+/* src/components/sections/Hero/Hero.module.css */
+
+/* ============================================================
+   HERO SECTION
+   Desktop: 1920 × 1080 (content zone, excludes StatsBar)
+   Mobile: full-width, single column, no decorative columns
+
+   Figma source node: 731:1424 (Home page)
+   Hero content node: 731:1427 (headline), 731:1432 (description)
+   Badge node:        731:1444 (bg), 731:1445 (text)
+   CTA node:          731:1447 (btn), 731:1449 (text)
+   Image column 1:    731:1428 (Component 1 — left marquee)
+   Image column 2:    731:1109 (Component — right marquee)
+   ============================================================ */
+
+/* ── Keyframe: continuous upward scroll ─────────────────────── */
+@keyframes marqueeUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* ── Keyframe: continuous downward scroll ───────────────────── */
+@keyframes marqueeDown {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+/* ── Section wrapper ────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-white);
+  padding-top: 5rem; /* ~80px mobile navbar height offset */
+  padding-bottom: var(--spacing-xl);
+}
+
+/* ── Content inner layout ───────────────────────────────────── */
+.inner {
+  position: relative;
+  z-index: var(--z-index-base);
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Clear uniform gap to use exact Figma margins */
+}
+
+/* ── Badge Pill ─────────────────────────────────────────────── */
+/* Figma: bg #e1fae3, border #b9e1c1, radius 15.5px, h=25.5px */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0 0.75rem;
+  height: 1.625rem; /* ~26px mobile */
+  border-radius: 0.96875rem; /* 15.5px */
+  width: fit-content;
+  background-color: #e1fae3;
+  border: 1px solid #b9e1c1;
+  box-sizing: border-box;
+  margin-bottom: 1.25rem;
+}
+
+.badgeIcon {
+  flex-shrink: 0;
+}
+
+.badgeLabel {
+  font-family: var(--font-family-body);
+  font-size: 0.785rem; /* 12.558px mobile */
+  font-weight: 500;
+  line-height: 1;
+  color: #035a2d;
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+/* ── Headline ───────────────────────────────────────────────── */
+/* Figma: Host Grotesk SemiBold, 32.581px */
+.headline {
+  font-family: var(--font-family-heading);
+  font-size: 2.036rem; /* 32.581px mobile */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 100%;
+  color: #0e0e0e;
+  margin-bottom: 1rem;
+}
+
+.headlineAccent {
+  color: #035a2d;
+}
+
+.desktopBr {
+  display: none;
+}
+
+/* ── Description ────────────────────────────────────────────── */
+/* Figma: Poppins Medium, 15.091px, opacity 71% */
+.description {
+  max-width: 100%;
+  color: rgba(0, 0, 0, 0.71);
+  font-family: var(--font-family-body);
+  font-size: 0.943rem; /* 15.091px mobile */
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* ── CTA row ────────────────────────────────────────────────── */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: 2.5rem;
+}
+
+/* ── CTA Button override ────────────────────────────────────── */
+/* Figma: bg #035a2d, border-radius 10.527px, w=161px, h=43.965px (mobile) */
+.ctaButton {
+  width: 161px;
+  height: 43.965px;
+  font-size: 12.718px;
+  font-weight: 600;
+  border-radius: 10.527px;
+  padding: 0 0.85rem;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ctaButton :global(span) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24.55px;
+  height: 23.53px;
+  border-radius: 3.58px;
+  background-color: var(--color-white);
+  color: #035a2d;
+  flex-shrink: 0;
+}
+
+.ctaButton :global(svg) {
+  width: 12px;
+  height: 12px;
+  color: #035a2d;
+}
+
+/* ── Social Proof ───────────────────────────────────────────── */
+/* Figma: gap 12px (0.75rem) */
+.socialProof {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0;
+}
+
+.avatarStack {
+  display: flex;
+  align-items: center;
+}
+
+/* Figma: circular avatar h=35px, w=35px, border 1.5px solid white */
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--color-bg-gray);
+  border: 1.5px solid var(--color-white);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.avatar + .avatar {
+  margin-left: -10px;
+}
+
+.avatarPlus {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--color-bg-gray);
+  border: 1.5px solid var(--color-white);
+  margin-left: -10px;
+  color: var(--color-white);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.avatarPlusBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatarPlusIcon {
+  position: relative;
+  z-index: 1;
+}
+
+.proofStat {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Figma: Poppins SemiBold, 18.966px */
+.proofValue {
+  font-family: var(--font-family-heading);
+  font-size: 18.966px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #000000;
+}
+
+/* Figma: Poppins Regular, 11.833px, opacity 90% */
+.proofLabel {
+  font-family: var(--font-family-body);
+  font-size: 11.833px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+/* ── Decorative overlays — background scrolling gallery on mobile ─────────────────── */
+.gradientTop,
+.gradientBottom {
+  display: none;
+}
+
+.imageColumns {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 412px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.12; /* Faint background decoration on mobile so text is legible */
+  overflow: hidden;
+}
+
+.columnLeft {
+  position: absolute;
+  left: 25px;
+  top: 441px;
+  width: 181px;
+  height: 1338px;
+}
+
+.columnRight {
+  position: absolute;
+  left: 216px;
+  top: -544px;
+  width: 177px;
+  height: 988px;
+}
+
+/* ── Image card base ────────────────────────────────────────── */
+/* Figma card: bg white, aspect-ratio 312 / 377 */
+.imageCard {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 312 / 377;
+  border-radius: 12px;
+  background-color: var(--color-white);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+  padding: 0.98875rem; /* 15.82px exact Figma white card border thickness */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.imageCardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.imageCardPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-gray);
+  border-radius: 8px;
+}
+
+/* ============================================================
+   TABLET — 768px
+   ============================================================ */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: var(--spacing-section);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .headline {
+    font-size: 3.25rem; /* ~52px tablet */
+  }
+
+  .description {
+    font-size: 1.375rem; /* ~22px tablet */
+  }
+}
+
+/* ============================================================
+   DESKTOP — 1024px
+   ============================================================ */
+@media (min-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding-top: 11.5rem; /* Increased vertical spacing below Navbar */
+    padding-bottom: 3rem;
+  }
+
+  /* Target standard container to reset default horizontal padding to match Figma */
+  .hero :global(.container) {
+    padding-left: 4rem; /* Safe default for smaller desktops */
+    padding-right: 2rem;
+    max-width: 106.25rem; /* 1700px standard content zone */
+  }
+
+  @media (min-width: 1200px) {
+    .hero :global(.container) {
+      padding-left: 6.875rem; /* 110px exact Figma left margin */
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .hero :global(.container) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .inner {
+    /* Limit left content to exact Figma width */
+    max-width: 54rem; /* 864px */
+  }
+
+  /* Precise spacings from Figma content flow */
+  .badge {
+    padding: 0 1.25rem;
+    height: 2.375rem; /* 38px */
+    margin-bottom: 1rem; /* 16px spacing */
+  }
+
+  .badgeLabel {
+    font-size: 1.215rem; /* ~19.4px */
+  }
+
+  .headline {
+    font-family: var(--font-family-heading);
+    font-size: 4.887rem; /* 78.194px exact Figma */
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0;
+    max-width: 54rem; /* 864px */
+    margin-bottom: 0.75rem; /* 12px spacing */
+  }
+
+  .desktopBr {
+    display: inline;
+  }
+
+  .description {
+    font-size: 1.8375rem; /* ~29.4px exact Figma */
+    line-height: 1.4;
+    max-width: 54rem; /* 864px */
+    margin-bottom: 2rem; /* ~32px spacing */
+  }
+
+  .ctaRow {
+    margin-bottom: 2.5rem; /* 40px spacing — ensures social proof stays above fold */
+  }
+
+  .ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16.25rem; /* 260px exact Figma */
+    height: 4.4375rem; /* 71px exact Figma */
+    padding-left: 2rem; /* 32px left padding */
+    padding-right: 1rem; /* 16px right padding */
+    font-size: 1.283rem; /* 20.539px exact Figma */
+    font-weight: 600;
+    border-radius: 1.0625rem; /* 17px exact Figma */
+  }
+
+  .ctaButton :global(span),
+  .ctaButton span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.478rem; /* 39.652px exact Figma */
+    height: 2.375rem; /* 38px exact Figma */
+    background-color: var(--color-white);
+    border-radius: 0.361rem; /* 5.783px exact Figma */
+    flex-shrink: 0;
+    margin-left: 1rem;
+  }
+
+  .ctaButton svg {
+    color: var(--color-brand-primary) !important;
+    width: 1.25rem; /* ~20px exact Figma */
+    height: 1.25rem;
+  }
+
+  .avatar {
+    width: 3.375rem;  /* ~54px exact Figma */
+    height: 3.375rem;
+  }
+
+  .avatar + .avatar {
+    margin-left: -1rem;
+  }
+
+  .avatarPlus {
+    width: 3.375rem;
+    height: 3.375rem;
+    margin-left: -1rem;
+  }
+
+  .proofValue {
+    font-size: var(--font-size-h2);
+  }
+
+  /* ── Top gradient overlay ── */
+  /* ── Top gradient overlay ── */
+  .gradientTop {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(50% + 2.8125rem); /* +45px from center */
+    width: 57.1875rem; /* 915px */
+    height: 8.5rem; /* ~136px — subtle top edge fade */
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* ── Bottom gradient overlay ── */
+  .gradientBottom {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% + 2.8125rem); /* +45px from center */
+    width: 57.1875rem; /* 915px */
+    height: 8.5rem; /* ~136px — subtle bottom edge fade */
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* ── Image columns container ── */
+  .imageColumns {
+    display: block; /* use absolute positioning for left and right columns */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 1; /* Reset mobile opacity: 0.12 — columns must be fully visible on desktop */
+    max-width: none; /* Reset mobile max-width: 412px constraint */
+    transform: none; /* Reset mobile translateX(-50%) */
+  }
+
+  /* ── Per-column wrappers ── */
+  /*
+   * Left Column (731:1109 Component) starts higher: top -1045px, left 1093px (+133px from center)
+   * Right Column (731:1428 Component 1) starts lower: top -833px, left 1482px (+522px from center)
+   */
+  .imageColumnWrap {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .columnLeft {
+    position: absolute;
+    left: calc(50% + 8.3125rem); /* 1093px on 1920px canvas */
+    top: -1045px;
+    width: 21.5625rem; /* 345px wrapper */
+    height: 2548px;
+  }
+
+  .columnRight {
+    position: absolute;
+    left: calc(50% + 32.625rem); /* 1482px on 1920px canvas */
+    top: -833px;
+    width: 21.4375rem; /* 343px wrapper */
+    height: 1913px;
+  }
+
+  /* ── Scrolling track ── */
+  /*
+   * Gap between cards is exactly 76px (4.75rem).
+   * Cards are aligned horizontally with left margin inside the wrappers:
+   * Left column card starts at left 16.38px
+   * Right column card starts at left 15.43px
+   */
+  .imageTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 4.75rem; /* 76px vertical gap */
+    padding-left: 0.96rem; /* matches right column card offset 15.43px */
+    animation: marqueeUp 35s linear infinite;
+    will-change: transform;
+  }
+
+  .imageTrackReversed {
+    display: flex;
+    flex-direction: column;
+    gap: 4.75rem; /* 76px vertical gap */
+    padding-left: 1.025rem; /* matches left column card offset 16.38px */
+    animation: marqueeDown 35s linear infinite;
+    will-change: transform;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION 
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .imageTrack,
+  .imageTrackReversed {
+    animation: none;
+  }
+}

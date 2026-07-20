@@ -1,0 +1,117 @@
+/* src/components/ui/Card/Card.module.css */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: var(--color-white, #ffffff);
+  color: var(--color-text-primary, #0e0e0e);
+  transition: 
+    transform var(--transition-fast, 0.2s ease-in-out),
+    box-shadow var(--transition-fast, 0.2s ease-in-out),
+    border-color var(--transition-fast, 0.2s ease-in-out);
+}
+
+/* Padding Presets */
+.paddingNone {
+  padding: 0;
+}
+
+.paddingSm {
+  padding: var(--spacing-sm, 1rem);
+}
+
+.paddingMd {
+  padding: var(--spacing-md, 1.5rem);
+}
+
+.paddingLg {
+  padding: var(--spacing-lg, 2rem);
+}
+
+.paddingXl {
+  padding: var(--spacing-xl, 3rem);
+}
+
+/* Shadow Presets */
+.shadowNone {
+  box-shadow: none;
+}
+
+.shadowSm {
+  box-shadow: var(--shadow-button, 0px 0px 6px rgba(0, 0, 0, 0.25));
+}
+
+.shadowMd {
+  box-shadow: var(--shadow-card, 0px 0px 16.8px rgba(0, 0, 0, 0.25));
+}
+
+.shadowLg {
+  box-shadow: var(--shadow-sticky, 0px 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Border Radius Presets */
+.radiusNone {
+  border-radius: 0;
+}
+
+.radiusSm {
+  border-radius: var(--radius-badge, 12px);
+}
+
+.radiusMd {
+  border-radius: var(--radius-button, 17px);
+}
+
+.radiusLg {
+  border-radius: var(--radius-card, 32px);
+}
+
+.radiusPill {
+  border-radius: var(--radius-pill, 9999px);
+}
+
+/* Border Presets */
+.borderNone {
+  border: 1px solid transparent;
+}
+
+.borderStandard {
+  border: 1px solid var(--color-border, #e0e6e2);
+}
+
+.borderPrimary {
+  border: 1px solid var(--color-brand-primary, #035a2d);
+}
+
+/* Hover Elevation Effect */
+.hoverable {
+  /* Ensure hover effect has slight translation and raises shadow level */
+}
+
+.hoverable:hover {
+  transform: translateY(-6px);
+  /* Fallback upgrade shadow if hoverable */
+  box-shadow: var(--shadow-sticky, 0px 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Clickable Utility Styles */
+.clickable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.clickable:focus {
+  outline: none;
+}
+
+.clickable:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus, 0px 0px 0px 3px rgba(3, 90, 45, 0.4));
+}
+
+/* Keep active state visual indicator for mouse click feedback */
+.clickable:active {
+  transform: scale(0.99) translateY(0);
+  transition: transform 0.05s ease-out;
+}

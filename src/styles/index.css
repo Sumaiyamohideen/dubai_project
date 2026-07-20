@@ -1,0 +1,18 @@
+/* src/styles/index.css */
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* 1. Design Tokens (Custom Properties) */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+@import './tokens/radius.css';
+@import './tokens/shadows.css';
+@import './tokens/breakpoints.css';
+@import './tokens/transitions.css';
+
+/* 2. Base & Reset Rules */
+@import './base/reset.css';
+@import './base/global.css';
+@import './base/utilities.css';

@@ -1,0 +1,134 @@
+/* src/components/sections/Services/Services.module.css */
+
+.servicesSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.headerContainer {
+  text-align: center;
+  max-width: 58.0625rem; /* 929px exact Figma */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.5rem; /* 56px spacing */
+}
+
+.sectionTitle {
+  font-family: var(--font-family-heading);
+  font-size: 4.886875rem; /* 78.19px exact Figma */
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin-bottom: 1.25rem; /* 20px spacing */
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-family-body);
+  font-size: 1.8401875rem; /* 29.44px exact Figma */
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-medium);
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 54rem; /* 864px exact Figma text bounds */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8125rem; /* 29px exact Figma spacing */
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem; /* 56px spacing */
+}
+
+.viewAllButton {
+  min-width: 11.3125rem; /* 181px exact Figma */
+  height: 4.4375rem; /* 71px exact Figma */
+  padding: 0 1rem 0 1.5rem;
+  background-color: var(--color-brand-primary, #035a2d);
+  color: var(--color-white, #ffffff);
+  border-radius: 1.0625rem; /* 17px exact Figma */
+  font-family: var(--font-family-body);
+  font-size: 1.2837rem; /* 20.539px exact Figma */
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.478rem; /* 39.65px exact Figma */
+  height: 2.375rem; /* 38px exact Figma */
+  background-color: var(--color-white, #ffffff);
+  border-radius: 0.3614rem; /* 5.783px exact Figma */
+  flex-shrink: 0;
+}
+
+.badgeIcon {
+  color: #333333;
+}
+
+/* Tablet Responsive Breakpoint */
+@media (max-width: 1024px) {
+  .servicesSection {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .headerContainer {
+    margin-bottom: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 3.25rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.375rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 767px) {
+  .servicesSection {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .headerContainer {
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.125rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .ctaContainer {
+    margin-top: 2.5rem;
+  }
+}

@@ -1,0 +1,11 @@
+/* src/styles/tokens/breakpoints.css */
+/* 
+   Note: Custom properties cannot be directly used in CSS @media query widths in pure CSS,
+   but these variables serve as documentation for JS/matchMedia and layout calculations.
+*/
+:root {
+  --breakpoint-mobile-width: 412px;    /* Mobile iPhone/Android Compact Figma frame width */
+  --breakpoint-tablet-width: 768px;    /* Standard portrait tablet width */
+  --breakpoint-desktop-width: 1024px;  /* Desktop layout starting point */
+  --breakpoint-canvas-width: 1920px;   /* Figma Lap Screen design canvas width */
+}

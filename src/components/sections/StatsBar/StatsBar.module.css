@@ -1,0 +1,82 @@
+/* src/sections/StatsBar/StatsBar.module.css */
+
+.statsSection {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: var(--color-white);
+  width: 100%;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl) var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xxl) var(--spacing-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .statsSection {
+    padding-top: 6rem; /* Increases vertical separation from Hero section */
+    padding-bottom: 5rem;
+  }
+
+  .statsGrid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+  }
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+
+.statValue {
+  font-family: var(--font-family-heading);
+  font-size: 2.75rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-primary);
+  line-height: 1.05;
+  letter-spacing: var(--letter-spacing-tight);
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .statValue {
+    font-size: 5.022rem; /* 80.359px exact Figma (node 731:1457) */
+  }
+}
+
+.statLabel {
+  font-family: var(--font-family-body);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-medium);
+  opacity: 0.71;
+  line-height: 1.2;
+  margin-top: 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .statLabel {
+    font-size: 1.84rem; /* 29.443px exact Figma (node 731:1457) */
+    margin-top: 0.875rem;
+  }
+}

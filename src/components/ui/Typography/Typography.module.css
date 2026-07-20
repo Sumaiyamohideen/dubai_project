@@ -1,0 +1,125 @@
+/* src/components/ui/Typography/Typography.module.css */
+
+.typography {
+  margin: 0;
+  color: inherit; /* Inherits text color or allows setting text color at parent level */
+}
+
+/* --- Hero / H1 --- */
+.hero,
+.h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2); /* Mobile fallback using tokens (~40px) */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+@media (min-width: 1024px) {
+  .hero,
+  .h1 {
+    font-size: var(--font-size-hero); /* Desktop standard (~78px) */
+  }
+}
+
+/* --- H2 --- */
+.h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-card-title); /* Mobile fallback using tokens (~24px) */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+@media (min-width: 1024px) {
+  .h2 {
+    font-size: var(--font-size-h2); /* Desktop standard (~40px) */
+  }
+}
+
+/* --- H3 --- */
+.h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-body-large); /* Mobile fallback using tokens (~20px) */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+@media (min-width: 1024px) {
+  .h3 {
+    font-size: var(--font-size-h3); /* Desktop standard (~32px) */
+  }
+}
+
+/* --- H4 --- */
+.h4 {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-body); /* Mobile fallback using tokens (~16px) */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+@media (min-width: 1024px) {
+  .h4 {
+    font-size: var(--font-size-card-title); /* Desktop standard (~24px) */
+  }
+}
+
+/* --- Body Large --- */
+.bodyLarge {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body); /* Mobile fallback using tokens (~16px) */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body);
+}
+
+@media (min-width: 1024px) {
+  .bodyLarge {
+    font-size: var(--font-size-body-large); /* Desktop standard (~20px) */
+  }
+}
+
+/* --- Body --- */
+.body {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body); /* Standard Poppins body (~16px) */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+/* --- Body Small --- */
+.bodySmall {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-small); /* Standard small body (~14px) */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+/* --- Caption --- */
+.caption {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-caption); /* Standard caption (~12px) */
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
+}
+
+/* --- Button Text --- */
+.button {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-body); /* Mobile fallback using tokens (~16px) */
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading);
+}
+
+@media (min-width: 1024px) {
+  .button {
+    font-size: var(--font-size-body-large); /* Desktop standard (~20px) */
+  }
+}
+
+/* --- Label --- */
+.label {
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-small); /* Standard small label (~14px) */
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
+}

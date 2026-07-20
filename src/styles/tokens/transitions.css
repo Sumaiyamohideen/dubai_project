@@ -1,0 +1,7 @@
+/* src/styles/tokens/transitions.css */
+:root {
+  /* Animation and Transition configurations */
+  --transition-fast: 0.2s ease-in-out;                  /* Hover effects on small badges, arrows */
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);/* Card translation, accordion expand, menu fade */
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);  /* Heavy overlay slide-in menu transition */
+}
