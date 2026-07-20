@@ -1,0 +1,127 @@
+/* src/components/sections/Projects/ProjectCard.module.css */
+
+.card {
+  background-color: var(--color-white, #ffffff);
+  border-radius: 1.688rem; /* 27px exact Figma */
+  box-shadow: 0px 0px 16.1px rgba(0, 0, 0, 0.25);
+  padding: 2rem 2.0625rem; /* ~33px side padding, 32px top/bottom */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.cardHeader {
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 2.02rem; /* 32.347px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.25;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.01em;
+}
+
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem 1rem;
+  background-color: #e1fae3;
+  border: 1px solid #b9e1c1;
+  border-radius: 1.5rem; /* 24px exact Figma */
+  color: var(--color-brand-primary, #035a2d);
+  font-family: var(--font-family-body);
+  font-size: 1.215rem; /* 19.447px exact Figma */
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.location {
+  font-family: var(--font-family-heading);
+  font-size: 1.215rem; /* 19.45px exact Figma */
+  font-weight: 400;
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 308px; /* 308px exact Figma height */
+  border-radius: 1.375rem; /* 22px exact Figma */
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: 1.278rem; /* 20.453px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.61);
+  line-height: 1.4;
+}
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 1024px) {
+  .card {
+    padding: 1.5rem 1.5rem;
+    border-radius: 1.35rem;
+  }
+
+  .title {
+    font-size: 1.65rem;
+  }
+
+  .imageContainer {
+    height: 260px;
+    border-radius: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    padding: 1.25rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .imageContainer {
+    height: 220px;
+  }
+
+  .badge {
+    font-size: 1rem;
+    padding: 0.25rem 0.85rem;
+  }
+
+  .location {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

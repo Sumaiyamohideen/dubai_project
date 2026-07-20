@@ -1,0 +1,143 @@
+/* src/components/sections/Projects/Projects.module.css */
+
+.projectsSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.headerArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4rem; /* 64px spacing exact Figma */
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-size: 4.887rem; /* 78.194px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.1;
+  margin-bottom: 1.375rem; /* 22px exact Figma */
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-family-body);
+  font-size: 1.84rem; /* 29.443px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  max-width: 864px;
+  line-height: 1.4;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4.5rem 2.5rem; /* 72px row gap, 40px column gap exact Figma */
+  margin-bottom: 4.5rem;
+}
+
+.ctaArea {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ctaButton {
+  background-color: var(--color-brand-primary, #035a2d);
+  color: var(--color-white, #ffffff);
+  border-radius: 1.0625rem; /* 17px exact Figma */
+  height: 71px;
+  padding: 0 0.5rem 0 2rem;
+  font-family: var(--font-family-body);
+  font-size: 1.284rem; /* 20.539px exact Figma */
+  font-weight: 600;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.iconBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 39.65px;
+  height: 38px;
+  background-color: var(--color-white, #ffffff);
+  border-radius: 5.783px; /* Exact Figma badge radius */
+  margin-left: 1.125rem;
+}
+
+.badgeIcon {
+  color: var(--color-brand-primary, #035a2d);
+  stroke-width: 2.5;
+}
+
+/* Tablet Responsive Breakpoint */
+@media (max-width: 1024px) {
+  .projectsSection {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .headerArea {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .description {
+    font-size: 1.375rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 2rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+/* Mobile Responsive Breakpoint */
+@media (max-width: 767px) {
+  .projectsSection {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .headerArea {
+    margin-bottom: 2.25rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .ctaButton {
+    height: 60px;
+    font-size: 1.1rem;
+    padding: 0 0.5rem 0 1.5rem;
+  }
+
+  .iconBadge {
+    width: 34px;
+    height: 34px;
+  }
+}
