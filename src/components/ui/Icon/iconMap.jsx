@@ -235,6 +235,16 @@ export const CUSTOM_ICONS = {
       <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth={props.strokeWidth || 2.5} strokeLinecap="round" strokeLinejoin="round" />
     </CustomSvgWrapper>
   ),
+  plus: (props) => (
+    <CustomSvgWrapper viewBox="0 0 24 24" {...props}>
+      <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth={props.strokeWidth || 2.5} strokeLinecap="round" strokeLinejoin="round" />
+    </CustomSvgWrapper>
+  ),
+  phone: (props) => (
+    <CustomSvgWrapper viewBox="0 0 24 24" {...props}>
+      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.053 15.053 0 0 1-6.59-6.59l2.2-2.21c.28-.27.36-.66.25-1.01A11.36 11.36 0 0 1 8.57 3.9a1 1 0 0 0-1-1H4.06c-.56 0-1.01.46-1.01 1.01 0 9.39 7.63 17.02 17.02 17.02.55 0 1.01-.45 1.01-1.01v-3.52c0-.56-.46-1.02-1.07-1.02z" fill="currentColor" />
+    </CustomSvgWrapper>
+  ),
 };
 
 

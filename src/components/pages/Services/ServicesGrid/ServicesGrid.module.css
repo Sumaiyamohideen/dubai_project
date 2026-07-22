@@ -1,0 +1,37 @@
+/* src/components/pages/Services/ServicesGrid/ServicesGrid.module.css */
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 2rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

@@ -1,0 +1,89 @@
+/* src/components/pages/About/AboutValues/AboutValues.module.css */
+
+.valuesSection {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.headerArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 4.887rem; /* ~78.19px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.1;
+  margin-bottom: 1.375rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.84rem; /* ~29.44px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  max-width: 913px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* 32px exact Figma */
+}
+
+@media (max-width: 1024px) {
+  .valuesSection {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .headerArea {
+    margin-bottom: 2.75rem;
+  }
+
+  .title {
+    font-size: 3.25rem;
+  }
+
+  .subtitle {
+    font-size: 1.375rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .valuesSection {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .headerArea {
+    margin-bottom: 2rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

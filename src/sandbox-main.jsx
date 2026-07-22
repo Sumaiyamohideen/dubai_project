@@ -9,7 +9,7 @@ import Button, { BUTTON_VARIANTS, BUTTON_SIZES } from './components/ui/Button';
 import Icon, { ICON_SIZES } from './components/ui/Icon';
 import Card, { CARD_PADDINGS, CARD_SHADOWS, CARD_RADIUS, CARD_BORDERS } from './components/ui/Card';
 import StatCard, { STAT_CARD_ORIENTATIONS, STAT_CARD_ALIGNMENTS, STAT_CARD_HIGHLIGHTS } from './components/features/StatCard';
-import Hero from './components/sections/Hero';
+import Hero from './components/pages/Home/Hero';
 
 
 // A simple arrow icon for button layout testing

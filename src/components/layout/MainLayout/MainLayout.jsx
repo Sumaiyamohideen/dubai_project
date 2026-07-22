@@ -1,13 +1,18 @@
 /* src/components/layout/MainLayout/MainLayout.jsx
  * Page-level layout orchestrator.
- * Composes: Navbar → <main> → Footer (Footer pending implementation).
+ * Composes: Navbar → <main> → Footer.
  */
-import { Outlet } from 'react-router-dom';
-import Navbar      from '../Navbar';
+import { Outlet, useLocation } from 'react-router-dom';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
+import FloatingContact from '../FloatingContact';
 
 import styles from './MainLayout.module.css';
 
 export default function MainLayout() {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className={styles.layout} data-testid="main-layout">
       <Navbar />
@@ -16,10 +21,9 @@ export default function MainLayout() {
         <Outlet />
       </main>
 
-      {/* Footer — pending implementation */}
-      <footer className={styles.footerPlaceholder} aria-label="Site footer">
-        {/* Footer component will replace this element */}
-      </footer>
+      <Footer />
+      {isHomePage && <FloatingContact />}
     </div>
   );
 }
+

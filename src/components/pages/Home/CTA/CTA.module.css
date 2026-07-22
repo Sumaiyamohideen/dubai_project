@@ -1,0 +1,172 @@
+/* src/components/sections/CTA/CTA.module.css */
+
+.ctaSection {
+  padding: var(--spacing-section, 96px) 0;
+  background-color: transparent;
+}
+
+.ctaCard {
+  background-color: var(--color-brand-primary);
+  border-radius: var(--radius-card, 32px);
+  padding: 134px var(--spacing-xl, 48px);
+  min-height: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+.contentArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  gap: 1.5rem;
+}
+
+.heading {
+  color: var(--color-white);
+  margin: 0;
+  text-align: center;
+  font-size: 4.25rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 780px;
+  text-align: center;
+  font-size: 1.375rem;
+  line-height: 1.4;
+}
+
+.actionsArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  margin-top: 2.75rem;
+}
+
+/* Base button overrides matching Figma exact shape, padding, and height */
+.whiteBtnPrimary,
+.whiteBtnSecondary {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-white) !important;
+  color: var(--color-brand-primary) !important;
+  font-family: var(--font-family-heading, inherit);
+  font-weight: var(--font-weight-bold, 700);
+  font-size: 0.9375rem; /* ~15px */
+  letter-spacing: 0.04em;
+  border-radius: 16px !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  transition: background-color var(--transition-fast, 0.2s ease),
+              transform var(--transition-fast, 0.2s ease),
+              box-shadow var(--transition-fast, 0.2s ease);
+}
+
+.whiteBtnPrimary {
+  padding: 6px 8px 6px 24px !important;
+}
+
+.whiteBtnSecondary {
+  padding: 6px 24px 6px 8px !important;
+}
+
+.whiteBtnPrimary:hover:not(:disabled),
+.whiteBtnSecondary:hover:not(:disabled) {
+  background-color: #f2f7f4 !important;
+  border-color: #f2f7f4 !important;
+  color: var(--color-brand-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Dark green rounded-square icon container inside the button */
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-brand-primary);
+  border-radius: 12px;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+/* Spacing between text and iconBox inside buttons */
+.whiteBtnPrimary > span {
+  margin-left: 14px;
+}
+
+.whiteBtnSecondary > span {
+  margin-right: 14px;
+}
+
+@media (max-width: 1024px) {
+  .ctaCard {
+    padding: 96px var(--spacing-lg, 32px);
+    min-height: 440px;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+
+  .actionsArea {
+    gap: 32px;
+    margin-top: 2.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaSection {
+    padding: var(--spacing-xl, 48px) 0;
+  }
+
+  .ctaCard {
+    padding: 56px var(--spacing-md, 24px);
+    min-height: auto;
+    border-radius: var(--radius-card, 24px);
+  }
+
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .description {
+    font-size: 1.0625rem;
+  }
+
+  .actionsArea {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacing-sm, 16px);
+    margin-top: 2rem;
+  }
+
+  .whiteBtnPrimary,
+  .whiteBtnSecondary {
+    width: 100%;
+    justify-content: space-between !important;
+  }
+}
+
+

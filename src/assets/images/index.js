@@ -8,31 +8,31 @@
 import companyLogo from './logo/company-logo.png';
 
 // Services - Cards
-import airFiltrationCard from './services/air-filtration-card.png';
+import airFiltrationCard from './services/airconditioningsystem.png';
 import airConditioningCard from './services/air-conditioning-card.png';
 import aluminumGlassWorksCard from './services/aluminum-glass-works-card.png';
 import carpentryServicesCard from './services/carpentry-services-card.png';
 import electricalFittingsCard from './services/electrical-fittings-card.png';
-import electromechanicalCard from './services/electromechanical-card.png';
-import falseCeilingCard from './services/false-ceiling-card.png';
-import fixturesRepairingCard from './services/fixtures-repairing-card.png';
+import electromechanicalCard from './services/electrochemicalinstallation.png';
+import falseCeilingCard from './services/fallceiling.png';
+import fixturesRepairingCard from './services/Fixtures-Repairing.png';
 import floorTilingCard from './services/floor-tiling-card.png';
 import generalMaintenanceCard from './services/general-maintenance-card.png';
-import interlockInstallationCard from './services/interlock-installation-card.png';
-import lightPartitionsCard from './services/light-partitions-card.png';
-import paintingServicesCard from './services/painting.png';
+import interlockInstallationCard from './services/interlock.png';
+import lightPartitionsCard from './services/Light-Partitions-Installation.png';
+import paintingServicesCard from './services/painting-services-card.png';
 import plumbingInstallationCard from './services/plumbing-installation-card.png';
 import roofWaterproofingCard from './services/roof-waterproofing-card.png';
-import sanitaryInstallationCard from './services/sanitary-installation-card.png';
-import ventilationsInstallationCard from './services/ventilations-installation-card.png';
-import wallTilingCard from './services/wall-tiling-card.png';
+import sanitaryInstallationCard from './services/Sanitary-Installation.png';
+import ventilationsInstallationCard from './services/Ventilations-Installation.png';
+import wallTilingCard from './services/walltiling.png';
 import wallpaperFixingCard from './services/wallpaper-fixing-card.png';
 import weldingServicesCard from './services/welding-services-card.png';
 import woodFlooringCard from './services/wood-flooring-card.png';
 
 // Services - Banners
 import interlockInstallationBanner from './services/interlock-installation-banner.png';
-import paintingServicesBanner from './services/painting-services-banner.png';
+import paintingServicesBanner from './services/painting.png';
 import roofWaterproofingBanner from './services/roof-waterproofing-banner.png';
 import wallpaperFixingBanner from './services/wallpaper-fixing-banner.png';
 
@@ -75,7 +75,8 @@ import clientAvatar4 from './satisfied_clients/image 15.png';
 import clientAvatar5 from './satisfied_clients/image 16.png';
 
 // About Section
-import storyImage from './about/story-image.png';
+import storyImage from './about/project-02-masonry.png';
+import advantageImage from './about/image 69.png';
 
 // Emirates Section
 import uaeMapImage from './emirates/uae-map.png';
@@ -90,6 +91,7 @@ export const images = {
   
   about: {
     story: storyImage,
+    advantage: advantageImage,
   },
 
   emirates: {
@@ -185,6 +187,7 @@ export const images = {
   
   projects: {
     project01: project01Card,
+    project01Card: project01Card,
     project01Masonry: project01Masonry,
     project02: image71,
     project02Card: project02Card,
@@ -195,13 +198,17 @@ export const images = {
     project04Card: project04Card,
     project04Masonry: project04Masonry,
     project05: project05Card,
+    project05Card: project05Card,
     project05Masonry: project05Masonry,
-    project06: project07Card,
+    project06: project06Card,
     project06Card: project06Card,
     project06Masonry: project06Masonry,
     project07: project07Card,
+    project07Card: project07Card,
     project08: project08Card,
+    project08Card: project08Card,
     project09: project09Card,
+    project09Card: project09Card,
     image71: image71,
     image72: image72,
     image73: image73,

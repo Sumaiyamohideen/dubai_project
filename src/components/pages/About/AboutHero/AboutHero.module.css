@@ -1,0 +1,82 @@
+/* src/components/pages/About/AboutHero/AboutHero.module.css */
+
+.heroSection {
+  padding-top: 16rem; /* Preserved top spacing */
+  padding-bottom: 10rem; /* Reduced bottom spacing for balanced section transition */
+  background-color: var(--color-bg-light, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 4.887rem; /* 78.194px exact Figma */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.1;
+  max-width: 856px; /* 856px exact Figma width */
+  margin-top: 0;
+  margin-bottom: 2.25rem; /* Reduced gap between H1 and description */
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.description {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.84rem; /* 29.443px exact Figma */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.4;
+  max-width: 913px; /* 913px exact Figma width */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .description {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+  }
+}

@@ -1,0 +1,160 @@
+/* src/components/layout/Footer/Footer.module.css */
+
+.footer {
+  background-color: var(--color-brand-primary);
+  color: var(--color-white);
+  padding: 80px 0;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 2.6fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.brandColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 440px;
+}
+
+/* White rounded logo badge container */
+.logoBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 124px;
+  height: 124px;
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.actionButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* WhatsApp Button: Solid white button with dark green text & icon */
+.whatsappBtn {
+  background-color: var(--color-white) !important;
+  border-color: var(--color-white) !important;
+  color: var(--color-brand-primary) !important;
+  font-family: var(--font-family-heading, inherit);
+  font-weight: var(--font-weight-bold, 700);
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  border-radius: 16px !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  transition: background-color var(--transition-fast, 0.2s ease),
+              transform var(--transition-fast, 0.2s ease);
+}
+
+.whatsappBtn:hover:not(:disabled) {
+  background-color: #f0f7f3 !important;
+  border-color: #f0f7f3 !important;
+  color: var(--color-brand-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Call Button: Transparent background with thin white border & white text */
+.callBtn {
+  background-color: transparent !important;
+  border: 1.5px solid var(--color-white) !important;
+  color: var(--color-white) !important;
+  font-family: var(--font-family-heading, inherit);
+  font-weight: var(--font-weight-bold, 700);
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  border-radius: 16px !important;
+  height: 56px !important;
+  min-height: 56px !important;
+  padding: 0 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+  transition: background-color var(--transition-fast, 0.2s ease),
+              border-color var(--transition-fast, 0.2s ease),
+              transform var(--transition-fast, 0.2s ease);
+}
+
+.callBtn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--color-white) !important;
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+}
+
+.navColumns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .brandColumn {
+    max-width: 100%;
+  }
+
+  .navColumns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 56px 0;
+  }
+
+  .navColumns {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .whatsappBtn,
+  .callBtn {
+    width: 100%;
+  }
+}
+

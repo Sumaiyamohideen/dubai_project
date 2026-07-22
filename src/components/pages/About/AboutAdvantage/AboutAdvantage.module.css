@@ -1,0 +1,189 @@
+/* src/components/pages/About/AboutAdvantage/AboutAdvantage.module.css */
+
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 620px);
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 3.625rem; /* Reduced from 4.887rem for clean proportional scaling */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+  white-space: nowrap; /* Single line on desktop */
+}
+
+.subtitle {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.375rem; /* Reduced from 1.84rem */
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.45;
+  margin-bottom: 2rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* 24px vertical spacing */
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkItem {
+  display: flex;
+  align-items: center; /* Perfect vertical alignment with text */
+  gap: 1.25rem;
+}
+
+/* Plain dark green rounded-square icon badge container */
+.checkBadge {
+  background-color: var(--color-brand-primary, #035a2d);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.itemText {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.375rem; /* Reduced from 1.85rem */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.3;
+}
+
+/* Scaled up image card container */
+.cardWrapper {
+  background-color: var(--color-white, #ffffff);
+  border-radius: 2.25rem; /* 36px exact Figma */
+  padding: 1.25rem;
+  box-shadow: 0px 0px 15.685px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 620px;
+}
+
+.imageWrapper {
+  width: 100%;
+  border-radius: 1.35rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 1280px) {
+  .title {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .title {
+    font-size: 3.25rem;
+    white-space: normal;
+  }
+
+  .subtitle {
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+  }
+
+  .itemText {
+    font-size: 1.45rem;
+  }
+
+  .cardWrapper {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .grid {
+    gap: 2rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .checklist {
+    gap: 1.25rem;
+  }
+
+  .itemText {
+    font-size: 1.15rem;
+  }
+
+  .checkBadge {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+
+  .cardWrapper {
+    padding: 0.85rem;
+    border-radius: 1.5rem;
+  }
+
+  .imageWrapper {
+    border-radius: 1.1rem;
+  }
+}

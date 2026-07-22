@@ -1,0 +1,39 @@
+/* src/components/pages/Projects/ProjectsGrid/ProjectsGrid.module.css */
+
+.gridSection {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg, 2rem);
+  width: 100%;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 1rem;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.61);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .gridSection {
+    padding-bottom: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

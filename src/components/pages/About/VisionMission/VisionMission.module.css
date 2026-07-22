@@ -1,0 +1,109 @@
+/* src/components/pages/About/VisionMission/VisionMission.module.css */
+
+.section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem; /* 32px exact Figma */
+}
+
+.visionCard,
+.missionCard {
+  border-radius: 1.9375rem; /* 31px exact Figma */
+  padding: 3rem 2.5rem;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 258px;
+  box-sizing: border-box;
+}
+
+.visionCard {
+  background-color: var(--color-brand-primary, #035a2d);
+  color: #ffffff;
+}
+
+.missionCard {
+  background-color: #ffffff;
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 2.236rem; /* 35.776px exact Figma */
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.visionCard .title {
+  color: #ffffff;
+}
+
+.missionCard .title {
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+.description {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.493rem; /* 23.888px exact Figma */
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.visionCard .description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.missionCard .description {
+  color: rgba(0, 0, 0, 0.71);
+}
+
+@media (max-width: 1024px) {
+  .visionCard,
+  .missionCard {
+    padding: 2.25rem 2rem;
+  }
+
+  .title {
+    font-size: 1.85rem;
+  }
+
+  .description {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .visionCard,
+  .missionCard {
+    padding: 1.75rem 1.5rem;
+    min-height: auto;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .description {
+    font-size: 1.0625rem;
+  }
+}

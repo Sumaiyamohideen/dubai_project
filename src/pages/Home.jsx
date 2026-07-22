@@ -1,14 +1,15 @@
 /* src/pages/Home.jsx */
-import Hero from '../components/sections/Hero';
-import StatsBar from '../components/sections/StatsBar';
-import Services from '../components/sections/Services';
-import About from '../components/sections/About';
-import WhyChoose from '../components/sections/WhyChoose';
-import Projects from '../components/sections/Projects';
-import Sectors from '../components/sections/Sectors';
-import Testimonials from '../components/sections/Testimonials';
-import Emirates from '../components/sections/Emirates';
-import FAQ from '../components/sections/FAQ';
+import Hero from '../components/pages/Home/Hero';
+import StatsBar from '../components/pages/Home/StatsBar';
+import Services from '../components/pages/Home/Services';
+import About from '../components/pages/Home/About';
+import WhyChoose from '../components/pages/Home/WhyChoose';
+import Projects from '../components/pages/Home/Projects';
+import Sectors from '../components/pages/Home/Sectors';
+import Testimonials from '../components/pages/Home/Testimonials';
+import Emirates from '../components/pages/Home/Emirates';
+import FAQ from '../components/pages/Home/FAQ';
+import CTA from '../components/pages/Home/CTA';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <Emirates />
       <FAQ />
+      <CTA />
     </div>
   );
 }
