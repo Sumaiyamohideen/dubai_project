@@ -1,0 +1,153 @@
+/* src/components/pages/Contact/ContactInfoCards/ContactInfoCards.module.css */
+
+/* ── Right column: 5 stacked cards ───────────────────────────
+   Figma: each card 602px × 174px, gap 33px (top delta between cards),
+   shadow 0 0 15.685px rgba(0,0,0,0.25)
+   Node refs: 731:5083 – 731:5087 (card shells)
+              731:5116 – 731:5120 (icon chips)
+              731:5100 – 731:5128 (labels, values, CTAs)
+──────────────────────────────────────────────────────────────── */
+
+.cardsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2.0625rem;        /* 33px gap between cards in Figma */
+  width: 100%;
+}
+
+/* ── Single card ─────────────────────────────────────────────── */
+.card {
+  display: flex;
+  align-items: center;   /* Vertical alignment centered with icon chip */
+  gap: 1.5rem;          /* Gap between icon chip and text block */
+  background: #ffffff;
+  border-radius: 1.8125rem;    /* 29px */
+  box-shadow: 0 0 15.685px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem 1.75rem;
+  height: 10.875rem;          /* 174px exact Figma height */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Green icon chip — Figma: #035a2d, 59px × 56.54px, border-radius 8.6px ── */
+.iconChip {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.6875rem;     /* 59px */
+  height: 3.5338rem;    /* 56.54px */
+  background-color: #035a2d;
+  border-radius: 0.53775rem; /* 8.604px */
+  color: #ffffff;
+}
+
+/* ── Card text content ───────────────────────────────────────── */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.2rem;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Title — Host Grotesk SemiBold 27.564px */
+.cardTitle {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.72275rem; /* 27.564px */
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Value — Host Grotesk Regular 19.45px */
+.cardValue {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.2156rem;  /* 19.45px */
+  font-weight: 400;
+  color: var(--color-text-primary, #0e0e0e);
+  margin: 0;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* CTA link — Host Grotesk Medium 23.844px, #035a2d */
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.49025rem; /* 23.844px */
+  font-weight: 500;
+  color: #035a2d;
+  text-decoration: none;
+  margin-top: 0.15rem;
+  line-height: 1.2;
+  transition: opacity 0.18s ease;
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.cardCta:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.cardCta:hover .ctaIcon {
+  transform: translateX(4px);
+}
+
+.cardCta:focus-visible {
+  outline: 2px solid #035a2d;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+  .cardValue {
+    font-size: 1.05rem;
+  }
+  .cardCta {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsColumn {
+    gap: 1.25rem;
+  }
+
+  .card {
+    padding: 1.25rem 1.25rem;
+    height: auto;
+    min-height: 8rem;
+    border-radius: 1.25rem;
+    gap: 1rem;
+  }
+
+  .iconChip {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardValue {
+    font-size: 0.95rem;
+  }
+
+  .cardCta {
+    font-size: 1rem;
+  }
+}

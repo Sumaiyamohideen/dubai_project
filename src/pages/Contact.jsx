@@ -1,10 +1,11 @@
 /* src/pages/Contact.jsx */
 
+import ContactPage from '../components/pages/Contact';
+
 export default function Contact() {
   return (
     <div data-testid="page-contact">
-      {/* Structural layout and section assembly will go here */}
-      <h1>Contact Page</h1>
+      <ContactPage />
     </div>
   );
 }

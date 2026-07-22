@@ -1,0 +1,74 @@
+/* src/components/pages/Contact/ContactHero/ContactHero.module.css */
+
+.heroSection {
+  padding-top: 14rem;
+  padding-bottom: 4rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+/* Figma Node 731:5041 — Host Grotesk SemiBold 78.194px, max-width ~1086px */
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 3.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin: 0 auto var(--spacing-md, 1.5rem);
+  text-align: center;
+}
+
+/* Figma Node 731:5040 — Poppins Medium 29.443px, 71% opacity, max-width ~963px */
+.description {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: var(--font-size-body-large, 1.25rem);
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.71);
+  line-height: 1.6;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    max-width: 90%;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    max-width: 90%;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 7rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.875rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,51 @@
+/* src/components/pages/Contact/ContactPage.module.css */
+
+/* ── Two-column section ────────────────────────────────────────
+   Figma: form card 915px left, info cards 602px right,
+   left at 110px on 1920px canvas → gap ~203px between columns.
+   Container handles the outer horizontal padding.
+──────────────────────────────────────────────────────────────── */
+.twoColSection {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  background-color: var(--color-bg-light, #ffffff);
+}
+
+.twoColGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.66fr;  /* ~915 : 602 ratio */
+  gap: 3rem;
+  align-items: start;
+}
+
+.formCol {
+  min-width: 0;
+}
+
+.infoCol {
+  min-width: 0;
+}
+
+/* ── Tablet — stack vertically ───────────────────────────────── */
+@media (max-width: 1024px) {
+  .twoColGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .twoColSection {
+    padding-bottom: 4rem;
+  }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .twoColSection {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .twoColGrid {
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,266 @@
+/* src/components/pages/Contact/ContactForm/ContactForm.module.css */
+
+/* ── Outer white card ─────────────────────────────────────────
+   Figma Node 731:5082: bg-white, 915px × 1001px, border-radius 44px,
+   shadow 0 0 15.685px rgba(0,0,0,0.25)
+──────────────────────────────────────────────────────────────── */
+.formCard {
+  background: #ffffff;
+  border-radius: 2.75rem;    /* 44px */
+  box-shadow: 0 0 15.685px rgba(0, 0, 0, 0.25);
+  padding: 3rem 3.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Section heading — Figma Node 731:5088
+   Host Grotesk SemiBold 49.052px, centered
+──────────────────────────────────────────────────────────────── */
+.formHeading {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+  text-align: center;
+  margin: 0 0 2.5rem;
+  line-height: 1.2;
+}
+
+/* ── Fields grid
+   Row layout matches Figma:
+     Row 1: Full Name (half) + Phone Number (half)
+     Row 2: Email (full)
+     Row 3: Service Required (half) + Location (half)
+     Row 4: Message (full)
+──────────────────────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.fieldsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.fieldWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.half {
+  grid-column: span 1;
+}
+
+.full {
+  grid-column: span 2;
+}
+
+/* ── Field label — Host Grotesk Medium 27.564px */
+.label {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.3;
+}
+
+.required {
+  color: #035a2d;
+}
+
+/* ── Shared input / select / textarea base
+   Figma: 1px solid rgba(0,0,0,0.41), border-radius 11px, height 54px
+──────────────────────────────────────────────────────────────── */
+.input,
+.select,
+.textarea {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text-primary, #0e0e0e);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.41);
+  border-radius: 0.6875rem;   /* 11px */
+  padding: 0 1rem;
+  height: 3.375rem;           /* 54px */
+  width: 100%;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  appearance: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(0, 0, 0, 0.52);
+  font-size: 0.875rem;
+}
+
+.select {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.52);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230e0e0e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.select option:not([value=""]) {
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+.textarea {
+  padding: 0.875rem 1rem;
+  height: 8.25rem;            /* 132px */
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #035a2d;
+  box-shadow: 0 0 0 3px rgba(3, 90, 45, 0.12);
+}
+
+/* ── Submit button
+   Figma Node 731:5112: #035a2d, 253px × 71px, border-radius 17px
+   Node 731:5113: Poppins SemiBold, 20.539px, white
+   Node 731:5114: white chip 39.652px × 38px, border-radius 5.783px
+──────────────────────────────────────────────────────────────── */
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0 1.25rem 0 1.75rem;
+  height: 4.4375rem;           /* 71px */
+  min-width: 15.8125rem;       /* 253px */
+  background-color: #035a2d;
+  border: none;
+  border-radius: 1.0625rem;    /* 17px */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  align-self: flex-start;
+}
+
+.submitBtn:hover {
+  background-color: #024a25;
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+.submitBtn:focus-visible {
+  outline: 2px solid #035a2d;
+  outline-offset: 3px;
+}
+
+.submitLabel {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #ffffff;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+/* Arrow chip — white background, green icon */
+.submitChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;               /* ~39.6px */
+  height: 2.375rem;            /* ~38px */
+  background: #ffffff;
+  border-radius: 0.3625rem;    /* 5.783px */
+  color: #035a2d;
+  flex-shrink: 0;
+}
+
+/* ── Success state ─────────────────────────────────────────── */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1rem;
+  min-height: 20rem;
+}
+
+.successIcon {
+  margin-bottom: 0.5rem;
+}
+
+.successTitle {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #035a2d;
+  margin: 0;
+}
+
+.successBody {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.71);
+  margin: 0;
+}
+
+.resetBtn {
+  margin-top: 0.5rem;
+  background: none;
+  border: 1px solid rgba(3, 90, 45, 0.4);
+  border-radius: 8px;
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 0.9375rem;
+  color: #035a2d;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.resetBtn:hover {
+  background: rgba(3, 90, 45, 0.06);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .formCard {
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 2rem 1.5rem;
+    border-radius: 1.5rem;
+  }
+
+  .formHeading {
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  /* Stack all fields to single column on mobile */
+  .fieldsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .half,
+  .full {
+    grid-column: span 1;
+  }
+
+  .submitBtn {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
