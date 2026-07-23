@@ -78,3 +78,15 @@
   flex-shrink: 0;
   margin-top: 3px;
 }
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .link,
+  .contactLink,
+  .contactInfo {
+    font-size: 0.875rem;
+  }
+}

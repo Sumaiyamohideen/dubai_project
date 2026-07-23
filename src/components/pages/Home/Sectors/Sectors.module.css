@@ -95,7 +95,17 @@
     font-size: 1.125rem;
   }
 
+  .banner {
+    background-color: transparent;
+    border-radius: 0;
+    overflow: visible;
+  }
+
   .grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem; /* 16px vertical gap between the 3 green cards */
+    column-gap: 0;
+    min-height: auto;
   }
 }

@@ -145,8 +145,16 @@
   }
 
   .gridContainer {
-    grid-template-columns: 1fr;
-    column-gap: 1rem;
-    row-gap: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 0.875rem;
+    row-gap: 1rem;
+  }
+
+  .gridContainer > li:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc(50% - 0.4375rem);
   }
 }

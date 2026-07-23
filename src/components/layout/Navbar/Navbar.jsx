@@ -168,13 +168,24 @@ HamburgerButton.propTypes = {
   onToggle: PropTypes.func.isRequired,
 };
 
+/* ─── Mobile Nav Links constant ───────────────────────────────────── */
+const MOBILE_NAV_LINKS = [
+  { label: 'HOME',       path: '/'         },
+  { label: 'ABOUT',      path: '/about'     },
+  { label: 'SERVICES',   path: '/services'  },
+  { label: 'PROJECTS',   path: '/projects'  },
+  { label: 'CONTACT US', path: '/contact'   },
+];
+
 /* ─── Sub-component: MobileMenu ──────────────────────────────────── */
 /**
- * Full-screen overlay mobile menu.
- * Figma Component 27 Frame 18 (expanded state).
- * Closes on nav link click or Escape key.
+ * Floating right dropdown mobile menu.
+ * Figma Component 28 / Frame 18 (expanded state).
+ * Closes on nav link click, outside click, or Escape key.
  */
 const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
+  const navigate = useNavigate();
+
   /* Close on Escape */
   useEffect(() => {
     if (!isOpen) return;
@@ -183,11 +194,11 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
     return () => document.removeEventListener('keydown', handleKey);
   }, [isOpen, onClose]);
 
-  /* Lock body scroll when open */
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [isOpen]);
+  const handleCtaClick = (e) => {
+    e.preventDefault();
+    onClose();
+    navigate('/contact');
+  };
 
   return (
     <div
@@ -198,9 +209,9 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
       aria-modal="true"
       aria-label="Mobile navigation menu"
     >
-      <nav aria-label="Mobile primary navigation">
+      <nav aria-label="Mobile primary navigation" className={styles.mobileNavContainer}>
         <ul className={styles.mobileNavList} role="list">
-          {NAV_LINKS.map(({ label, path }) => (
+          {MOBILE_NAV_LINKS.map(({ label, path }) => (
             <li key={path} className={styles.mobileNavItem}>
               <NavLink
                 to={path}
@@ -218,16 +229,14 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
         </ul>
 
         <div className={styles.mobileMenuFooter}>
-          <a
-            href={PHONE_HREF}
-            className={styles.mobilePhoneLink}
-            aria-label={`Call us: ${PHONE_NUMBER}`}
+          <button
+            type="button"
+            className={styles.mobileFreeQuoteBtn}
+            onClick={handleCtaClick}
             tabIndex={isOpen ? 0 : -1}
-            onClick={onClose}
           >
-            {PHONE_NUMBER}
-          </a>
-          <CtaButton className={styles.mobileCtaButton} />
+            FREE QUOTE
+          </button>
         </div>
       </nav>
     </div>
@@ -305,11 +314,11 @@ function Navbar({ className }) {
 
           {/* Mobile hamburger */}
           <HamburgerButton isOpen={isMobileOpen} onToggle={handleToggle} />
+
+          {/* Floating Mobile Dropdown Menu */}
+          <MobileMenu isOpen={isMobileOpen} onClose={handleClose} />
         </Container>
       </header>
-
-      {/* Mobile overlay menu */}
-      <MobileMenu isOpen={isMobileOpen} onClose={handleClose} />
 
       {/* Backdrop — closes menu on outside click */}
       {isMobileOpen && (

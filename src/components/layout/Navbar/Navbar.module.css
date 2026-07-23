@@ -269,24 +269,9 @@
  * Figma Component 27 Frame 18 (expanded state):
  * full-screen overlay, dark green brand bg, white link text.
  */
+/* ── Mobile overlay menu (Floating dropdown below right side of navbar) ──── */
 .mobileMenu {
-  position: fixed;
-  inset: 0;
-  z-index: calc(var(--z-index-overlay) - 1);
-  background-color: var(--color-brand-primary);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 7rem var(--spacing-lg) var(--spacing-lg);
-  overflow-y: auto;
-  /* hidden state */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-1rem);
-  transition: opacity var(--transition-slow),
-              visibility var(--transition-slow),
-              transform var(--transition-slow);
+  display: none;
 }
 
 .mobileMenuOpen {
@@ -298,99 +283,81 @@
 .mobileNavList {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: var(--spacing-lg);
+  gap: 1rem;
   width: 100%;
 }
 
 .mobileNavItem {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .mobileNavLink {
   display: block;
   font-family: var(--font-family-body);
-  font-weight: var(--font-weight-medium);
-  font-size: 1.5rem; /* ~24px — scaled mobile link */
-  letter-spacing: var(--letter-spacing-wide);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.85);
+  color: #0e0e0e;
   text-decoration: none;
-  padding: var(--spacing-xs) 0;
-  transition: color var(--transition-fast),
-              letter-spacing var(--transition-fast);
-}
-
-.mobileNavLink:hover {
-  color: var(--color-white);
-  letter-spacing: 0.08em;
-}
-
-.mobileNavLink:focus-visible {
-  outline: 2px solid var(--color-white);
-  outline-offset: 4px;
-  border-radius: 2px;
-}
-
-.mobileNavLinkActive {
-  color: var(--color-white);
-  font-weight: var(--font-weight-bold);
-}
-
-/* Footer section of mobile menu: phone + CTA */
-.mobileMenuFooter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-top: var(--spacing-xl);
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  width: 100%;
-}
-
-.mobilePhoneLink {
-  font-family: var(--font-family-body);
-  font-weight: var(--font-weight-medium);
-  font-size: var(--font-size-body);
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
+  padding: 0.25rem 0;
   transition: color var(--transition-fast);
 }
 
-.mobilePhoneLink:hover {
-  color: var(--color-white);
+.mobileNavLink:hover {
+  color: #035a2d;
 }
 
-.mobilePhoneLink:focus-visible {
-  outline: 2px solid var(--color-white);
+.mobileNavLink:focus-visible {
+  outline: 2px solid #035a2d;
   outline-offset: 2px;
   border-radius: 2px;
 }
 
-.mobileCtaButton {
-  /* Override to white bg with brand text for mobile contrast */
-  background-color: var(--color-white);
-  border-color: var(--color-white);
-  color: var(--color-brand-primary);
-  min-width: 14rem;
+.mobileNavLinkActive {
+  color: #035a2d;
+  font-weight: 700;
 }
 
-.mobileCtaButton:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
+.mobileMenuFooter {
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.mobileFreeQuoteBtn {
+  width: 100%;
+  height: 2.625rem; /* 42px */
+  background-color: #035a2d;
+  color: #ffffff;
+  font-family: var(--font-family-body);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+}
+
+.mobileFreeQuoteBtn:hover {
+  background-color: #024422;
 }
 
 /* ── Backdrop ──────────────────────────────────────────────────────── */
 .backdrop {
   position: fixed;
   inset: 0;
-  z-index: calc(var(--z-index-overlay) - 2);
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-index-overlay) - 1);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* ── Reduced-motion overrides ──────────────────────────────────────── */
@@ -399,6 +366,7 @@
   .navLink,
   .phoneLink,
   .ctaButton,
+  .hamburger,
   .hamburgerBar,
   .mobileMenu,
   .mobileNavLink {
@@ -408,10 +376,10 @@
 
 /* ── Responsive breakpoints ────────────────────────────────────────── */
 
-/* Tablet: shrink side padding */
-@media (max-width: 1280px) {
+/* Tablet: shrink side padding for large tablet */
+@media (min-width: 1024px) and (max-width: 1280px) {
   .inner {
-    padding-inline: var(--spacing-xl); /* 48px */
+    padding-inline: var(--spacing-xl);
     gap: var(--spacing-md);
   }
 
@@ -426,14 +394,51 @@
   }
 }
 
-/* Mobile: hide desktop nav, show hamburger */
+/* ── Mobile & Tablet (< 1024px): floating white navbar bar & dropdown ── */
 @media (max-width: 1023px) {
   .navbar {
-    height: 5rem; /* compact mobile bar */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    height: auto;
+    background: transparent;
+    z-index: var(--z-index-overlay);
   }
 
   .inner {
-    padding-inline: var(--spacing-sm);
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 1.25rem; /* 20px */
+    padding: 0.5rem 1.25rem; /* 8px top/bottom padding */
+    height: 3.75rem; /* 60px exact Figma height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .logoLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+    max-height: 2.75rem; /* 44px max height fits inside 60px bar with equal 8px padding */
+    width: auto;
+    max-width: 6.875rem; /* 110px */
+    flex-shrink: 0;
+  }
+
+  .logoImage {
+    display: block;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
   }
 
   .desktopNav {
@@ -446,10 +451,62 @@
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
   }
 
-  /* White hamburger bars when mobile menu is open (dark green bg behind) */
-  .navbarMenuOpen .hamburgerBar {
-    background-color: var(--color-white);
+  .hamburgerBar {
+    display: block;
+    width: 1.25rem;
+    height: 2px;
+    background-color: #0e0e0e;
+    border-radius: 2px;
+    transition: transform 0.25s ease;
+  }
+
+  /* Rotate 90deg to form 3 vertical lines ||| when menu is open */
+  .hamburgerOpen {
+    transform: rotate(90deg);
+  }
+
+  .hamburgerOpen .hamburgerBar {
+    background-color: #0e0e0e;
+  }
+
+  .mobileMenu {
+    display: block;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 14.375rem; /* 230px floating width */
+    background-color: #ffffff;
+    border-radius: 1.25rem; /* 20px */
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem 1.25rem 1.25rem;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  }
+
+  /* Corrected specificity so mobileMenuOpen overrides opacity 0 / hidden */
+  .mobileMenuOpen {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
   }
 }

@@ -30,8 +30,6 @@
   position: relative;
   overflow: hidden;
   background-color: var(--color-white);
-  padding-top: 5rem; /* ~80px mobile navbar height offset */
-  padding-bottom: 1.25rem; /* Reduced bottom spacing for tight transition to StatsBar */
 }
 
 /* ── Content inner layout ───────────────────────────────────── */
@@ -40,13 +38,58 @@
   z-index: var(--z-index-base);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0; /* Clear uniform gap to use exact Figma margins */
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+  width: 100%;
+}
+
+/* ── Decorative overlays ─────────────────── */
+.gradientTop,
+.gradientBottom {
+  display: none;
+}
+
+.imageColumns {
+  display: block;
+}
+
+.imageColumnWrap {
+  overflow: hidden;
+  position: absolute;
+}
+
+/* ── Image card base ────────────────────────────────────────── */
+.imageCard {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 312 / 377;
+  border-radius: 14px;
+  background-color: var(--color-white);
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.imageCardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.imageCardPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-gray);
+  border-radius: 10px;
 }
 
 /* ── Badge Pill ─────────────────────────────────────────────── */
-/* Figma: bg #e1fae3, border #b9e1c1, radius 15.5px, h=25.5px */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -58,9 +101,8 @@
   background-color: #e1fae3;
   border: 1px solid #b9e1c1;
   box-sizing: border-box;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 0.875rem;
+  align-self: flex-start;
 }
 
 .badgeIcon {
@@ -77,7 +119,6 @@
 }
 
 /* ── Headline ───────────────────────────────────────────────── */
-/* Figma: Host Grotesk SemiBold, 32.581px */
 .headline {
   font-family: var(--font-family-heading);
   font-size: 2.036rem; /* 32.581px mobile */
@@ -86,7 +127,8 @@
   letter-spacing: -0.01em;
   max-width: 100%;
   color: #0e0e0e;
-  margin-bottom: 0.5rem; /* Reduced gap between H1 and description */
+  text-align: left;
+  margin-bottom: 0.75rem;
 }
 
 .headlineAccent {
@@ -98,7 +140,6 @@
 }
 
 /* ── Description ────────────────────────────────────────────── */
-/* Figma: Poppins Medium, 15.091px, opacity 71% */
 .description {
   max-width: 100%;
   color: rgba(0, 0, 0, 0.71);
@@ -106,31 +147,34 @@
   font-size: 0.943rem; /* 15.091px mobile */
   font-weight: 500;
   line-height: 1.5;
-  margin-bottom: 1.25rem; /* Reduced gap below description */
+  text-align: left;
+  margin-bottom: 1.5rem;
 }
 
 /* ── CTA row ────────────────────────────────────────────────── */
 .ctaRow {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
+  justify-content: flex-start;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
 /* ── CTA Button override ────────────────────────────────────── */
-/* Figma: bg #035a2d, border-radius 10.527px, w=161px, h=43.965px (mobile) */
 .ctaButton {
   width: 161px;
   height: 43.965px;
   font-size: 12.718px;
   font-weight: 600;
   border-radius: 10.527px;
-  padding: 0 0.85rem;
+  padding: 0 0.5rem 0 1rem;
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #035a2d;
+  color: #ffffff;
+  border: none;
 }
 
 .ctaButton :global(span) {
@@ -152,12 +196,12 @@
 }
 
 /* ── Social Proof ───────────────────────────────────────────── */
-/* Figma: gap 12px (0.75rem) */
 .socialProof {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-top: 0;
+  align-self: flex-start;
 }
 
 .avatarStack {
@@ -165,7 +209,6 @@
   align-items: center;
 }
 
-/* Figma: circular avatar h=35px, w=35px, border 1.5px solid white */
 .avatar {
   width: 35px;
   height: 35px;
@@ -188,21 +231,11 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: var(--color-bg-gray);
+  background-color: #e52e2e;
   border: 1.5px solid var(--color-white);
   margin-left: -10px;
   color: var(--color-white);
   flex-shrink: 0;
-  overflow: hidden;
-}
-
-.avatarPlusBg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .avatarPlusIcon {
@@ -213,9 +246,9 @@
 .proofStat {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Figma: Poppins SemiBold, 18.966px */
 .proofValue {
   font-family: var(--font-family-heading);
   font-size: 18.966px;
@@ -224,7 +257,6 @@
   color: #000000;
 }
 
-/* Figma: Poppins Regular, 11.833px, opacity 90% */
 .proofLabel {
   font-family: var(--font-family-body);
   font-size: 11.833px;
@@ -233,112 +265,169 @@
   color: rgba(0, 0, 0, 0.9);
 }
 
-/* ── Decorative overlays — background scrolling gallery on mobile ─────────────────── */
-.gradientTop,
-.gradientBottom {
-  display: none;
-}
-
-.imageColumns {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 412px;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.12; /* Faint background decoration on mobile so text is legible */
-  overflow: hidden;
-}
-
-.columnLeft {
-  position: absolute;
-  left: 25px;
-  top: 441px;
-  width: 181px;
-  height: 1338px;
-}
-
-.columnRight {
-  position: absolute;
-  left: 216px;
-  top: -544px;
-  width: 177px;
-  height: 988px;
-}
-
-/* ── Image card base ────────────────────────────────────────── */
-/* Figma card: bg white, aspect-ratio 312 / 377 */
-.imageCard {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 312 / 377;
-  border-radius: 12px;
-  background-color: var(--color-white);
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
-  padding: 0.98875rem; /* 15.82px exact Figma white card border thickness */
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  flex-shrink: 0;
-}
-
-.imageCardImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
-}
-
-.imageCardPlaceholder {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-bg-gray);
-  border-radius: 8px;
-}
-
 /* ============================================================
-   TABLET — 768px
+   MOBILE & TABLET — (<1024px)
    ============================================================ */
-@media (min-width: 768px) {
+@media (max-width: 1023px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .imageColumns {
+    order: 1;
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 310px;
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    opacity: 1;
+    pointer-events: none;
+    border-radius: 16px;
+    z-index: 1;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 18%,
+      rgba(0, 0, 0, 1) 82%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 18%,
+      rgba(0, 0, 0, 1) 82%,
+      transparent 100%
+    );
+  }
+
+  .imageColumns::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .imageColumns::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background: linear-gradient(
+      to top,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  .containerWrap {
+    order: 2;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .columnLeft {
+    position: absolute;
+    left: 0;
+    top: -120px;
+    width: 48%;
+    height: 900px;
+  }
+
+  .columnRight {
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 48%;
+    height: 900px;
+  }
+
+  .imageTrack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: marqueeUp 25s linear infinite;
+    will-change: transform;
+  }
+
+  .imageTrackReversed {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    animation: marqueeDown 25s linear infinite;
+    will-change: transform;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .hero {
     padding-top: var(--spacing-section);
     padding-bottom: var(--spacing-xl);
   }
 
+  .imageColumns {
+    max-width: 480px;
+    height: 360px;
+  }
+
   .headline {
-    font-size: 3.25rem; /* ~52px tablet */
+    font-size: 2.75rem;
   }
 
   .description {
-    font-size: 1.375rem; /* ~22px tablet */
+    font-size: 1.25rem;
   }
 }
 
 /* ============================================================
-   DESKTOP — 1024px
+   DESKTOP — (1024px and above) — EXACT RESTORED BASELINE
    ============================================================ */
 @media (min-width: 1024px) {
   .hero {
+    display: block;
     min-height: auto;
-    padding-top: 11.5rem; /* Vertical spacing below Navbar */
-    padding-bottom: 1.5rem; /* Reduced bottom spacing for seamless transition to StatsBar */
+    padding-top: 11.5rem;
+    padding-bottom: 1.5rem;
   }
 
-  /* Target standard container to reset default horizontal padding to match Figma */
+  .containerWrap {
+    order: unset;
+  }
+
   .hero :global(.container) {
-    padding-left: 4rem; /* Safe default for smaller desktops */
+    padding-left: 4rem;
     padding-right: 2rem;
-    max-width: 106.25rem; /* 1700px standard content zone */
+    max-width: 106.25rem;
   }
 
   @media (min-width: 1200px) {
     .hero :global(.container) {
-      padding-left: 6.875rem; /* 110px exact Figma left margin */
+      padding-left: 6.875rem;
     }
   }
 
@@ -350,33 +439,33 @@
   }
 
   .inner {
-    /* Limit left content to exact Figma width */
-    max-width: 54rem; /* 864px */
+    max-width: 54rem;
     align-items: flex-start;
     text-align: left;
+    position: relative;
+    z-index: 2;
   }
 
-  /* Precise spacings from Figma content flow */
   .badge {
     padding: 0 1.25rem;
-    height: 2.375rem; /* 38px */
-    margin-bottom: 0.875rem; /* 14px spacing */
+    height: 2.375rem;
+    margin-bottom: 0.875rem;
     margin-left: 0;
     margin-right: 0;
   }
 
   .badgeLabel {
-    font-size: 1.215rem; /* ~19.4px */
+    font-size: 1.215rem;
   }
 
   .headline {
     font-family: var(--font-family-heading);
-    font-size: 4.887rem; /* 78.194px exact Figma */
+    font-size: 4.887rem;
     font-weight: 600;
     line-height: 1.15;
     letter-spacing: 0;
-    max-width: 54rem; /* 864px */
-    margin-bottom: 0.5rem; /* Reduced gap between H1 and description */
+    max-width: 54rem;
+    margin-bottom: 0.5rem;
   }
 
   .desktopBr {
@@ -384,28 +473,28 @@
   }
 
   .description {
-    font-size: 1.8375rem; /* ~29.4px exact Figma */
+    font-size: 1.8375rem;
     line-height: 1.4;
-    max-width: 54rem; /* 864px */
-    margin-bottom: 1.5rem; /* Reduced gap below description */
+    max-width: 54rem;
+    margin-bottom: 1.5rem;
   }
 
   .ctaRow {
     justify-content: flex-start;
-    margin-bottom: 1.75rem; /* Tightened spacing to social proof */
+    margin-bottom: 1.75rem;
   }
 
   .ctaButton {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 16.25rem; /* 260px exact Figma */
-    height: 4.4375rem; /* 71px exact Figma */
-    padding-left: 2rem; /* 32px left padding */
-    padding-right: 1rem; /* 16px right padding */
-    font-size: 1.283rem; /* 20.539px exact Figma */
+    width: 16.25rem;
+    height: 4.4375rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    font-size: 1.283rem;
     font-weight: 600;
-    border-radius: 1.0625rem; /* 17px exact Figma */
+    border-radius: 1.0625rem;
   }
 
   .ctaButton :global(span),
@@ -413,22 +502,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2.478rem; /* 39.652px exact Figma */
-    height: 2.375rem; /* 38px exact Figma */
+    width: 2.478rem;
+    height: 2.375rem;
     background-color: var(--color-white);
-    border-radius: 0.361rem; /* 5.783px exact Figma */
+    border-radius: 0.361rem;
     flex-shrink: 0;
     margin-left: 1rem;
   }
 
   .ctaButton svg {
     color: var(--color-brand-primary) !important;
-    width: 1.25rem; /* ~20px exact Figma */
+    width: 1.25rem;
     height: 1.25rem;
   }
 
   .avatar {
-    width: 3.375rem;  /* ~54px exact Figma */
+    width: 3.375rem;
     height: 3.375rem;
   }
 
@@ -440,21 +529,20 @@
     width: 3.375rem;
     height: 3.375rem;
     margin-left: -1rem;
+    background-color: var(--color-bg-gray);
   }
 
   .proofValue {
     font-size: var(--font-size-h2);
   }
 
-  /* ── Top gradient overlay ── */
-  /* ── Top gradient overlay ── */
   .gradientTop {
     display: block;
     position: absolute;
     top: 0;
-    left: calc(50% + 2.8125rem); /* +45px from center */
-    width: 57.1875rem; /* 915px */
-    height: 8.5rem; /* ~136px — subtle top edge fade */
+    left: calc(50% + 2.8125rem);
+    width: 57.1875rem;
+    height: 8.5rem;
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.85) 0%,
@@ -464,14 +552,13 @@
     pointer-events: none;
   }
 
-  /* ── Bottom gradient overlay ── */
   .gradientBottom {
     display: block;
     position: absolute;
     bottom: 0;
-    left: calc(50% + 2.8125rem); /* +45px from center */
-    width: 57.1875rem; /* 915px */
-    height: 8.5rem; /* ~136px — subtle bottom edge fade */
+    left: calc(50% + 2.8125rem);
+    width: 57.1875rem;
+    height: 8.5rem;
     background: linear-gradient(
       to top,
       rgba(255, 255, 255, 0.85) 0%,
@@ -481,9 +568,9 @@
     pointer-events: none;
   }
 
-  /* ── Image columns container ── */
   .imageColumns {
-    display: block; /* use absolute positioning for left and right columns */
+    order: unset;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -492,49 +579,35 @@
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
-    opacity: 1; /* Reset mobile opacity: 0.12 — columns must be fully visible on desktop */
-    max-width: none; /* Reset mobile max-width: 412px constraint */
-    transform: none; /* Reset mobile translateX(-50%) */
-  }
-
-  /* ── Per-column wrappers ── */
-  /*
-   * Left Column (731:1109 Component) starts higher: top -1045px, left 1093px (+133px from center)
-   * Right Column (731:1428 Component 1) starts lower: top -833px, left 1482px (+522px from center)
-   */
-  .imageColumnWrap {
-    overflow: hidden;
-    position: relative;
+    opacity: 1;
+    max-width: none;
+    transform: none;
+    margin: 0;
+    height: auto;
+    border-radius: 0;
   }
 
   .columnLeft {
     position: absolute;
-    left: calc(50% + 8.3125rem); /* 1093px on 1920px canvas */
+    left: calc(50% + 8.3125rem);
     top: -1045px;
-    width: 21.5625rem; /* 345px wrapper */
+    width: 21.5625rem;
     height: 2548px;
   }
 
   .columnRight {
     position: absolute;
-    left: calc(50% + 32.625rem); /* 1482px on 1920px canvas */
+    left: calc(50% + 32.625rem);
     top: -833px;
-    width: 21.4375rem; /* 343px wrapper */
+    width: 21.4375rem;
     height: 1913px;
   }
 
-  /* ── Scrolling track ── */
-  /*
-   * Gap between cards is exactly 76px (4.75rem).
-   * Cards are aligned horizontally with left margin inside the wrappers:
-   * Left column card starts at left 16.38px
-   * Right column card starts at left 15.43px
-   */
   .imageTrack {
     display: flex;
     flex-direction: column;
-    gap: 4.75rem; /* 76px vertical gap */
-    padding-left: 0.96rem; /* matches right column card offset 15.43px */
+    gap: 4.75rem;
+    padding-left: 0.96rem;
     animation: marqueeUp 35s linear infinite;
     will-change: transform;
   }
@@ -542,10 +615,30 @@
   .imageTrackReversed {
     display: flex;
     flex-direction: column;
-    gap: 4.75rem; /* 76px vertical gap */
-    padding-left: 1.025rem; /* matches left column card offset 16.38px */
+    gap: 4.75rem;
+    padding-left: 1.025rem;
     animation: marqueeDown 35s linear infinite;
     will-change: transform;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION 
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .imageTrack,
+  .imageTrackReversed {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION 
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .imageTrack,
+  .imageTrackReversed {
+    animation: none;
   }
 }
 

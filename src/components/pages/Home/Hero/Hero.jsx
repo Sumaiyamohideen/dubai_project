@@ -98,7 +98,7 @@ const Hero = memo(({ className = '' }) => {
       {/* Decorative bottom gradient overlay — desktop only */}
       <div className={styles.gradientBottom} aria-hidden="true" />
 
-      {/* Decorative image columns with marquee — desktop only */}
+      {/* Decorative image columns with marquee — desktop absolute overlay across full section */}
       <div className={styles.imageColumns} aria-hidden="true">
         <MarqueeColumn
           items={HERO_COLUMN_1_IMAGES}
@@ -112,7 +112,7 @@ const Hero = memo(({ className = '' }) => {
         />
       </div>
 
-      <Container>
+      <Container className={styles.containerWrap}>
         <div className={styles.inner}>
           {/* Badge Pill */}
           <div className={styles.badge}>
@@ -173,11 +173,6 @@ const Hero = memo(({ className = '' }) => {
                 />
               ))}
               <div className={styles.avatarPlus} aria-hidden="true">
-                <img
-                  src={HERO_SOCIAL_PROOF.extraAvatar}
-                  alt=""
-                  className={styles.avatarPlusBg}
-                />
                 <Icon
                   name="plus"
                   size={14}
