@@ -24,7 +24,7 @@ export const PROJECTS_LIST = [
     location: 'Dubai',
     description:
       'Two-bedroom move-in repaint with two accent walls, completed in 36 hours.',
-    imageKey: 'project02',
+    imageKey: 'sharjahOfficeGlassPartitions',
   },
   {
     id: 'sharjah-glass-partitions',
@@ -42,7 +42,7 @@ export const PROJECTS_LIST = [
     location: 'Dubai',
     description:
       'PU-based roof waterproofing with heat-reflective topcoat on a 5-bedroom villa.',
-    imageKey: 'project04',
+    imageKey: 'mirdifRoofWaterproofing',
   },
   {
     id: 'khalifa-city-interlock',
@@ -51,7 +51,7 @@ export const PROJECTS_LIST = [
     location: 'Abu Dhabi',
     description:
       'Charcoal & grey interlock driveway with edge curbs and garden path.',
-    imageKey: 'project05',
+    imageKey: 'project05Card',
   },
   {
     id: 'al-nahda-bathroom',
@@ -60,6 +60,6 @@ export const PROJECTS_LIST = [
     location: 'Sharjah',
     description:
       'Full bathroom strip-out, waterproofing membrane and porcelain re-tiling.',
-    imageKey: 'project06',
+    imageKey: 'project07Card',
   },
 ];

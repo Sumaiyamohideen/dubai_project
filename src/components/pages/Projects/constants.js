@@ -44,7 +44,7 @@ export const PROJECTS_GRID_DATA = [
     categoryLabel: 'Residential',              // Figma Node 731:4649
     filterCategories: ['residential'],
     location: 'Al Barsha, Dubai',
-    imageKey: 'image71',
+    imageKey: 'sharjahOfficeGlassPartitions',
     description:
       'Two-bedroom move-in repaint with two accent walls, completed in 36 hours.',
   },
@@ -66,7 +66,7 @@ export const PROJECTS_GRID_DATA = [
     categoryLabel: 'Waterproofing',            // Figma Node 731:4634
     filterCategories: ['waterproofing'],
     location: 'Mirdif, Dubai',
-    imageKey: 'image73',
+    imageKey: 'mirdifRoofWaterproofing',
     description:
       'PU-based roof waterproofing with heat-reflective topcoat on a 5-bedroom villa.',
   },

@@ -1,10 +1,10 @@
 /* src/pages/ServiceDetail.jsx */
 
+import { useParams } from 'react-router-dom';
+import ServiceDetailsPage from '@/components/pages/ServiceDetails';
+
 export default function ServiceDetail() {
-  return (
-    <div data-testid="page-service-detail">
-      {/* Structural layout and section assembly will go here */}
-      <h1>Service Detail Page</h1>
-    </div>
-  );
+  const { serviceSlug } = useParams();
+
+  return <ServiceDetailsPage slug={serviceSlug} />;
 }

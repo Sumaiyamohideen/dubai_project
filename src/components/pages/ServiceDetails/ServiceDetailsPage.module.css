@@ -1,0 +1,330 @@
+/* src/components/pages/ServiceDetails/ServiceDetailsPage.module.css */
+
+.page {
+  background-color: var(--color-bg-light, #ffffff);
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+/* ── 1. Hero Section ────────────────────────────────────────────── */
+.heroSection {
+  /* Clean vertical spacing clearing the fixed Navbar (~13rem / 208px from top) */
+  padding-top: 13rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.heroTitle {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 4.8875rem; /* ~78.2px from Figma */
+  font-weight: 600;
+  color: #0e0e0e;
+  line-height: 1.1;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 900px;
+}
+
+/* ── 2. Framed Hero Image Container ─────────────────────────────── */
+.framedImageCard {
+  background-color: #ffffff;
+  border-radius: 51px;
+  padding: 44px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
+  margin-top: 3.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 1624 / 945; /* Exact Figma 1:1 aspect ratio (1624px x 945px) */
+  object-fit: cover;
+  border-radius: 41px;
+  display: block;
+}
+
+/* ── 3. Overview Section ───────────────────────────────────────── */
+.overviewSection {
+  padding-top: 4.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.overviewLead {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 2.275rem; /* ~36.4px from Figma */
+  line-height: 1.5;
+  color: #0e0e0e;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ── 4. Services Offered Section ────────────────────────────────── */
+.servicesOfferedSection {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+.offeredHeading {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 2.65rem; /* ~42.5px from Figma */
+  font-weight: 600;
+  color: #0e0e0e;
+  margin: 0 0 2.5rem 0;
+  text-align: left;
+}
+
+.offeredList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.offeredItem {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 2.41rem; /* ~38.6px from Figma */
+  line-height: 1.45;
+  color: #0e0e0e;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.offeredLabel {
+  font-weight: 600;
+  color: #0e0e0e;
+}
+
+.offeredText {
+  font-weight: 400;
+}
+
+/* ── 5. Related Services Section ────────────────────────────────── */
+.relatedSection {
+  padding-top: 5rem;
+  padding-bottom: 5.5rem;
+  text-align: center;
+}
+
+.relatedTitle {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 4.8875rem; /* ~78.2px from Figma */
+  font-weight: 600;
+  color: #0e0e0e;
+  margin: 0 0 1.25rem 0;
+}
+
+.relatedSubtitle {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.84rem; /* ~29.4px from Figma */
+  line-height: 1.5;
+  color: #000000;
+  opacity: 0.71;
+  max-width: 856px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  text-align: left;
+}
+
+.relatedCard {
+  background-color: #ffffff;
+  border-radius: 35px;
+  padding: 1.75rem;
+  box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.relatedCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.3);
+}
+
+.cardImageWrapper {
+  width: 100%;
+  height: 309px;
+  border-radius: 29px;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardTitle {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 2.02rem; /* ~32.3px from Figma */
+  font-weight: 600;
+  color: #0e0e0e;
+  margin: 1.5rem 0 0.5rem 0;
+}
+
+.cardDescription {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.28rem; /* ~20.5px from Figma */
+  line-height: 1.5;
+  color: #000000;
+  opacity: 0.61;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1;
+}
+
+.cardLink {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 1.49rem; /* ~23.8px from Figma */
+  font-weight: 500;
+  color: var(--color-brand-primary, #035a2d);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: auto;
+  transition: opacity 0.2s ease;
+}
+
+.cardLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.viewAllWrapper {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.viewAllBtn {
+  background-color: var(--color-brand-primary, #035a2d) !important;
+  color: #ffffff !important;
+  border-radius: 17px !important;
+  height: 71px !important;
+  padding: 0 28px !important;
+  font-family: var(--font-family-body, inherit);
+  font-weight: 600;
+  font-size: 1.28rem !important;
+  gap: 12px !important;
+}
+
+.viewAllIconBadge {
+  background-color: #ffffff;
+  width: 39.65px;
+  height: 38px;
+  border-radius: 5.78px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.viewAllBtn:hover .viewAllIconBadge {
+  transform: scale(1.06);
+}
+
+/* ── Responsive Rules ───────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .heroSection {
+    padding-top: 9.5rem;
+  }
+
+  .heroTitle,
+  .relatedTitle {
+    font-size: 3.5rem;
+  }
+
+  .framedImageCard {
+    padding: 24px;
+    border-radius: 32px;
+  }
+
+  .heroImage {
+    border-radius: 24px;
+  }
+
+  .overviewLead {
+    font-size: 1.75rem;
+  }
+
+  .offeredItem {
+    font-size: 1.6rem;
+  }
+
+  .relatedSubtitle {
+    font-size: 1.35rem;
+  }
+
+  .cardTitle {
+    font-size: 1.6rem;
+  }
+
+  .cardDescription {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    padding-top: 8.5rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 7rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .heroTitle,
+  .relatedTitle {
+    font-size: 2.5rem;
+  }
+
+  .framedImageCard {
+    padding: 16px;
+    border-radius: 24px;
+    margin-top: 2rem;
+  }
+
+  .heroImage {
+    border-radius: 16px;
+  }
+
+  .overviewLead {
+    font-size: 1.25rem;
+  }
+
+  .offeredHeading {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .offeredItem {
+    font-size: 1.125rem;
+  }
+
+  .relatedSubtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .relatedGrid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .cardImageWrapper {
+    height: 220px;
+  }
+}

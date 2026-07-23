@@ -64,4 +64,14 @@ export const FOOTER_DATA = {
       ],
     },
   ],
+  bottom: {
+    copyright: '2026 Chalachal Technical Services LLC',
+    designer: 'Designed by Quantixmedia',
+    links: [
+      { label: 'Privacy Policy', href: '#privacy' },
+      { label: 'Terms of Use', href: '#terms' },
+      { label: 'Sitemap', href: '#sitemap' },
+    ],
+  },
 };
+

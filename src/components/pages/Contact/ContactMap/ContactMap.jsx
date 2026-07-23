@@ -2,46 +2,57 @@
 
 import { memo } from 'react';
 import Container from '@/components/ui/Container';
+import { CONTACT_MAP_DATA } from '../constants';
 import styles from './ContactMap.module.css';
 
 /**
- * ContactMap — static map image section.
+ * ContactMap — embedded interactive Google Map section.
  * Matches Figma Node 731:5139:
  *   1700px × 617.862px, border-radius 44.552px, left 110px on 1920px canvas.
  *
- * The map image must be available at:
- *   src/assets/images/contact/map.png
+ * Points to official business location link:
+ *   https://maps.app.goo.gl/GT87anqgeNKjzYT86?g_st=ic
  *
  * @component ContactMap
  */
 const ContactMap = memo(() => {
   return (
-    <section className={styles.mapSection} aria-label="Map showing Chalachal Technical Services locations across the UAE">
+    <section className={styles.mapSection} aria-label="Official business location map">
       <Container>
-        <div
-          className={styles.mapWrapper}
-          role="img"
-          aria-label="Map of UAE showing Chalachal Technical Services service areas"
-        >
-          <img
-            src="/src/assets/images/contact/map.png"
-            alt="Map of UAE service areas — Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Umm Al Quwain"
-            className={styles.mapImage}
+        <div className={styles.mapWrapper}>
+          <iframe
+            src={CONTACT_MAP_DATA.embedUrl}
+            title={CONTACT_MAP_DATA.title}
+            className={styles.mapIframe}
+            allowFullScreen=""
             loading="lazy"
-            onError={(e) => {
-              /* Graceful fallback if map image not yet exported */
-              e.currentTarget.style.display = 'none';
-            }}
+            referrerPolicy="no-referrer-when-downgrade"
           />
-          {/* Fallback placeholder shown when image is missing */}
-          <div className={styles.mapFallback} aria-hidden="true">
-            <p className={styles.fallbackText}>
-              Serving all 7 Emirates of the UAE
-            </p>
-            <p className={styles.fallbackSub}>
-              Dubai · Abu Dhabi · Sharjah · Ajman · Ras Al Khaimah · Fujairah · Umm Al Quwain
-            </p>
-          </div>
+          <a
+            href={CONTACT_MAP_DATA.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.openMapLink}
+            aria-label={`${CONTACT_MAP_DATA.buttonLabel} (opens in a new tab)`}
+          >
+            <span>{CONTACT_MAP_DATA.buttonLabel}</span>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+              className={styles.externalIcon}
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </a>
         </div>
       </Container>
     </section>
@@ -51,3 +62,4 @@ const ContactMap = memo(() => {
 ContactMap.displayName = 'ContactMap';
 
 export default ContactMap;
+

@@ -1,4 +1,4 @@
-/* src/components/sections/CTA/CTA.jsx */
+/* src/components/pages/Home/CTA/CTA.jsx */
 
 import { memo } from 'react';
 import PropTypes from 'prop-types';
@@ -10,14 +10,26 @@ import { CTA_DATA } from './constants';
 import styles from './CTA.module.css';
 
 /**
- * CTA (Call To Action) section component supporting 'home' and 'about' variants.
+ * CTA (Call To Action) section component supporting 'home', 'about', and 'service' variants.
  *
  * @component CTA
  * @param {Object} props
- * @param {'home' | 'about'} [props.variant='home'] - Layout variant for different pages
+ * @param {'home' | 'about' | 'service'} [props.variant='home'] - Layout variant for different pages
+ * @param {string} [props.heading] - Optional heading text override
+ * @param {string} [props.description] - Optional description text override
+ * @param {string} [props.buttonLabel] - Optional primary button label override
+ * @param {string} [props.href] - Optional primary button link override
  */
-const CTA = memo(({ variant = 'home' }) => {
-  const { heading, description, primaryButton, secondaryButton } = CTA_DATA;
+const CTA = memo(({
+  variant = 'home',
+  heading = undefined,
+  description = undefined,
+  buttonLabel = undefined,
+  href = '#contact',
+}) => {
+  const displayHeading = heading || CTA_DATA.heading;
+  const displayDescription = description || CTA_DATA.description;
+  const displayButtonLabel = buttonLabel || (variant === 'about' ? 'REQUEST FREE QUOTE' : CTA_DATA.primaryButton.label);
 
   return (
     <section className={styles.ctaSection} id="cta" aria-labelledby="cta-heading">
@@ -25,19 +37,19 @@ const CTA = memo(({ variant = 'home' }) => {
         <div className={styles.ctaCard}>
           <div className={styles.contentArea}>
             <Typography variant="h2" as="h2" id="cta-heading" className={styles.heading}>
-              {heading}
+              {displayHeading}
             </Typography>
             <Typography variant="bodyLarge" as="p" className={styles.description}>
-              {description}
+              {displayDescription}
             </Typography>
           </div>
 
           <div className={styles.actionsArea}>
-            {variant === 'about' ? (
+            {variant === 'about' || variant === 'service' ? (
               <Button
                 variant="primary"
                 size="lg"
-                href="#contact"
+                href={href}
                 icon={
                   <span className={styles.iconBox} aria-hidden="true">
                     <Icon name="arrow-up-right" size={20} color="var(--color-white)" />
@@ -46,40 +58,40 @@ const CTA = memo(({ variant = 'home' }) => {
                 iconPosition="right"
                 className={styles.whiteBtnPrimary}
               >
-                REQUEST FREE QUOTE
+                {displayButtonLabel}
               </Button>
             ) : (
               <>
                 <Button
                   variant="primary"
                   size="lg"
-                  href={primaryButton.href}
+                  href={CTA_DATA.primaryButton.href}
                   icon={
                     <span className={styles.iconBox} aria-hidden="true">
-                      <Icon name={primaryButton.iconName} size={20} color="var(--color-white)" />
+                      <Icon name={CTA_DATA.primaryButton.iconName} size={20} color="var(--color-white)" />
                     </span>
                   }
                   iconPosition="right"
                   className={styles.whiteBtnPrimary}
                 >
-                  {primaryButton.label}
+                  {CTA_DATA.primaryButton.label}
                 </Button>
 
                 <Button
                   variant="secondary"
                   size="lg"
-                  href={secondaryButton.href}
-                  target={secondaryButton.target}
-                  rel={secondaryButton.rel}
+                  href={CTA_DATA.secondaryButton.href}
+                  target={CTA_DATA.secondaryButton.target}
+                  rel={CTA_DATA.secondaryButton.rel}
                   icon={
                     <span className={styles.iconBox} aria-hidden="true">
-                      <Icon name={secondaryButton.iconName} size={20} color="var(--color-white)" />
+                      <Icon name={CTA_DATA.secondaryButton.iconName} size={20} color="var(--color-white)" />
                     </span>
                   }
                   iconPosition="left"
                   className={styles.whiteBtnSecondary}
                 >
-                  {secondaryButton.label}
+                  {CTA_DATA.secondaryButton.label}
                 </Button>
               </>
             )}
@@ -93,9 +105,11 @@ const CTA = memo(({ variant = 'home' }) => {
 CTA.displayName = 'CTA';
 
 CTA.propTypes = {
-  variant: PropTypes.oneOf(['home', 'about']),
+  variant: PropTypes.oneOf(['home', 'about', 'service']),
+  heading: PropTypes.string,
+  description: PropTypes.string,
+  buttonLabel: PropTypes.string,
+  href: PropTypes.string,
 };
 
 export default CTA;
-
-

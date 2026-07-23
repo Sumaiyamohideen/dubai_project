@@ -31,11 +31,11 @@ export const ALL_SERVICES_LIST = [
   },
   // Row 2
   {
-    id: 'wallpaper-fixing',
+    id: 'wallpaper-fixing-installation',
     title: 'Wallpaper Fixing Installation',
     description: 'Decorative & branded wall stickers, decals and wall murals.',
     imageKey: 'wallpaperFixing',
-    href: '/services/wallpaper-fixing',
+    href: '/services/wallpaper-fixing-installation',
   },
   {
     id: 'aluminum-glass-works',
@@ -104,18 +104,18 @@ export const ALL_SERVICES_LIST = [
     href: '/services/interlock-installation',
   },
   {
-    id: 'air-filtration',
+    id: 'air-filtration-systems',
     title: 'Air Filtration Systems',
     description: 'Expert Systems Installation tailored to your residential and commercial needs.',
     imageKey: 'airFiltration',
-    href: '/services/air-filtration',
+    href: '/services/air-filtration-systems',
   },
   {
-    id: 'false-ceiling',
+    id: 'false-ceiling-installation',
     title: 'False Ceiling Installation',
     description: 'Professional false ceiling installation for modern, stylish, and functional interiors.',
     imageKey: 'falseCeiling',
-    href: '/services/false-ceiling',
+    href: '/services/false-ceiling-installation',
   },
   // Row 6
   {
@@ -126,11 +126,11 @@ export const ALL_SERVICES_LIST = [
     href: '/services/wall-tiling',
   },
   {
-    id: 'electromechanical',
+    id: 'electromechanical-installation',
     title: 'Electromechanical Installation',
     description: 'Complete Electromechanical Installation services tailored to your project needs.',
     imageKey: 'electromechanical',
-    href: '/services/electromechanical',
+    href: '/services/electromechanical-installation',
   },
   {
     id: 'fixtures-repairing',
@@ -155,10 +155,10 @@ export const ALL_SERVICES_LIST = [
     href: '/services/ventilations-installation',
   },
   {
-    id: 'light-partitions',
+    id: 'light-partitions-installation',
     title: 'Light Partitions Installation',
     description: 'Precision light partition systems designed for durability, privacy, and a clean finish.',
     imageKey: 'lightPartitions',
-    href: '/services/light-partitions',
+    href: '/services/light-partitions-installation',
   },
 ];

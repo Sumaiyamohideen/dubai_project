@@ -18,7 +18,7 @@ import styles from './Footer.module.css';
  * @component Footer
  */
 const Footer = memo(() => {
-  const { brand, columns } = FOOTER_DATA;
+  const { brand, columns, bottom } = FOOTER_DATA;
 
   return (
     <footer className={styles.footer} aria-label="Site footer">
@@ -81,6 +81,21 @@ const Footer = memo(() => {
               />
             ))}
           </nav>
+        </div>
+
+        {/* Bottom Footer Row */}
+        <div className={styles.bottomRow}>
+          <p className={styles.copyrightText}>
+            {bottom.copyright} | {bottom.designer}
+          </p>
+
+          <div className={styles.bottomLinks}>
+            {bottom.links.map((link) => (
+              <a key={link.label} href={link.href} className={styles.bottomLink}>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </Container>
     </footer>

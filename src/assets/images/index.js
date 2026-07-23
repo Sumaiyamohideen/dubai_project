@@ -7,9 +7,9 @@
 // Logo
 import companyLogo from './logo/company-logo.png';
 
-// Services - Cards
+// Services - Cards (used across Services page, Home section, and Related Services cards)
 import airFiltrationCard from './services/airconditioningsystem.png';
-import airConditioningCard from './services/air-conditioning-card.png';
+import airConditioningImage from './services/Air-Conditioning.png';
 import aluminumGlassWorksCard from './services/aluminum-glass-works-card.png';
 import carpentryServicesCard from './services/carpentry-services-card.png';
 import electricalFittingsCard from './services/electrical-fittings-card.png';
@@ -20,21 +20,38 @@ import floorTilingCard from './services/floor-tiling-card.png';
 import generalMaintenanceCard from './services/general-maintenance-card.png';
 import interlockInstallationCard from './services/interlock.png';
 import lightPartitionsCard from './services/Light-Partitions-Installation.png';
-import paintingServicesCard from './services/painting-services-card.png';
+import paintingServicesImage from './services/painting.png';
 import plumbingInstallationCard from './services/plumbing-installation-card.png';
-import roofWaterproofingCard from './services/roof-waterproofing-card.png';
+import roofWaterproofingCard from './services/roof-waterproofing-banner.png';
 import sanitaryInstallationCard from './services/Sanitary-Installation.png';
 import ventilationsInstallationCard from './services/Ventilations-Installation.png';
 import wallTilingCard from './services/walltiling.png';
-import wallpaperFixingCard from './services/wallpaper-fixing-card.png';
+import wallpaperFixingCard from './services/wallpaper-fixing-installation.png';
 import weldingServicesCard from './services/welding-services-card.png';
 import woodFlooringCard from './services/wood-flooring-card.png';
 
-// Services - Banners
-import interlockInstallationBanner from './services/interlock-installation-banner.png';
-import paintingServicesBanner from './services/painting.png';
-import roofWaterproofingBanner from './services/roof-waterproofing-banner.png';
-import wallpaperFixingBanner from './services/wallpaper-fixing-banner.png';
+// Services - High-Res Service Details Banners (from './service details/')
+import airFiltrationBanner from './service details/Air Filtration Systems.png';
+import airConditioningBanner from './service details/Air-Conditioning.png';
+import aluminumGlassWorksBanner from './service details/Aluminum & Glass Works.png';
+import carpentryServicesBanner from './service details/Carpentry Services.png';
+import electricalFittingsBanner from './service details/Electrical Fittings.png';
+import electromechanicalBanner from './service details/Electromechanical Installation.png';
+import falseCeilingBanner from './service details/False Ceiling Installation.png';
+import fixturesRepairingBanner from './service details/Fixtures Repairing.png';
+import floorTilingBanner from './service details/Floor Tiling.png';
+import generalMaintenanceBanner from './service details/General Maintenance.png';
+import interlockInstallationBanner from './service details/Interlock Installation.png';
+import lightPartitionsBanner from './service details/Light Partitions Installation.png';
+import paintingServicesBanner from './service details/Painting Services.png';
+import plumbingInstallationBanner from './service details/Plumbing Installation.png';
+import roofWaterproofingBanner from './service details/Roof Waterproofing.png';
+import sanitaryInstallationBanner from './service details/Sanitary Installation.png';
+import ventilationsInstallationBanner from './service details/Ventilations Installation.png';
+import wallTilingBanner from './service details/Wall Tiling.png';
+import wallpaperFixingBanner from './service details/Wallpaper Fixing Installation.png';
+import weldingServicesBanner from './service details/Welding Services.png';
+import woodFlooringBanner from './service details/Wood Flooring.png';
 
 // Projects - Cards
 import project01Card from './projects/project-01-card.png';
@@ -50,7 +67,8 @@ import project09Card from './projects/project-09-card.png';
 // Projects - Exact Figma Card Images
 import image71 from './projects/image 71.png';
 import image72 from './projects/image 72.png';
-import image73 from './projects/image 73.png';
+import sharjahOfficeGlassPartitions from './projects/Sharjah-Office-Glass-Partitions.png';
+import mirdifRoofWaterproofing from './services/Mirdif-Roof-Waterproofing.png';
 
 // Projects - Masonry
 import project01Masonry from './projects/project-01-masonry.png';
@@ -75,7 +93,7 @@ import clientAvatar4 from './satisfied_clients/image 15.png';
 import clientAvatar5 from './satisfied_clients/image 16.png';
 
 // About Section
-import storyImage from './about/project-02-masonry.png';
+import storyImage from './projects/project-02-card.png';
 import advantageImage from './about/image 69.png';
 
 // Emirates Section
@@ -101,88 +119,88 @@ export const images = {
   services: {
     airFiltration: {
       card: airFiltrationCard,
-      banner: null
+      banner: airFiltrationBanner,
     },
     airConditioning: {
-      card: airConditioningCard,
-      banner: null
+      card: airConditioningImage,
+      banner: airConditioningBanner,
     },
     aluminumGlassWorks: {
       card: aluminumGlassWorksCard,
-      banner: null
+      banner: aluminumGlassWorksBanner,
     },
     carpentryServices: {
       card: carpentryServicesCard,
-      banner: null
+      banner: carpentryServicesBanner,
     },
     electricalFittings: {
       card: electricalFittingsCard,
-      banner: null
+      banner: electricalFittingsBanner,
     },
     electromechanical: {
       card: electromechanicalCard,
-      banner: null
+      banner: electromechanicalBanner,
     },
     falseCeiling: {
       card: falseCeilingCard,
-      banner: null
+      banner: falseCeilingBanner,
     },
     fixturesRepairing: {
       card: fixturesRepairingCard,
-      banner: null
+      banner: fixturesRepairingBanner,
     },
     floorTiling: {
       card: floorTilingCard,
-      banner: null
+      banner: floorTilingBanner,
     },
     generalMaintenance: {
       card: generalMaintenanceCard,
-      banner: null
+      banner: generalMaintenanceBanner,
     },
     interlockInstallation: {
       card: interlockInstallationCard,
-      banner: interlockInstallationBanner
+      banner: interlockInstallationBanner,
     },
     lightPartitions: {
       card: lightPartitionsCard,
-      banner: null
+      banner: lightPartitionsBanner,
     },
     paintingServices: {
-      card: paintingServicesCard,
-      banner: paintingServicesBanner
+      card: paintingServicesImage,
+      banner: paintingServicesBanner,
     },
     plumbingInstallation: {
       card: plumbingInstallationCard,
-      banner: null
+      banner: plumbingInstallationBanner,
     },
     roofWaterproofing: {
       card: roofWaterproofingCard,
-      banner: roofWaterproofingBanner
+      banner: roofWaterproofingBanner,
     },
     sanitaryInstallation: {
       card: sanitaryInstallationCard,
-      banner: null
+      banner: sanitaryInstallationBanner,
     },
     ventilationsInstallation: {
       card: ventilationsInstallationCard,
-      banner: null
+      banner: ventilationsInstallationBanner,
     },
     wallTiling: {
       card: wallTilingCard,
-      banner: null
+      banner: wallTilingBanner,
     },
     wallpaperFixing: {
       card: wallpaperFixingCard,
-      banner: wallpaperFixingBanner
+      banner: wallpaperFixingBanner,
     },
     weldingServices: {
       card: weldingServicesCard,
-      banner: null
+      banner: weldingServicesBanner,
     },
     woodFlooring: {
       card: woodFlooringCard,
-      banner: null
-    }
+      banner: woodFlooringBanner,
+    },
   },
   
   projects: {
@@ -194,7 +212,9 @@ export const images = {
     project02Masonry: project02Masonry,
     project03: image72,
     project03Card: project03Card,
-    project04: image73,
+    sharjahOfficeGlassPartitions: sharjahOfficeGlassPartitions,
+    image72: image72,
+    project04: mirdifRoofWaterproofing,
     project04Card: project04Card,
     project04Masonry: project04Masonry,
     project05: project05Card,
@@ -209,17 +229,18 @@ export const images = {
     project08Card: project08Card,
     project09: project09Card,
     project09Card: project09Card,
-    image71: image71,
-    image72: image72,
-    image73: image73,
+    image73: mirdifRoofWaterproofing,
+    mirdifRoofWaterproofing: mirdifRoofWaterproofing,
   },
-  
+
   testimonials: {
-    client01: client01,
-    client02: client02,
-    client03: client03,
-    client04: client04,
-    client05: client05,
-    client06: client06
-  }
+    client01,
+    client02,
+    client03,
+    client04,
+    client05,
+    client06,
+  },
 };
+
+export default images;

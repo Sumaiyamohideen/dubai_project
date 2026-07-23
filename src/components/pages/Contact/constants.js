@@ -135,3 +135,13 @@ export const CONTACT_FORM_FIELDS = [
 
 /* Submit button label — Figma Node 731:5113 */
 export const CONTACT_FORM_SUBMIT_LABEL = 'SEND MESSAGE';
+
+/* ─── Map Location Data ─────────────────────────────────────── */
+export const CONTACT_MAP_DATA = {
+  url: 'https://maps.app.goo.gl/GT87anqgeNKjzYT86?g_st=ic',
+  embedUrl:
+    'https://maps.google.com/maps?q=United+Arab+Emirates&ftid=0x3e5e48dfb1ab12bd:0x33d32f56c0080aa7&z=12&output=embed',
+  title: 'Google Maps location of Chalachal Technical Services LLC',
+  buttonLabel: 'Open in Google Maps',
+};
+
