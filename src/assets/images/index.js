@@ -7,6 +7,9 @@
 // Logo
 import companyLogo from './logo/company-logo.png';
 
+// Popup image
+import popupImage from './popup image.png';
+
 // Services - Cards (used across Services page, Home section, and Related Services cards)
 import airFiltrationCard from './services/airconditioningsystem.png';
 import airConditioningImage from './services/Air-Conditioning.png';
@@ -241,6 +244,8 @@ export const images = {
     client05,
     client06,
   },
+
+  popupImage,
 };
 
 export default images;

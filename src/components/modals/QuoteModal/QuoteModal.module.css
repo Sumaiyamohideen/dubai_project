@@ -1,0 +1,262 @@
+/* src/components/modals/QuoteModal/QuoteModal.module.css
+ * Figma Node 731:2254 — "Request a Free Quote" modal popup
+ * Card bounds: 1370px × 847px
+ */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(14, 14, 14, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalCard {
+  position: relative;
+  width: 100%;
+  max-width: 1370px;
+  height: 847px;
+  max-height: 92vh;
+  background-color: #ffffff;
+  border-radius: 36px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+  display: flex;
+  overflow: hidden;
+  animation: scaleUp 0.25s ease-out;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Close Button (X) — Figma Node 731:2283 (Rectangle 85) + 731:2284 (Vector) */
+.closeBtn {
+  position: absolute;
+  top: 2.25rem;
+  right: 2.25rem;
+  z-index: 20;
+  width: 45.36px;
+  height: 43.47px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #035a2d;
+  transition: all var(--transition-fast, 0.2s);
+}
+
+.closeBtn:hover {
+  background-color: #035a2d;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Left Form Area */
+.formArea {
+  flex: 1;
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #0e0e0e);
+  line-height: 1.15;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 1.05rem;
+  color: rgba(14, 14, 14, 0.65);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 540px;
+}
+
+.formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.label {
+  font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #0e0e0e);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(14, 14, 14, 0.15);
+  background-color: #f9fbf9;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-size: 0.95rem;
+  color: var(--color-text-primary, #0e0e0e);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: #035a2d;
+  box-shadow: 0 0 0 3px rgba(3, 90, 45, 0.12);
+  background-color: #ffffff;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button — Figma Nodes 731:2275 (194.5062px × 54.5847px, radius 13.0696px) */
+.submitBtn {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  width: 194.5062px;
+  height: 54.5847px;
+  padding: 0 0.6rem 0 1.25rem;
+  border-radius: 13.0696px;
+  background-color: #035a2d;
+  color: #ffffff;
+  font-family: var(--font-family-body, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(3, 90, 45, 0.22);
+}
+
+.submitIconChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30.48px;
+  height: 29.21px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #035a2d;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.submitBtn:hover {
+  background-color: #024220;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(3, 90, 45, 0.35);
+}
+
+.submitBtn:hover .submitIconChip {
+  transform: translate(1px, -1px);
+}
+
+.successAlert {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background-color: #e1fae3;
+  color: #035a2d;
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Right Image Panel */
+.imageArea {
+  width: 589px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+/* Responsiveness for laptop/smaller desktop viewports */
+@media (max-height: 900px) {
+  .modalCard {
+    height: 780px;
+  }
+  .formArea {
+    padding: 2.25rem 2.75rem;
+  }
+  .title {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imageArea {
+    display: none;
+  }
+  .modalCard {
+    max-width: 680px;
+    height: auto;
+    max-height: 90vh;
+    border-radius: 28px;
+  }
+}

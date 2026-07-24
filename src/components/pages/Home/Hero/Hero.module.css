@@ -231,16 +231,25 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #e52e2e;
   border: 1.5px solid var(--color-white);
   margin-left: -10px;
   color: var(--color-white);
   flex-shrink: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.avatarPlusBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .avatarPlusIcon {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .proofStat {

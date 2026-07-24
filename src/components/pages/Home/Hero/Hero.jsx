@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container';
 import Typography from '@/components/ui/Typography';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
+import { useQuoteModal } from '@/context/QuoteModalContext';
 
 import { images } from '@/assets/images';
 
@@ -84,6 +85,7 @@ MarqueeColumn.propTypes = {
  * @param {string} [props.className=''] - Additional CSS class for layout overrides
  */
 const Hero = memo(({ className = '' }) => {
+  const { openQuoteModal } = useQuoteModal();
   const sectionClassName = `${styles.hero} ${className}`.trim();
 
   return (
@@ -151,7 +153,10 @@ const Hero = memo(({ className = '' }) => {
             <Button
               variant="primary"
               size="lg"
-              href={HERO_CTA.href}
+              onClick={(e) => {
+                e.preventDefault();
+                openQuoteModal();
+              }}
               className={styles.ctaButton}
               icon={<Icon name={HERO_CTA.icon} size="sm" />}
               iconPosition="right"
@@ -173,6 +178,11 @@ const Hero = memo(({ className = '' }) => {
                 />
               ))}
               <div className={styles.avatarPlus} aria-hidden="true">
+                <img
+                  src={HERO_SOCIAL_PROOF.extraAvatar}
+                  alt=""
+                  className={styles.avatarPlusBg}
+                />
                 <Icon
                   name="plus"
                   size={14}

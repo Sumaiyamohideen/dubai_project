@@ -2,6 +2,7 @@
 
 import { memo } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Typography from '../../ui/Typography';
 import Icon from '../../ui/Icon';
 import styles from './FooterColumn.module.css';
@@ -20,21 +21,38 @@ const FooterColumn = memo(({ title, links, items }) => {
 
       {links && (
         <ul className={styles.linkList}>
-          {links.map((link) => (
-            <li key={link.label} className={styles.linkItem}>
-              <a href={link.href} className={styles.link}>
-                <span>{link.label}</span>
-                {link.showArrow && (
-                  <Icon
-                    name="arrow-up-right"
-                    size={16}
-                    aria-hidden="true"
-                    className={styles.arrowIcon}
-                  />
+          {links.map((link) => {
+            const isInternal = link.href.startsWith('/');
+            return (
+              <li key={link.label} className={styles.linkItem}>
+                {isInternal ? (
+                  <Link to={link.href} className={styles.link}>
+                    <span>{link.label}</span>
+                    {link.showArrow && (
+                      <Icon
+                        name="arrow-up-right"
+                        size={16}
+                        aria-hidden="true"
+                        className={styles.arrowIcon}
+                      />
+                    )}
+                  </Link>
+                ) : (
+                  <a href={link.href} className={styles.link}>
+                    <span>{link.label}</span>
+                    {link.showArrow && (
+                      <Icon
+                        name="arrow-up-right"
+                        size={16}
+                        aria-hidden="true"
+                        className={styles.arrowIcon}
+                      />
+                    )}
+                  </a>
                 )}
-              </a>
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       )}
 

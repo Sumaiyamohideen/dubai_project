@@ -6,6 +6,7 @@ import Container from '@/components/ui/Container';
 import Typography from '@/components/ui/Typography';
 import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
+import { useQuoteModal } from '@/context/QuoteModalContext';
 import { CTA_DATA } from './constants';
 import styles from './CTA.module.css';
 
@@ -25,11 +26,17 @@ const CTA = memo(({
   heading = undefined,
   description = undefined,
   buttonLabel = undefined,
-  href = '#contact',
+  href = undefined,
 }) => {
+  const { openQuoteModal } = useQuoteModal();
   const displayHeading = heading || CTA_DATA.heading;
   const displayDescription = description || CTA_DATA.description;
   const displayButtonLabel = buttonLabel || (variant === 'about' ? 'REQUEST FREE QUOTE' : CTA_DATA.primaryButton.label);
+
+  const handleQuoteClick = (e) => {
+    e.preventDefault();
+    openQuoteModal();
+  };
 
   return (
     <section className={styles.ctaSection} id="cta" aria-labelledby="cta-heading">
@@ -49,7 +56,7 @@ const CTA = memo(({
               <Button
                 variant="primary"
                 size="lg"
-                href={href}
+                onClick={handleQuoteClick}
                 icon={
                   <span className={styles.iconBox} aria-hidden="true">
                     <Icon name="arrow-up-right" size={20} color="var(--color-white)" />
@@ -65,7 +72,7 @@ const CTA = memo(({
                 <Button
                   variant="primary"
                   size="lg"
-                  href={CTA_DATA.primaryButton.href}
+                  onClick={handleQuoteClick}
                   icon={
                     <span className={styles.iconBox} aria-hidden="true">
                       <Icon name={CTA_DATA.primaryButton.iconName} size={20} color="var(--color-white)" />

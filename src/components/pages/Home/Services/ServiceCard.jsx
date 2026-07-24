@@ -1,6 +1,7 @@
 /* src/components/sections/Services/ServiceCard.jsx */
 import { memo } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Typography from '@/components/ui/Typography';
 import Icon from '@/components/ui/Icon';
@@ -37,14 +38,14 @@ const ServiceCard = memo(({ title, description, imageKey, href }) => {
         {description}
       </Typography>
 
-      <a href={href} className={styles.actionLink}>
+      <Link to={href} className={styles.actionLink}>
         <span>Learn more</span>
         <Icon
           name="arrow-right"
           size="sm"
           className={styles.arrowIcon}
         />
-      </a>
+      </Link>
     </article>
   );
 });

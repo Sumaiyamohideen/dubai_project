@@ -24,6 +24,7 @@ import { NavLink, Link, useNavigate }                     from 'react-router-dom
 import PropTypes                                          from 'prop-types';
 
 import { NAV_LINKS, PHONE_NUMBER, PHONE_HREF, CTA_LABEL } from '../../../constants/navData';
+import { useQuoteModal }                                  from '../../../context/QuoteModalContext';
 import {
   SCROLL_THRESHOLD,
   MOBILE_MENU_ID,
@@ -107,7 +108,7 @@ const PhoneLink = memo(function PhoneLink() {
         aria-hidden="true"
         decorative={true}
       />
-      <span>{PHONE_NUMBER}</span>
+      <span className={styles.phoneText}>{PHONE_NUMBER}</span>
     </a>
   );
 });
@@ -118,12 +119,12 @@ const PhoneLink = memo(function PhoneLink() {
  * Figma: Rectangle 17, x=1629 y=49, 181×59px, brand-green bg, white text.
  */
 const CtaButton = memo(function CtaButton({ className }) {
-  const navigate = useNavigate();
+  const { openQuoteModal } = useQuoteModal();
 
   const handleCtaClick = useCallback((e) => {
     e.preventDefault();
-    navigate('/contact');
-  }, [navigate]);
+    openQuoteModal();
+  }, [openQuoteModal]);
 
   return (
     <Button
