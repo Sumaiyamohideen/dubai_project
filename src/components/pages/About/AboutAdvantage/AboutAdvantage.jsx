@@ -41,9 +41,7 @@ const AboutAdvantage = memo(() => {
             <ul className={styles.checklist}>
               {items.map((item) => (
                 <li key={item.id} className={styles.checkItem}>
-                  <div className={styles.checkBadge}>
-                    <Icon name={item.iconName} size={16} color="#ffffff" aria-hidden="true" />
-                  </div>
+                  <div className={styles.checkBadge} aria-hidden="true" />
                   <span className={styles.itemText}>{item.text}</span>
                 </li>
               ))}

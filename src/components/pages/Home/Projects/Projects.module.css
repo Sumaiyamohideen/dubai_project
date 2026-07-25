@@ -133,6 +133,11 @@
     margin-bottom: 2.5rem;
   }
 
+  /* Show only 3 project cards on mobile screens (up to Sharjah Office Glass Partitions) */
+  .gridContainer > article:nth-child(n+4) {
+    display: none;
+  }
+
   .ctaButton {
     height: 60px;
     font-size: 1.1rem;

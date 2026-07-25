@@ -22,6 +22,13 @@
   max-width: 440px;
 }
 
+.brandHeaderRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
 /* White rounded logo badge container */
 .logoBox {
   display: flex;
@@ -186,54 +193,75 @@
   }
 
   .brandColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
+    display: grid;
+    grid-template-areas:
+      "logo actions"
+      "desc desc";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 16px;
     width: 100%;
     max-width: 100%;
   }
 
   .logoBox {
-    order: 1;
-    width: 100px;
-    height: 100px;
-    border-radius: 16px;
-    padding: 10px;
+    grid-area: logo;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    padding: 4px;
+    flex-shrink: 0;
   }
 
   .actionButtons {
-    order: 2;
+    grid-area: actions;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
+    justify-content: flex-end;
+    gap: 10px;
     width: 100%;
-    margin-top: 4px;
+    margin-top: 0;
+  }
+
+  /* Hide call & whatsapp logos from both footer buttons on mobile view alone */
+  .actionButtons :global(span[class*="iconLeft"]),
+  .actionButtons :global(span[class*="iconRight"]),
+  .actionButtons svg {
+    display: none !important;
   }
 
   .whatsappBtn {
-    flex: 1 !important;
+    flex: 0 0 auto !important;
     width: auto !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    border-radius: 12px !important;
-    font-size: 0.875rem !important;
-    padding: 0 14px !important;
+    min-width: 88px !important;
+    max-width: 115px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    border-radius: 8px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    padding: 0 12px !important;
+    letter-spacing: 0.04em !important;
   }
 
   .callBtn {
-    flex: 1 !important;
+    flex: 0 0 auto !important;
     width: auto !important;
-    height: 48px !important;
-    min-height: 48px !important;
-    border-radius: 12px !important;
-    font-size: 0.875rem !important;
-    padding: 0 14px !important;
+    min-width: 88px !important;
+    max-width: 115px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    border-radius: 8px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    padding: 0 12px !important;
+    letter-spacing: 0.04em !important;
   }
 
   .description {
-    order: 3;
+    grid-area: desc;
     font-size: 0.875rem;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.85);
@@ -248,9 +276,31 @@
     width: 100%;
   }
 
-  /* 3rd column (Contact Us) spans across full width underneath */
+  /* 3rd column (Contact) centered block container with strictly left-aligned text starting at identical left edge */
   .navColumns > *:nth-child(3) {
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 290px;
+    margin: 8px auto 0 auto;
+  }
+
+  .navColumns > *:nth-child(3) ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .navColumns > *:nth-child(3) li {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
   }
 
   .bottomRow {

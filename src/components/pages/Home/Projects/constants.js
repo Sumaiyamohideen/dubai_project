@@ -5,6 +5,7 @@ export const PROJECTS_HEADER = {
   description:
     'Discover work that delivers real impact, drives growth, and reflects our commitment to excellence.',
   ctaButtonText: 'VIEW ALL PROJECTS',
+  href: '/projects',
 };
 
 export const PROJECTS_LIST = [

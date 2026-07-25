@@ -131,30 +131,60 @@
     padding-bottom: 3.5rem;
   }
 
+  .splitLayout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* Move mapCard below headerArea on mobile viewports */
+  .mapCard {
+    order: 2;
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    padding: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contentColumn {
+    order: 1;
+    display: contents; /* Allows headerArea to be order 1, mapCard order 2, gridContainer order 3 */
+  }
+
   .headerArea {
-    margin-bottom: 1.75rem;
+    order: 1;
+    margin-bottom: 0;
   }
 
   .title {
-    font-size: 2.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
   }
 
   .description {
-    font-size: 1.125rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.75);
   }
 
   .gridContainer {
+    order: 3;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 0.875rem;
-    row-gap: 1rem;
+    column-gap: 0.75rem;
+    row-gap: 0.75rem;
   }
 
   .gridContainer > li:last-child {
     grid-column: 1 / -1;
     justify-self: center;
     width: 100%;
-    max-width: calc(50% - 0.4375rem);
+    max-width: calc(50% - 0.375rem);
   }
 }

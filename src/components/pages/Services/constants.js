@@ -6,6 +6,31 @@ export const SERVICES_HERO_DATA = {
     'Whether you need a quick repair or a full renovation, we cover every trade under one number — across all seven emirates.',
 };
 
+export const SERVICE_CATEGORIES = [
+  'ALL',
+  'Electrical Services',
+  'HVAC Services',
+  'Plumbing Services',
+  'Interior Works',
+  'Flooring & Tiling',
+  'Metal & Glass',
+  'Carpentry Works',
+  'Waterproofing',
+  'Maintenance',
+];
+
+export const CATEGORY_MAP = {
+  'Electrical Services': ['electrical-fittings', 'electromechanical-installation', 'fixtures-repairing'],
+  'HVAC Services': ['air-conditioning', 'air-filtration-systems', 'ventilations-installation'],
+  'Plumbing Services': ['plumbing-installation', 'sanitary-installation'],
+  'Interior Works': ['wallpaper-fixing-installation', 'false-ceiling-installation', 'light-partitions-installation', 'painting-services'],
+  'Flooring & Tiling': ['floor-tiling', 'wood-flooring', 'wall-tiling', 'interlock-installation'],
+  'Metal & Glass': ['aluminum-glass-works', 'welding-services'],
+  'Carpentry Works': ['carpentry-services'],
+  'Waterproofing': ['roof-waterproofing'],
+  'Maintenance': ['general-maintenance'],
+};
+
 export const ALL_SERVICES_LIST = [
   // Row 1
   {

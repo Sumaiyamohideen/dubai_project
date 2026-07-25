@@ -116,6 +116,15 @@
   margin-right: 14px;
 }
 
+/* Desktop vs Mobile Actions toggle */
+.desktopActions {
+  display: flex;
+}
+
+.mobileActions {
+  display: none !important;
+}
+
 @media (max-width: 1024px) {
   .ctaCard {
     padding: 96px var(--spacing-lg, 32px);
@@ -137,35 +146,99 @@
 }
 
 @media (max-width: 768px) {
+  .desktopActions {
+    display: none !important;
+  }
+
+  .mobileActions {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-top: 1.75rem;
+  }
+
   .ctaSection {
-    padding: var(--spacing-xl, 48px) 0;
+    padding: 2.5rem 0;
   }
 
   .ctaCard {
-    padding: 56px var(--spacing-md, 24px);
+    padding: 44px 16px;
     min-height: auto;
-    border-radius: var(--radius-card, 24px);
+    border-radius: 24px;
+  }
+
+  .contentArea {
+    gap: 1rem;
   }
 
   .heading {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
   .description {
-    font-size: 1.0625rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .actionsArea {
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    gap: var(--spacing-sm, 16px);
-    margin-top: 2rem;
+    gap: 12px;
+    margin-top: 1.75rem;
   }
 
+  /* Flexible & responsive mobile CTA buttons fitting both short ("GET FREE QUOTE") and long ("REQUEST FREE QUOTE") labels */
+  .actionsArea button,
+  .actionsArea a,
   .whiteBtnPrimary,
   .whiteBtnSecondary {
-    width: 100%;
-    justify-content: space-between !important;
+    width: auto !important;
+    min-width: 171px !important;
+    max-width: 220px !important;
+    height: 52px !important;
+    min-height: 52px !important;
+    border-radius: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 13.5px !important;
+    line-height: 100% !important;
+    letter-spacing: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* Reset any outer icon wrapper margins from Button component */
+  .actionsArea :global(span[class*="iconRight"]),
+  .actionsArea :global(span[class*="iconLeft"]) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  .iconBox {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  .iconBox svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 }
 

@@ -82,6 +82,6 @@ export const SERVICES_DATA = [
 
 export const SERVICES_CTA = {
   label: 'VIEW ALL',
-  href: '#services',
+  href: '/services',
   icon: 'arrow-right',
 };

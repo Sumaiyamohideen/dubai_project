@@ -51,7 +51,8 @@ const CTA = memo(({
             </Typography>
           </div>
 
-          <div className={styles.actionsArea}>
+          {/* Desktop Actions Area (Hidden on Mobile) */}
+          <div className={`${styles.actionsArea} ${styles.desktopActions}`}>
             {variant === 'about' || variant === 'service' ? (
               <Button
                 variant="primary"
@@ -102,6 +103,41 @@ const CTA = memo(({
                 </Button>
               </>
             )}
+          </div>
+
+          {/* Mobile Actions Area (Rendered identically for ALL pages on Mobile) */}
+          <div className={`${styles.actionsArea} ${styles.mobileActions}`}>
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={handleQuoteClick}
+              icon={
+                <span className={styles.iconBox} aria-hidden="true">
+                  <Icon name={CTA_DATA.primaryButton.iconName} size={20} color="var(--color-white)" />
+                </span>
+              }
+              iconPosition="right"
+              className={styles.whiteBtnPrimary}
+            >
+              {CTA_DATA.primaryButton.label}
+            </Button>
+
+            <Button
+              variant="secondary"
+              size="lg"
+              href={CTA_DATA.secondaryButton.href}
+              target={CTA_DATA.secondaryButton.target}
+              rel={CTA_DATA.secondaryButton.rel}
+              icon={
+                <span className={styles.iconBox} aria-hidden="true">
+                  <Icon name={CTA_DATA.secondaryButton.iconName} size={20} color="var(--color-white)" />
+                </span>
+              }
+              iconPosition="left"
+              className={styles.whiteBtnSecondary}
+            >
+              {CTA_DATA.secondaryButton.label}
+            </Button>
           </div>
         </div>
       </Container>

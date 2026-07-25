@@ -49,6 +49,11 @@
   text-align: center;
 }
 
+/* Mobile-only Filter Bar (Figma nodes 731:6863 - 731:6866) */
+.mobileFilterBar {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .heroSection {
     padding-top: 10rem;
@@ -70,15 +75,146 @@
 @media (max-width: 768px) {
   .heroSection {
     padding-top: 7rem;
-    padding-bottom: 3.5rem;
+    padding-bottom: 2rem;
   }
 
   .title {
-    font-size: 2.25rem;
+    font-size: 2rem;
+    line-height: 1.25;
     margin-bottom: 1rem;
   }
 
   .description {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .mobileFilterBar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 360px;
+    gap: 12px;
+    margin-top: 1.75rem;
+  }
+
+  /* Search Input Box (Figma Node 731:6863) */
+  .searchBox {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 14.4px 0px rgba(0, 0, 0, 0.25);
+    height: 42px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 8px;
+    box-sizing: border-box;
+  }
+
+  .searchIcon {
+    color: rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+  }
+
+  .searchInput {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+    font-size: 0.95rem;
+    color: #0e0e0e;
+  }
+
+  .searchInput::placeholder {
+    color: rgba(0, 0, 0, 0.36);
+  }
+
+  /* Category Dropdown (Figma Node 731:6866) */
+  .dropdownContainer {
+    position: relative;
+    flex-shrink: 0;
+    width: 145px;
+  }
+
+  .dropdownTrigger {
+    background-color: var(--color-brand-primary, #035a2d);
+    color: #ffffff;
+    height: 42px;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .dropdownLabel {
+    font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffff;
+  }
+
+  .chevronIcon {
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .chevronRotated {
+    transform: rotate(180deg);
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 180px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.18);
+    padding: 6px 0;
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    max-height: 260px;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .dropdownItem {
+    width: 100%;
+    text-align: left;
+    padding: 8px 14px;
+    font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #035A2D !important;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease;
+  }
+
+  .dropdownItem:hover {
+    background-color: #f0f7f3;
+    color: #035A2D !important;
+  }
+
+  .selectedItem {
+    background-color: #e6f2eb;
+    color: #035A2D !important;
+    font-weight: 700;
   }
 }

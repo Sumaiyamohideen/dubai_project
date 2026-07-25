@@ -96,7 +96,7 @@ import clientAvatar4 from './satisfied_clients/image 15.png';
 import clientAvatar5 from './satisfied_clients/image 16.png';
 
 // About Section
-import storyImage from './projects/project-02-card.png';
+import storyImage from './about/project-02-masonry.png';
 import advantageImage from './about/image 69.png';
 
 // Emirates Section

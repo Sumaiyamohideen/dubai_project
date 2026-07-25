@@ -48,6 +48,7 @@ const Projects = memo(() => {
           <Button
             variant="primary"
             size="lg"
+            href={PROJECTS_HEADER.href || '/projects'}
             icon={
               <span className={styles.iconBadge}>
                 <Icon name="arrow-up-right" size={20} className={styles.badgeIcon} />

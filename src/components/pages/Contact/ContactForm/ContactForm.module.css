@@ -260,7 +260,26 @@
   }
 
   .submitBtn {
-    width: 100%;
-    justify-content: space-between;
+    width: 154px !important;
+    min-width: 154px !important;
+    max-width: 154px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    border-radius: 12px !important;
+    padding: 0 8px 0 12px !important;
+    align-self: flex-start !important;
+    justify-content: center !important;
+    gap: 6px !important;
+  }
+
+  .submitLabel {
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+
+  .submitChip {
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 5px !important;
   }
 }

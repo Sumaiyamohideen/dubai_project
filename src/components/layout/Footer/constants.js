@@ -44,13 +44,13 @@ export const FOOTER_DATA = {
       id: 'service-areas',
       title: 'Service Areas',
       links: [
-        { label: 'Dubai', href: '#areas' },
-        { label: 'Sharjah', href: '#areas' },
-        { label: 'Ras Al Khaimah', href: '#areas' },
-        { label: 'Umm Al Quwain', href: '#areas' },
-        { label: 'Abu Dhabi', href: '#areas' },
-        { label: 'Ajman', href: '#areas' },
-        { label: 'Fujairah', href: '#areas' },
+        { label: 'Dubai', href: '/contact' },
+        { label: 'Sharjah', href: '/contact' },
+        { label: 'Ras Al Khaimah', href: '/contact' },
+        { label: 'Umm Al Quwain', href: '/contact' },
+        { label: 'Abu Dhabi', href: '/contact' },
+        { label: 'Ajman', href: '/contact' },
+        { label: 'Fujairah', href: '/contact' },
       ],
     },
     {
@@ -68,9 +68,9 @@ export const FOOTER_DATA = {
     copyright: '2026 Chalachal Technical Services LLC',
     designer: 'Designed by Quantixmedia',
     links: [
-      { label: 'Privacy Policy', href: '#privacy' },
-      { label: 'Terms of Use', href: '#terms' },
-      { label: 'Sitemap', href: '#sitemap' },
+      { label: 'Privacy Policy', href: '/contact' },
+      { label: 'Terms of Use', href: '/contact' },
+      { label: 'Sitemap', href: '/services' },
     ],
   },
 };

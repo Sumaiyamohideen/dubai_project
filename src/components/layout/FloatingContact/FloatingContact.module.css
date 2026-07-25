@@ -8,11 +8,12 @@
   display: flex;
   flex-direction: column;
   background-color: var(--color-brand-primary, #035a2d);
-  border-radius: 24px 0 0 24px;
+  border-radius: 17.2952px 0px 0px 17.2952px;
   z-index: 999;
   overflow: hidden;
   border: none;
-  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.1);
+  width: 77.8286px;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.25);
 
   /* Hidden during Hero section, smooth fade-in afterwards */
   opacity: 0;
@@ -31,18 +32,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 80px;
+  width: 77.8286px;
+  height: 77.8286px;
   color: #ffffff;
   text-decoration: none;
   background-color: transparent;
   transition: background-color 0.2s ease;
   box-sizing: border-box;
-  padding: 0;
+  padding: 20px 18.5px;
 }
 
 .actionButton:hover {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .actionButton:focus-visible {
@@ -51,24 +52,19 @@
 }
 
 .actionButton:active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .divider {
   width: 100%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.2);
+  height: 0.75px;
+  background-color: rgba(255, 255, 255, 0.4);
   margin: 0;
   padding: 0;
 }
 
 @media (max-width: 768px) {
   .container {
-    border-radius: 20px 0 0 20px;
-  }
-
-  .actionButton {
-    width: 64px;
-    height: 64px;
+    display: none !important;
   }
 }

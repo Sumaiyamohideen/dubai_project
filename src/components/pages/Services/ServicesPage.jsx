@@ -1,6 +1,6 @@
 /* src/components/pages/Services/ServicesPage.jsx */
 
-import { memo } from 'react';
+import { memo, useState } from 'react';
 import ServicesHero from './ServicesHero/ServicesHero';
 import ServicesGrid from './ServicesGrid/ServicesGrid';
 import CTA from '@/components/pages/Home/CTA';
@@ -12,10 +12,21 @@ import CTA from '@/components/pages/Home/CTA';
  * @component ServicesPage
  */
 const ServicesPage = memo(() => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
+
   return (
     <div data-testid="services-page">
-      <ServicesHero />
-      <ServicesGrid />
+      <ServicesHero
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
+      <ServicesGrid
+        searchQuery={searchQuery}
+        selectedCategory={selectedCategory}
+      />
       <CTA variant="about" />
     </div>
   );

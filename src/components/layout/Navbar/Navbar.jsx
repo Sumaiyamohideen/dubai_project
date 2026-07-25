@@ -185,7 +185,7 @@ const MOBILE_NAV_LINKS = [
  * Closes on nav link click, outside click, or Escape key.
  */
 const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
-  const navigate = useNavigate();
+  const { openQuoteModal } = useQuoteModal();
 
   /* Close on Escape */
   useEffect(() => {
@@ -198,7 +198,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
   const handleCtaClick = (e) => {
     e.preventDefault();
     onClose();
-    navigate('/contact');
+    openQuoteModal();
   };
 
   return (

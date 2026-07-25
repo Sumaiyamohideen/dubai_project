@@ -52,7 +52,7 @@ const FloatingContact = memo(() => {
         aria-label={phone.label}
         className={styles.actionButton}
       >
-        <Icon name={phone.iconName} size={32} color="#ffffff" aria-hidden="true" />
+        <Icon name={phone.iconName} size={34.5} color="#ffffff" aria-hidden="true" />
       </a>
 
       <div className={styles.divider} aria-hidden="true" />
@@ -64,7 +64,7 @@ const FloatingContact = memo(() => {
         aria-label={whatsapp.label}
         className={styles.actionButton}
       >
-        <Icon name={whatsapp.iconName} size={34} color="#ffffff" aria-hidden="true" />
+        <Icon name={whatsapp.iconName} size={35.5} color="#ffffff" aria-hidden="true" />
       </a>
     </aside>
   );
