@@ -26,8 +26,8 @@
   position: relative;
   width: 100%;
   max-width: 1370px;
-  height: 847px;
-  max-height: 92vh;
+  height: auto;
+  max-height: 90vh;
   background-color: #ffffff;
   border-radius: 36px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
@@ -79,12 +79,13 @@
   padding: 3rem 3.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.5rem;
   overflow-y: auto;
 }
 
 .header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .title {
@@ -108,7 +109,7 @@
 .formGrid {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.1rem;
 }
 
 .row {
@@ -156,12 +157,12 @@
 
 .textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 90px;
 }
 
 /* Submit Button — Figma Nodes 731:2275 (194.5062px × 54.5847px, radius 13.0696px) */
 .submitBtn {
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   align-self: flex-start;
   width: 194.5062px;
   height: 54.5847px;
@@ -239,7 +240,7 @@
 /* Responsiveness for laptop/smaller desktop viewports */
 @media (max-height: 900px) {
   .modalCard {
-    height: 780px;
+    height: auto;
   }
   .formArea {
     padding: 2.25rem 2.75rem;
