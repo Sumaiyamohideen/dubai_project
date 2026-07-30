@@ -37,8 +37,8 @@ const MarqueeColumn = memo(function MarqueeColumn({ items, columnClass, trackCla
     <div className={columnClass} aria-hidden="true">
       {/* Track is doubled so the loop is seamless */}
       <div className={trackClass}>
-        {[...items, ...items].map(({ key, alt }, idx) => {
-          const src = images.services[key]?.card ?? images.services[key] ?? null;
+        {[...items, ...items].map(({ key, alt, src: customSrc }, idx) => {
+          const src = customSrc ?? images.unused?.[key] ?? images.services?.[key]?.card ?? images.services?.[key] ?? null;
           return (
             <div className={styles.imageCard} key={`${key}-${idx}`}>
               {src ? (
@@ -94,26 +94,6 @@ const Hero = memo(({ className = '' }) => {
       aria-label="Hero"
       id="hero"
     >
-      {/* Decorative top gradient overlay — desktop only (CSS-controlled visibility) */}
-      <div className={styles.gradientTop} aria-hidden="true" />
-
-      {/* Decorative bottom gradient overlay — desktop only */}
-      <div className={styles.gradientBottom} aria-hidden="true" />
-
-      {/* Decorative image columns with marquee — desktop absolute overlay across full section */}
-      <div className={styles.imageColumns} aria-hidden="true">
-        <MarqueeColumn
-          items={HERO_COLUMN_1_IMAGES}
-          columnClass={`${styles.imageColumnWrap} ${styles.columnRight}`}
-          trackClass={styles.imageTrack}
-        />
-        <MarqueeColumn
-          items={HERO_COLUMN_2_IMAGES}
-          columnClass={`${styles.imageColumnWrap} ${styles.columnLeft}`}
-          trackClass={styles.imageTrackReversed}
-        />
-      </div>
-
       <Container className={styles.containerWrap}>
         <div className={styles.inner}>
           {/* Badge Pill */}
@@ -200,6 +180,26 @@ const Hero = memo(({ className = '' }) => {
               </span>
             </div>
           </div>
+        </div>
+
+        {/* Decorative image columns with marquee — flex right column inside shared content container */}
+        <div className={styles.imageColumns} aria-hidden="true">
+          {/* Decorative top gradient overlay */}
+          <div className={styles.gradientTop} aria-hidden="true" />
+
+          {/* Decorative bottom gradient overlay */}
+          <div className={styles.gradientBottom} aria-hidden="true" />
+
+          <MarqueeColumn
+            items={HERO_COLUMN_1_IMAGES}
+            columnClass={`${styles.imageColumnWrap} ${styles.columnLeft}`}
+            trackClass={styles.imageTrack}
+          />
+          <MarqueeColumn
+            items={HERO_COLUMN_2_IMAGES}
+            columnClass={`${styles.imageColumnWrap} ${styles.columnRight}`}
+            trackClass={styles.imageTrackReversed}
+          />
         </div>
       </Container>
     </section>

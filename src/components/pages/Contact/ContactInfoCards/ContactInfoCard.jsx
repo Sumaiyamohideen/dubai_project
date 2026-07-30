@@ -12,9 +12,9 @@ import styles from './ContactInfoCards.module.css';
  *
  * @component ContactInfoCard
  */
-const ContactInfoCard = memo(({ title, value, cta, icon }) => {
+const ContactInfoCard = memo(({ id, title, value, cta, icon }) => {
   return (
-    <div className={styles.card} role="listitem">
+    <div className={styles.card} data-card-id={id} role="listitem">
       {/* Green icon chip — Figma: #035a2d, 59px × 56.5px, border-radius 8.6px */}
       <div className={styles.iconChip} aria-hidden="true">
         <Icon name={icon} size={28} color="#ffffff" decorative />

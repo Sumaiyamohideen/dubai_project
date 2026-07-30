@@ -3,7 +3,6 @@
 import { memo } from 'react';
 import Container from '../../../ui/Container';
 import Typography from '../../../ui/Typography';
-import Icon from '../../../ui/Icon';
 import { images } from '../../../../assets/images';
 import { ABOUT_ADVANTAGE_DATA } from '../constants';
 import styles from './AboutAdvantage.module.css';

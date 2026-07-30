@@ -26,7 +26,6 @@ const CTA = memo(({
   heading = undefined,
   description = undefined,
   buttonLabel = undefined,
-  href = undefined,
 }) => {
   const { openQuoteModal } = useQuoteModal();
   const displayHeading = heading || CTA_DATA.heading;
@@ -51,58 +50,39 @@ const CTA = memo(({
             </Typography>
           </div>
 
-          {/* Desktop Actions Area (Hidden on Mobile) */}
+          {/* Desktop Actions Area */}
           <div className={`${styles.actionsArea} ${styles.desktopActions}`}>
-            {variant === 'about' || variant === 'service' ? (
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={handleQuoteClick}
-                icon={
-                  <span className={styles.iconBox} aria-hidden="true">
-                    <Icon name="arrow-up-right" size={20} color="var(--color-white)" />
-                  </span>
-                }
-                iconPosition="right"
-                className={styles.whiteBtnPrimary}
-              >
-                {displayButtonLabel}
-              </Button>
-            ) : (
-              <>
-                <Button
-                  variant="primary"
-                  size="lg"
-                  onClick={handleQuoteClick}
-                  icon={
-                    <span className={styles.iconBox} aria-hidden="true">
-                      <Icon name={CTA_DATA.primaryButton.iconName} size={20} color="var(--color-white)" />
-                    </span>
-                  }
-                  iconPosition="right"
-                  className={styles.whiteBtnPrimary}
-                >
-                  {CTA_DATA.primaryButton.label}
-                </Button>
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={handleQuoteClick}
+              icon={
+                <span className={styles.iconBox} aria-hidden="true">
+                  <Icon name={CTA_DATA.primaryButton.iconName} size={20} color="var(--color-white)" />
+                </span>
+              }
+              iconPosition="right"
+              className={styles.whiteBtnPrimary}
+            >
+              {CTA_DATA.primaryButton.label}
+            </Button>
 
-                <Button
-                  variant="secondary"
-                  size="lg"
-                  href={CTA_DATA.secondaryButton.href}
-                  target={CTA_DATA.secondaryButton.target}
-                  rel={CTA_DATA.secondaryButton.rel}
-                  icon={
-                    <span className={styles.iconBox} aria-hidden="true">
-                      <Icon name={CTA_DATA.secondaryButton.iconName} size={20} color="var(--color-white)" />
-                    </span>
-                  }
-                  iconPosition="left"
-                  className={styles.whiteBtnSecondary}
-                >
-                  {CTA_DATA.secondaryButton.label}
-                </Button>
-              </>
-            )}
+            <Button
+              variant="secondary"
+              size="lg"
+              href={CTA_DATA.secondaryButton.href}
+              target={CTA_DATA.secondaryButton.target}
+              rel={CTA_DATA.secondaryButton.rel}
+              icon={
+                <span className={styles.iconBox} aria-hidden="true">
+                  <Icon name={CTA_DATA.secondaryButton.iconName} size={20} color="var(--color-white)" />
+                </span>
+              }
+              iconPosition="left"
+              className={styles.whiteBtnSecondary}
+            >
+              {CTA_DATA.secondaryButton.label}
+            </Button>
           </div>
 
           {/* Mobile Actions Area (Rendered identically for ALL pages on Mobile) */}

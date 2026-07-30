@@ -20,7 +20,7 @@
  */
 
 import { memo, useState, useEffect, useCallback, useRef } from 'react';
-import { NavLink, Link, useNavigate }                     from 'react-router-dom';
+import { NavLink, Link }                             from 'react-router-dom';
 import PropTypes                                          from 'prop-types';
 
 import { NAV_LINKS, PHONE_NUMBER, PHONE_HREF, CTA_LABEL } from '../../../constants/navData';
@@ -63,6 +63,8 @@ const Logo = memo(function Logo() {
           width={123}
           height={100}
           loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
       )}
     </Link>

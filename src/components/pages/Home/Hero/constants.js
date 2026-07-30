@@ -64,28 +64,19 @@ export const HERO_AVATAR_COUNT = 4;
  * Closest production equivalents from the mapped service cards:
  */
 export const HERO_COLUMN_1_IMAGES = [
-  { key: 'roofWaterproofing',     alt: 'Roof waterproofing service' },
-  { key: 'electricalFittings',    alt: 'Electrical fittings service' },
-  { key: 'plumbingInstallation',  alt: 'Plumbing installation service' },
-  { key: 'floorTiling',           alt: 'Floor tiling service' },
-  { key: 'paintingServices',      alt: 'Painting services' },
-  { key: 'carpentryServices',     alt: 'Carpentry services' },
+  { key: 'client01',         alt: 'Technical Client Showcase 1' },
+  { key: 'client02',         alt: 'Technical Client Showcase 2' },
+  { key: 'client03',         alt: 'Technical Client Showcase 3' },
+  { key: 'projectUnused01',  alt: 'Technical Project Showcase' },
 ];
 
 /**
  * Image keys used in Column 2 of the hero decorative marquee.
- * Sourced from the active service card assets in src/assets/images/services/.
- * Order matches the Figma hero right marquee column composition.
- *
- * Figma node: 731:1109 (Component)
- * Images mapped from: image 14, image 18, image 10, image 16, image 17, image 15
- * Closest production equivalents:
+ * Sourced from the unused assets folder.
  */
 export const HERO_COLUMN_2_IMAGES = [
-  { key: 'aluminumGlassWorks',        alt: 'Aluminum and glass works' },
-  { key: 'falseCeiling',              alt: 'False ceiling installation' },
-  { key: 'weldingServices',           alt: 'Welding services' },
-  { key: 'woodFlooring',              alt: 'Wood flooring service' },
-  { key: 'wallTiling',                alt: 'Wall tiling service' },
-  { key: 'interlockInstallation',     alt: 'Interlock installation service' },
+  { key: 'client04',         alt: 'Technical Client Showcase 4' },
+  { key: 'client05',         alt: 'Technical Client Showcase 5' },
+  { key: 'client06',         alt: 'Technical Client Showcase 6' },
+  { key: 'client01',         alt: 'Technical Client Showcase 1' },
 ];

@@ -66,7 +66,7 @@
   aspect-ratio: 312 / 377;
   border-radius: 14px;
   background-color: var(--color-white);
-  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.20);
   padding: 6px;
   display: flex;
   flex-direction: column;
@@ -418,14 +418,25 @@
    ============================================================ */
 @media (min-width: 1024px) {
   .hero {
-    display: block;
-    min-height: auto;
-    padding-top: 11.5rem;
-    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin-top: 0;
+    padding-top: 9.4375rem;
+    padding-bottom: 7rem;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
   }
 
   .containerWrap {
     order: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
   }
 
   .hero :global(.container) {
@@ -453,12 +464,14 @@
     text-align: left;
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
+    margin-top: 3.5rem;
   }
 
   .badge {
     padding: 0 1.25rem;
     height: 2.375rem;
-    margin-bottom: 0.875rem;
+    margin-bottom: 1.5rem;
     margin-left: 0;
     margin-right: 0;
   }
@@ -474,7 +487,7 @@
     line-height: 1.15;
     letter-spacing: 0;
     max-width: 54rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .desktopBr {
@@ -485,12 +498,12 @@
     font-size: 1.8375rem;
     line-height: 1.4;
     max-width: 54rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .ctaRow {
     justify-content: flex-start;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2.75rem;
   }
 
   .ctaButton {
@@ -549,12 +562,12 @@
     display: block;
     position: absolute;
     top: 0;
-    left: calc(50% + 2.8125rem);
-    width: 57.1875rem;
-    height: 8.5rem;
+    left: 0;
+    right: 0;
+    height: 9.4375rem;
     background: linear-gradient(
       to bottom,
-      rgba(255, 255, 255, 0.85) 0%,
+      rgba(255, 255, 255, 0.95) 0%,
       rgba(255, 255, 255, 0) 100%
     );
     z-index: 2;
@@ -565,68 +578,92 @@
     display: block;
     position: absolute;
     bottom: 0;
-    left: calc(50% + 2.8125rem);
-    width: 57.1875rem;
-    height: 8.5rem;
+    left: 0;
+    right: 0;
+    height: 6rem;
     background: linear-gradient(
       to top,
-      rgba(255, 255, 255, 0.85) 0%,
+      #ffffff 15%,
       rgba(255, 255, 255, 0) 100%
     );
     z-index: 2;
     pointer-events: none;
   }
 
+  .imageCard {
+    padding: 12px;
+  }
+
   .imageColumns {
     order: unset;
-    display: block;
+    display: flex;
+    gap: 2rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -150px;
+    bottom: -50px;
+    right: 20px;
+    width: 43rem;
+    max-width: 43rem;
+    height: auto;
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
     opacity: 1;
-    max-width: none;
     transform: none;
     margin: 0;
-    height: auto;
     border-radius: 0;
   }
 
+  .imageColumnWrap {
+    position: relative;
+    width: 20.5rem;
+    height: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-sizing: border-box;
+  }
+
   .columnLeft {
-    position: absolute;
-    left: calc(50% + 8.3125rem);
-    top: -1045px;
-    width: 21.5625rem;
-    height: 2548px;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: 0;
+    width: 20.5rem;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .columnRight {
-    position: absolute;
-    left: calc(50% + 32.625rem);
-    top: -833px;
-    width: 21.4375rem;
-    height: 1913px;
+    position: relative;
+    left: auto;
+    right: auto;
+    top: 0;
+    width: 20.5rem;
+    height: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .imageTrack {
     display: flex;
     flex-direction: column;
-    gap: 4.75rem;
-    padding-left: 0.96rem;
-    animation: marqueeUp 35s linear infinite;
+    gap: 2rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    animation: marqueeUp 30s linear infinite;
     will-change: transform;
   }
 
   .imageTrackReversed {
     display: flex;
     flex-direction: column;
-    gap: 4.75rem;
-    padding-left: 1.025rem;
-    animation: marqueeDown 35s linear infinite;
+    gap: 2rem;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+    animation: marqueeDown 30s linear infinite;
     will-change: transform;
   }
 }

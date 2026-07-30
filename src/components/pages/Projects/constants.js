@@ -75,7 +75,7 @@ export const PROJECTS_GRID_DATA = [
     title: 'Khalifa City Driveway Interlock',
     slug: 'khalifa-city-driveway-interlock',
     categoryLabel: 'Residential',              // Figma Node 731:4657
-    filterCategories: ['residential', 'flooring'], // appears under both filter tabs
+    filterCategories: ['residential'], // appears under both filter tabs
     location: 'Khalifa City, Abu Dhabi',
     imageKey: 'project05Card',
     description:

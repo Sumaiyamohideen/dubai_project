@@ -6,8 +6,8 @@
    Container handles the outer horizontal padding.
 ──────────────────────────────────────────────────────────────── */
 .twoColSection {
-  padding-top: 2rem;
-  padding-bottom: 5rem;
+  padding-top: 4.5rem;
+  padding-bottom: var(--spacing-section, 9rem);
   background-color: var(--color-bg-light, #ffffff);
 }
 

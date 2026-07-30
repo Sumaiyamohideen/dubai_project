@@ -8,14 +8,9 @@
   padding: 1.8125rem; /* ~29px exact Figma */
   border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: none;
   height: 100%;
   box-sizing: border-box;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .imageWrapper {
@@ -25,6 +20,7 @@
   overflow: hidden;
   background-color: var(--color-bg-gray);
   margin-bottom: 1.5rem; /* 24px spacing */
+  cursor: pointer;
 }
 
 .image {
@@ -33,11 +29,11 @@
   object-fit: cover;
   display: block;
   border-radius: 1.8125rem; /* 29px exact Figma rounded image corners */
-  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal, 0.3s ease);
 }
 
 .card:hover .image {
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
 .title {

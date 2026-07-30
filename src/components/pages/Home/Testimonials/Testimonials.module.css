@@ -1,8 +1,8 @@
 /* src/components/sections/Testimonials/Testimonials.module.css */
 
 .testimonialsSection {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: var(--spacing-section, 9rem);
+  padding-bottom: var(--spacing-section, 9rem);
   background-color: var(--color-bg-light, #ffffff);
 }
 

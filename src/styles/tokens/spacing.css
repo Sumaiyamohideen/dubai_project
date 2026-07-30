@@ -8,7 +8,7 @@
   --spacing-lg: 2rem;      /* 32px */
   --spacing-xl: 3rem;      /* 48px */
   --spacing-xxl: 4rem;     /* 64px */
-  --spacing-section: 6rem; /* 96px - Default gap between major page sections */
+  --spacing-section: 9rem; /* 144px - Increased generous spacing between page sections */
 
   /* Container Constraints */
   --max-width-container: 1700px; /* Standard constraint */

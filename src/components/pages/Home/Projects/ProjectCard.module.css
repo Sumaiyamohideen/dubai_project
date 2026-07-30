@@ -68,6 +68,11 @@
   object-fit: cover;
   object-position: center;
   display: block;
+  transition: transform var(--transition-normal, 0.3s ease);
+}
+
+.card:hover .image {
+  transform: scale(1.06);
 }
 
 .description {

@@ -17,6 +17,7 @@ const ContactInfoCards = memo(() => {
       {CONTACT_INFO_CARDS.map((card) => (
         <ContactInfoCard
           key={card.id}
+          id={card.id}
           title={card.title}
           value={card.value}
           cta={card.cta}

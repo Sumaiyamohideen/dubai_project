@@ -45,8 +45,29 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding-inline: 6.875rem; /* 110px — Figma canvas side margin */
   gap: var(--spacing-lg);
+}
+
+@media (min-width: 1024px) {
+  .navbar :global(.container) {
+    padding-left: 4rem;
+    padding-right: 2rem;
+    max-width: 106.25rem;
+  }
+
+  @media (min-width: 1200px) {
+    .navbar :global(.container) {
+      padding-left: 6.875rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    .navbar :global(.container) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 /* ── Logo ──────────────────────────────────────────────────────────── */
@@ -383,7 +404,6 @@
 /* Tablet: shrink side padding for large tablet */
 @media (min-width: 1024px) and (max-width: 1280px) {
   .inner {
-    padding-inline: var(--spacing-xl);
     gap: var(--spacing-md);
   }
 

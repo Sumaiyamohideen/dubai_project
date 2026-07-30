@@ -80,13 +80,14 @@ import project04Masonry from './projects/project-04-masonry.png';
 import project05Masonry from './projects/project-05-masonry.png';
 import project06Masonry from './projects/project-06-masonry.png';
 
-// Testimonials (unused but organized client images)
+// Testimonials & Unused Images
 import client01 from './unused/client-01.png';
 import client02 from './unused/client-02.png';
 import client03 from './unused/client-03.png';
 import client04 from './unused/client-04.png';
 import client05 from './unused/client-05.png';
 import client06 from './unused/client-06.png';
+import projectUnused01 from './unused/project-unused-01.png';
 
 // Satisfied Client Avatars (Hero section)
 import clientAvatar1 from './satisfied_clients/Ellipse 2.png';
@@ -96,7 +97,8 @@ import clientAvatar4 from './satisfied_clients/image 15.png';
 import clientAvatar5 from './satisfied_clients/image 16.png';
 
 // About Section
-import storyImage from './about/story-image.png';
+import homeStoryImage from './about/story-image.png';
+import aboutStoryImage from './about/project-02-masonry.png';
 import advantageImage from './about/image 69.png';
 
 // Emirates Section
@@ -111,7 +113,8 @@ export const images = {
   },
   
   about: {
-    story: storyImage,
+    homeStory: homeStoryImage,
+    story: aboutStoryImage,
     advantage: advantageImage,
   },
 
@@ -243,6 +246,16 @@ export const images = {
     client04,
     client05,
     client06,
+  },
+
+  unused: {
+    client01,
+    client02,
+    client03,
+    client04,
+    client05,
+    client06,
+    projectUnused01,
   },
 
   popupImage,

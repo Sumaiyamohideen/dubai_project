@@ -22,7 +22,7 @@ const About = memo(() => {
           <div className={styles.cardWrapper}>
             <div className={styles.imageWrapper}>
               <img
-                src={images.about.story}
+                src={images.about.homeStory}
                 alt={ABOUT_DATA.imageAlt}
                 className={styles.image}
                 loading="lazy"

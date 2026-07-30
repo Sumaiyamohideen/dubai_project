@@ -73,7 +73,7 @@ export const ABOUT_VALUES_DATA = {
 export const ABOUT_ADVANTAGE_DATA = {
   title: 'The Chalachal Advantage',
   subtitle:
-    'We deliver dependable technical services with a focus on quality, efficiency, and customer satisfaction. Our skilled team ensures every project is completed on time, within budget, and to the highest standards.',
+    'We deliver dependable technical services with a focus on quality, efficiency, and customer satisfaction. Our skilled, certified team ensures every project is completed on time, within budget, and to the highest professional standards. From routine maintenance to full-scale property upgrades, we provide end-to-end expertise tailored to your exact needs across all emirates.',
   items: [
     {
       id: 'same-day',

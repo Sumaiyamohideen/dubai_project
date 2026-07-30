@@ -4,8 +4,8 @@
    Figma: top ~1990px, padding of ~80px (5rem) on 1920px canvas
 ──────────────────────────────────────────────────────────────── */
 .mapSection {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: var(--spacing-section, 9rem);
+  padding-bottom: var(--spacing-section, 9rem);
   background-color: var(--color-bg-light, #ffffff);
 }
 

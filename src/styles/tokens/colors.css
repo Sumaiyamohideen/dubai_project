@@ -12,8 +12,8 @@
   --color-text-medium: rgba(14, 14, 14, 0.73); /* 73% opacity black for body copy / FAQ answers */
   --color-text-low: rgba(14, 14, 14, 0.61);    /* 61% opacity black for card descriptions */
 
-  /* Background / Surface Colors */
-  --color-bg-light: #f9f9f9;           /* Soft light background */
-  --color-bg-gray: #f0f3f1;            /* Lighter gray/green for section dividers and alternate sections */
+  /* Background / Surface Colors (Unified pure white across all pages & sections) */
+  --color-bg-light: #ffffff;           /* Pure white background for seamless consistency */
+  --color-bg-gray: #ffffff;            /* Pure white background for seamless consistency */
   --color-border: #e0e6e2;             /* Subtle border gray-green */
 }

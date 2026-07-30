@@ -125,13 +125,7 @@ const ServiceDetailsPage = memo(({ slug = DEFAULT_SERVICE_SLUG, customData = nul
       )}
 
       {/* 6. Shared CTA Section (Figma: Ready to get started?) */}
-      <CTA
-        variant="service"
-        heading="Ready to get started?"
-        description="Get a free, no-obligation quote in minutes. Tell us what you need — we handle the rest."
-        buttonLabel="REQUEST FREE QUOTE"
-        href="#contact"
-      />
+      <CTA />
     </div>
   );
 });

@@ -7,15 +7,9 @@
   border-radius: var(--radius-card, 27px);
   box-shadow: var(--shadow-card, 0px 0px 16.1px 0px rgba(0, 0, 0, 0.25));
   padding: var(--spacing-lg, 2rem);
-  transition: transform var(--transition-normal, 0.3s ease),
-              box-shadow var(--transition-normal, 0.3s ease);
+  transition: none;
   height: 100%;
   overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .cardHeader {
@@ -86,7 +80,7 @@
 }
 
 .card:hover .image {
-  transform: scale(1.03);
+  transform: scale(1.06);
 }
 
 .description {

@@ -1,8 +1,8 @@
 /* src/components/pages/About/AboutStory/AboutStory.module.css */
 
 .storySection {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: var(--spacing-section, 9rem);
+  padding-bottom: var(--spacing-section, 9rem);
   background-color: var(--color-bg-light, #ffffff);
 }
 

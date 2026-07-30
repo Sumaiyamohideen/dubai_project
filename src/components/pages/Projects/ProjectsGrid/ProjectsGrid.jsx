@@ -33,11 +33,7 @@ const ProjectsGrid = memo(({ projects = PROJECTS_GRID_DATA }) => {
             ))}
           </div>
         ) : (
-          <div className={styles.emptyState}>
-            <Typography variant="bodyLarge" as="p">
-              No projects found matching the selected category.
-            </Typography>
-          </div>
+          <div className={styles.emptyState} style={{ minHeight: '200px' }} />
         )}
       </Container>
     </section>
