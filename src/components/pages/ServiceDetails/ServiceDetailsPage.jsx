@@ -2,6 +2,7 @@
 
 import { memo } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Container from '@/components/ui/Container';
 import Typography from '@/components/ui/Typography';
 import Button from '@/components/ui/Button';
@@ -88,15 +89,19 @@ const ServiceDetailsPage = memo(({ slug = DEFAULT_SERVICE_SLUG, customData = nul
             <div className={styles.relatedGrid}>
               {data.relatedServices.map((card) => (
                 <article key={card.id} className={styles.relatedCard}>
-                  <div className={styles.cardImageWrapper}>
+                  <Link to={`/services/${card.slug}`} className={styles.cardImageWrapper} aria-label={`View details for ${card.title}`}>
                     <img src={card.image} alt={card.title} className={styles.cardImage} loading="lazy" />
-                  </div>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  </Link>
+                  <h3 className={styles.cardTitle}>
+                    <Link to={`/services/${card.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {card.title}
+                    </Link>
+                  </h3>
                   <p className={styles.cardDescription}>{card.description}</p>
-                  <a href={`/services/${card.slug}`} className={styles.cardLink}>
+                  <Link to={`/services/${card.slug}`} className={styles.cardLink}>
                     <span>Learn more</span>
                     <Icon name="arrow-right" size={18} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </article>
               ))}
             </div>

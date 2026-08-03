@@ -18,7 +18,7 @@ const ServiceCard = memo(({ title, description, imageKey, href }) => {
 
   return (
     <article className={styles.card}>
-      <div className={styles.imageWrapper}>
+      <Link to={href} className={styles.imageWrapper} aria-label={`View details for ${title}`}>
         {imageSrc ? (
           <img
             src={imageSrc}
@@ -28,10 +28,12 @@ const ServiceCard = memo(({ title, description, imageKey, href }) => {
             decoding="async"
           />
         ) : null}
-      </div>
+      </Link>
 
       <Typography variant="h3" as="h3" className={styles.title}>
-        {title}
+        <Link to={href} style={{ color: 'inherit', textDecoration: 'none' }}>
+          {title}
+        </Link>
       </Typography>
 
       <Typography variant="body" as="p" className={styles.description}>

@@ -1,6 +1,6 @@
-/* src/components/ui/Button/Button.jsx */
 import { memo } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { BUTTON_VARIANTS, BUTTON_SIZES } from './constants';
 import styles from './Button.module.css';
 
@@ -10,7 +10,7 @@ const VALID_SIZES = Object.values(BUTTON_SIZES);
 /**
  * @component Button
  * @description A production-ready, highly reusable Button component conforming to the design system.
- * It renders either an anchor `<a>` or a `<button>` based on the `href`/`to` prop.
+ * It renders either React Router Link, an anchor `<a>`, or a `<button>` based on the `href`/`to` prop.
  *
  * @param {Object} props
  * @param {React.ReactNode} [props.children] - The button text/label (optional for icon-only buttons)
@@ -22,7 +22,7 @@ const VALID_SIZES = Object.values(BUTTON_SIZES);
  * @param {boolean} [props.disabled=false] - Disables interaction and clicks
  * @param {boolean} [props.loading=false] - Disables interaction and renders a loading spinner
  * @param {'button'|'submit'|'reset'} [props.type='button'] - Button type (ignored if href/to exists)
- * @param {string} [props.href] - If present, renders the component as an anchor link
+ * @param {string} [props.href] - If present, renders the component as an anchor link or Link
  * @param {string} [props.to] - Alternative prop for navigation
  * @param {string} [props.target] - Target attribute for anchor link (e.g., '_blank')
  * @param {string} [props.rel] - Rel attribute for anchor link (e.g., 'noopener noreferrer')
@@ -88,6 +88,25 @@ const Button = memo(({
   };
 
   if (isLink) {
+    const isInternal = typeof linkTarget === 'string' && linkTarget.startsWith('/') && target !== '_blank';
+    if (isInternal) {
+      return (
+        <Link
+          to={linkTarget}
+          className={combinedClassName}
+          onClick={handleLinkClick}
+          role="button"
+          tabIndex={isCurrentlyDisabled ? -1 : 0}
+          aria-disabled={isCurrentlyDisabled || undefined}
+          {...rest}
+        >
+          {renderIcon('left')}
+          {children}
+          {renderIcon('right')}
+        </Link>
+      );
+    }
+
     return (
       <a
         href={isCurrentlyDisabled ? undefined : linkTarget}
