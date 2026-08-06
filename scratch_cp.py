@@ -1,4 +1,4 @@
-import os
+mport os
 import shutil
 
 brain_dir = r"C:\Users\Sumaiya\.gemini\antigravity\brain\6fa15a14-958d-484c-afc3-56f1e758d450"

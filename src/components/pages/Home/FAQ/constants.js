@@ -7,28 +7,28 @@ export const FAQ_HEADER = {
 };
 
 export const FAQ_LIST = [
-  {
+   {
     id: 'faq-1',
-    question: 'What types of courses does Skillanic offer?',
+    question: 'What services does Chalachal Technical Services provide?',
     answer:
-      'Skillanic offers 17+ IT courses in Full Stack, AI, Cloud, Data, SAP, UI/UX, Testing, and Marketing, with hands-on projects, expert guidance, and job-ready training to help you build real-world skills.',
+      'We specialize in residential, commercial, and industrial technical services including electrical works, plumbing, HVAC maintenance, painting, carpentry, tiling, waterproofing, renovations, and annual maintenance contracts',
   },
   {
     id: 'faq-2',
-    question: "Is Skillanic's training online or offline?",
+    question: "Do you offer emergency maintenance services?",
     answer:
-      'Skillanic offers both online and offline training with flexible learning options. Get real-time classes, projects, and trainer support—anytime, anywhere.',
+      'Our team responds quickly to urgent electrical, plumbing, and maintenance issues to minimize downtime and inconvenience.',
   },
   {
     id: 'faq-3',
-    question: 'Who are the trainers at Skillanic?',
+    question: 'Can I request a free site inspection and quotation?',
     answer:
-      'Skillanic trainers are industry experts with 15+ years of experience, offering hands-on learning and mentorship for real-world readiness.',
+      'Absolutely. We offer free site visits for eligible projects, assess your requirements, and provide a transparent quotation with no hidden charges.',
   },
   {
     id: 'faq-4',
-    question: 'What companies hire from Skillanic?',
+    question: 'How can I book a technical service?',
     answer:
-      'Skillanic trainers are industry experts with 15+ years of experience, offering hands-on learning and mentorship for real-world readiness.',
+      'Booking is simple. You can call us, send a WhatsApp message, submit the contact form on our website, or request a free quotation. Our team will schedule a convenient time for inspection or service.',
   },
 ];

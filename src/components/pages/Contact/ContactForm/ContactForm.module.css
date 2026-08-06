@@ -80,41 +80,67 @@
 .select,
 .textarea {
   font-family: var(--font-family-heading, 'Host Grotesk', sans-serif);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--color-text-primary, #0e0e0e);
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.41);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0.6875rem;   /* 11px */
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   height: 3.375rem;           /* 54px */
   width: 100%;
   outline: none;
-  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
   appearance: none;
+}
+
+.input:hover:not(:focus),
+.select:hover:not(:focus),
+.textarea:hover:not(:focus) {
+  border-color: rgba(3, 90, 45, 0.55);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(0, 0, 0, 0.52);
-  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .select {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.52);
+  color: rgba(0, 0, 0, 0.45);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230e0e0e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 1rem center;
-  padding-right: 2.5rem;
+  background-position: right 1.25rem center;
+  padding-right: 2.75rem;
 }
 
-.select option:not([value=""]) {
+.select.hasValue {
   color: var(--color-text-primary, #0e0e0e);
+  font-weight: 400;
+}
+
+.select option {
+  color: var(--color-text-primary, #0e0e0e);
+  background-color: #ffffff;
+  padding: 0.5rem;
+}
+
+.select option[value=""],
+.select option:disabled {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.input:-webkit-autofill,
+.select:-webkit-autofill,
+.textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: var(--color-text-primary, #0e0e0e) !important;
 }
 
 .textarea {
-  padding: 0.875rem 1rem;
+  padding: 0.875rem 1.25rem;
   height: 8.25rem;            /* 132px */
   resize: vertical;
   line-height: 1.5;
@@ -124,7 +150,8 @@
 .select:focus,
 .textarea:focus {
   border-color: #035a2d;
-  box-shadow: 0 0 0 3px rgba(3, 90, 45, 0.12);
+  box-shadow: 0 0 0 3px rgba(3, 90, 45, 0.15);
+  background-color: #ffffff;
 }
 
 /* ── Submit button

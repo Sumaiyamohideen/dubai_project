@@ -422,6 +422,7 @@
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+    min-height: 100dvh;
     margin-top: 0;
     padding-top: 9.4375rem;
     padding-bottom: 7rem;

@@ -2,6 +2,7 @@
 
 import { memo, useState, useCallback, useId } from 'react';
 import Icon from '@/components/ui/Icon';
+import { redirectToWhatsApp } from '@/services/waRedirect';
 import { CONTACT_FORM_FIELDS, CONTACT_FORM_SUBMIT_LABEL } from '../constants';
 import styles from './ContactForm.module.css';
 
@@ -27,16 +28,47 @@ const ContactForm = memo(() => {
 
   const handleChange = useCallback((e) => {
     const { name, value } = e.target;
+    if (name === 'phone') {
+      const sanitizedPhone = value.replace(/[^0-9+\-\s]/g, '');
+      setValues((prev) => ({ ...prev, phone: sanitizedPhone }));
+      return;
+    }
     setValues((prev) => ({ ...prev, [name]: value }));
   }, []);
 
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      /* TODO: connect to backend / email service */
+
+      const name = (values.fullName || '').trim();
+      const phone = (values.phone || '').trim();
+      const email = (values.email || '').trim();
+
+      if (!name || !phone || !email) {
+        return;
+      }
+
+      const messageLines = [
+        '📋 *NEW CONTACT FORM ENQUIRY*',
+        '',
+        `👤 *Name:* ${name}`,
+        `📞 *Phone:* ${phone}`,
+        `✉️ *Email:* ${email}`,
+        `🛠️ *Service:* ${values.service || 'General Inquiry'}`,
+        `📍 *Location:* ${values.location || 'UAE'}`,
+      ];
+
+      const trimmedMsg = (values.message || '').trim();
+      if (trimmedMsg) {
+        messageLines.push('', '💬 *Message:*', trimmedMsg);
+      }
+
+      const formattedMessage = messageLines.join('\n');
+      redirectToWhatsApp(formattedMessage, '971554579790');
+
       setSubmitted(true);
     },
-    []
+    [values]
   );
 
   if (submitted) {
@@ -46,9 +78,9 @@ const ContactForm = memo(() => {
           <div className={styles.successIcon}>
             <Icon name="check-circle" size="lg" color="#035a2d" decorative />
           </div>
-          <p className={styles.successTitle}>Message sent!</p>
+          <p className={styles.successTitle}>Redirecting to WhatsApp...</p>
           <p className={styles.successBody}>
-            We&rsquo;ll get back to you within minutes during business hours.
+            Opening WhatsApp with your message details. We&rsquo;ll get back to you within minutes!
           </p>
           <button
             type="button"
@@ -76,7 +108,6 @@ const ContactForm = memo(() => {
         className={styles.form}
         onSubmit={handleSubmit}
         aria-labelledby={`${baseId}-form-heading`}
-        noValidate
       >
         {/* Build the two rows of field pairs then individual full-width fields */}
         <div className={styles.fieldsGrid}>
@@ -113,7 +144,7 @@ const ContactForm = memo(() => {
                   <select
                     id={fieldId}
                     name={field.id}
-                    className={styles.select}
+                    className={`${styles.select} ${values[field.id] ? styles.hasValue : ''}`}
                     value={values[field.id]}
                     onChange={handleChange}
                     required={field.required}

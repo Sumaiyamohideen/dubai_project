@@ -39,8 +39,16 @@ const QuoteModal = memo(function QuoteModal() {
       });
       setSubmitted(false);
 
-      // Lock body scroll
+      // Lock body scroll using Safari iOS safe pattern (preserving scrollY offset)
+      const scrollY = window.scrollY;
       const originalOverflow = document.body.style.overflow;
+      const originalPosition = document.body.style.position;
+      const originalTop = document.body.style.top;
+      const originalWidth = document.body.style.width;
+
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
 
       // Set aria-hidden on root main layout container so background elements are excluded from focus
@@ -50,7 +58,11 @@ const QuoteModal = memo(function QuoteModal() {
       }
 
       return () => {
+        document.body.style.position = originalPosition;
+        document.body.style.top = originalTop;
+        document.body.style.width = originalWidth;
         document.body.style.overflow = originalOverflow;
+        window.scrollTo(0, scrollY);
         if (mainLayout) {
           mainLayout.removeAttribute('aria-hidden');
         }
@@ -251,7 +263,7 @@ const QuoteModal = memo(function QuoteModal() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className={styles.select}
+                    className={`${styles.select} ${formData.service ? styles.hasValue : ''}`}
                   >
                     <option value="" disabled>
                       Select a service
@@ -274,7 +286,7 @@ const QuoteModal = memo(function QuoteModal() {
                     required
                     value={formData.location}
                     onChange={handleChange}
-                    className={styles.select}
+                    className={`${styles.select} ${formData.location ? styles.hasValue : ''}`}
                   >
                     <option value="" disabled>
                       Select emirate

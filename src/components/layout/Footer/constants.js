@@ -20,7 +20,7 @@ export const FOOTER_DATA = {
     },
     callBtn: {
       label: 'CALL',
-      href: 'tel:+971554579790',
+      href: 'tel:+971554579790', 
       iconName: 'phone',
     },
   },
@@ -60,7 +60,7 @@ export const FOOTER_DATA = {
         { icon: 'phone', text: '+971 55 457 9790', href: 'tel:+971554579790' },
         { icon: 'mail', text: 'chalachaltechnical@gmail.com', href: 'mailto:chalachaltechnical@gmail.com' },
         { icon: 'map-pin', text: 'United Arab Emirates' },
-        { icon: 'clock', text: 'Sat – Thu, 8:00 AM – 8:00 PM' },
+        { icon: 'clock', text: 'Sat – Thu, 24/7' },
       ],
     },
   ],
@@ -68,9 +68,9 @@ export const FOOTER_DATA = {
     copyright: '2026 Chalachal Technical Services LLC',
     designer: 'Designed by Quantixmedia',
     links: [
-      { label: 'Privacy Policy', href: '/contact' },
-      { label: 'Terms of Use', href: '/contact' },
-      { label: 'Sitemap', href: '/services' },
+      { label: 'Privacy Policy', href: '/privacy-policy' },
+      { label: 'Terms of Use', href: '/terms-of-use' },
+      { label: 'Sitemap', href: '/sitemap' },
     ],
   },
 };

@@ -422,9 +422,9 @@
 @media (max-width: 1023px) {
   .navbar {
     position: fixed;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
+    top: max(1rem, env(safe-area-inset-top));
+    left: max(1rem, env(safe-area-inset-left));
+    right: max(1rem, env(safe-area-inset-right));
     height: auto;
     background: transparent;
     z-index: var(--z-index-overlay);

@@ -14,7 +14,16 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   padding: 1.5rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  padding-left: max(1.5rem, env(safe-area-inset-left));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
   animation: fadeIn 0.25s ease-out;
+
+  /* WebKit GPU compositing fix for backdrop-filter flickering */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: opacity, transform;
 }
 
 @keyframes fadeIn {
@@ -28,13 +37,20 @@
   max-width: 1480px;
   height: auto;
   min-height: 680px;
-  max-height: 110vh;
+  max-height: 90vh;
+  max-height: 90dvh;
   background-color: #ffffff;
   border-radius: 36px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
   display: flex;
   overflow: hidden;
   animation: scaleUp 0.25s ease-out;
+
+  /* WebKit GPU compositing fix for card content layer */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 @keyframes scaleUp {
@@ -83,6 +99,7 @@
   justify-content: flex-start;
   gap: 1.5rem;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .header {
@@ -139,13 +156,56 @@
   width: 100%;
   padding: 0.95rem 1.2rem;
   border-radius: 14px;
-  border: 1px solid rgba(14, 14, 14, 0.15);
+  border: 1px solid rgba(14, 14, 14, 0.2);
   background-color: #f9fbf9;
   font-family: var(--font-family-body, 'Poppins', sans-serif);
   font-size: 1rem;
   color: var(--color-text-primary, #0e0e0e);
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  appearance: none;
+}
+
+.input:hover:not(:focus),
+.select:hover:not(:focus),
+.textarea:hover:not(:focus) {
+  border-color: rgba(3, 90, 45, 0.5);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(14, 14, 14, 0.45);
+}
+
+.select {
+  cursor: pointer;
+  color: rgba(14, 14, 14, 0.45);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230e0e0e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  padding-right: 2.5rem;
+}
+
+.select.hasValue {
+  color: var(--color-text-primary, #0e0e0e);
+  font-weight: 400;
+}
+
+.select option {
+  color: var(--color-text-primary, #0e0e0e);
+  background-color: #ffffff;
+}
+
+.select option[value=""],
+.select option:disabled {
+  color: rgba(14, 14, 14, 0.45);
+}
+
+.input:-webkit-autofill,
+.select:-webkit-autofill,
+.textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: var(--color-text-primary, #0e0e0e) !important;
 }
 
 .input:focus,
@@ -261,7 +321,8 @@
   .modalCard {
     max-width: 780px;
     height: auto;
-    max-height: 92vh;
+    max-height: 90vh;
+    max-height: 90dvh;
     min-height: auto;
     border-radius: 28px;
   }
@@ -273,12 +334,13 @@
 /* ── Mobile Layout (Figma Node 731:6103) ── */
 @media (max-width: 768px) {
   .backdrop {
-    padding: 0.85rem;
+    padding: max(0.85rem, env(safe-area-inset-top)) max(0.85rem, env(safe-area-inset-right)) max(0.85rem, env(safe-area-inset-bottom)) max(0.85rem, env(safe-area-inset-left));
   }
 
   .modalCard {
     max-width: 100%;
-    max-height: 92vh;
+    max-height: 90vh;
+    max-height: 90dvh;
     border-radius: 24px;
   }
 

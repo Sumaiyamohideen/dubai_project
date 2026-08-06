@@ -7,8 +7,8 @@ import styles from './FloatingContact.module.css';
 
 /**
  * Shared FloatingContact sidebar component.
- * Displays fixed dark-green container with Phone and WhatsApp action buttons on the right edge.
- * Automatically hidden while Hero section is in viewport, smoothly displayed once scrolled past.
+ * Displays fixed dark-green container with connected Phone and WhatsApp action buttons on the right edge.
+ * Automatically hidden at the top of the page, smoothly displayed once scrolled down.
  *
  * @component FloatingContact
  */
@@ -17,29 +17,18 @@ const FloatingContact = memo(() => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const heroElement = document.getElementById('hero');
-
-    // If hero section does not exist on current page, display floating contact by default
-    if (!heroElement) {
-      setIsVisible(true);
-      return;
-    }
-
-    // Use IntersectionObserver to efficiently toggle visibility when Hero leaves/enters viewport
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(!entry.isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0,
+    const handleScroll = () => {
+      if (window.scrollY > 60) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
       }
-    );
+    };
 
-    observer.observe(heroElement);
-
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
-      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -52,7 +41,7 @@ const FloatingContact = memo(() => {
         aria-label={phone.label}
         className={styles.actionButton}
       >
-        <Icon name={phone.iconName} size={34.5} color="#ffffff" aria-hidden="true" />
+        <Icon name={phone.iconName} size={28} color="#ffffff" aria-hidden="true" />
       </a>
 
       <div className={styles.divider} aria-hidden="true" />
@@ -64,7 +53,7 @@ const FloatingContact = memo(() => {
         aria-label={whatsapp.label}
         className={styles.actionButton}
       >
-        <Icon name={whatsapp.iconName} size={35.5} color="#ffffff" aria-hidden="true" />
+        <Icon name={whatsapp.iconName} size={28} color="#ffffff" aria-hidden="true" />
       </a>
     </aside>
   );
@@ -73,3 +62,4 @@ const FloatingContact = memo(() => {
 FloatingContact.displayName = 'FloatingContact';
 
 export default FloatingContact;
+

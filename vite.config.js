@@ -11,7 +11,12 @@ export default defineConfig({
     },
   },
   server: {
+    port: 5173,
+    host: true,
     allowedHosts: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react', 'react-helmet-async'],
   },
   build: {
     target: 'esnext',

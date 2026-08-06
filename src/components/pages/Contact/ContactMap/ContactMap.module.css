@@ -17,6 +17,7 @@
   width: 100%;
   height: 618px;
   max-height: 65vh;
+  max-height: 65dvh;
   border-radius: 2.8rem;       /* 44.552px */
   overflow: hidden;
   background: #e8ede9;        /* subtle background tint while loading */
